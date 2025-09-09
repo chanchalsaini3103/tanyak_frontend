@@ -22,6 +22,8 @@ import {
   FaRegUserCircle,
 } from "react-icons/fa";
 import "../styles/Navbar.css";
+import logo from "../assets/logo.avif";
+
 
 export default function TanyakNavbar() {
   const [query, setQuery] = useState("");
@@ -138,9 +140,10 @@ export default function TanyakNavbar() {
         <div className="main-header">
           <Container fluid className="d-flex align-items-center flex-wrap">
             {/* LOGO */}
-            <a href="/" className="brand" onClick={() => handleNavClick("/")}>
-              <div className="brand-placeholder">TANYAK</div>
-            </a>
+          <a href="/" className="brand" onClick={() => handleNavClick("/")}>
+  <img src={logo} alt="TANYAK" className="brand-img" />
+</a>
+
 
             {/* Desktop search */}
             <form className="search-form d-none d-md-flex" onSubmit={handleSearch} role="search">

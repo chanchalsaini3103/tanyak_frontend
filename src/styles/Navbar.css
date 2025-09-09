@@ -219,6 +219,16 @@
 .btn-login { background: #216ba5; color:#fff; }
 .btn-signup { background: #eef1f5; color:#333; }
 
+.brand-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 576px) {
+  .brand-img { height: 32px; }
+}
+
 /* contact row (one line) */
 .mobile-contact-row {
   display:flex;
