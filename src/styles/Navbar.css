@@ -216,7 +216,6 @@
   text-decoration:none;
   flex: 1 1 0;
 }
-.btn-login { background: #216ba5; color:#fff; }
 .btn-signup { background: #eef1f5; color:#333; }
 
 .brand-img {
@@ -255,4 +254,42 @@
   .brand-placeholder { height:32px; font-size:18px; padding:0 10px; }
   .nav-actions .login-link { display:none; }
   .cart-total { display:none; }
+}
+/* Yellow login button (theme: yellow + blue) */
+.btn-login {
+  background: #f0c419;        /* main yellow */
+  color: #111;                /* dark text for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  flex: 1 1 0;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(240,196,25,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+/* Hover / focus states */
+.btn-login:hover,
+.btn-login:focus {
+  background: #e7b712;       /* slightly darker yellow */
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(240,196,25,0.18);
+  outline: none;
+}
+
+/* Active / pressed */
+.btn-login:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* ensure the icon inherits the text color (black) */
+.btn-login svg {
+  color: inherit;
+  font-size: 1rem;  /* or whatever size you want */
 }
