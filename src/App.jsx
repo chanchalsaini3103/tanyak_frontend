@@ -1,14 +1,22 @@
 import React from "react";
-import TanyakNavbar from "./components/TanyakNavbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroSection from "./components/HeroSection";
+import TanyakNavbar from "./components/TanyakNavbar";
+import AboutUs from "./components/AboutUs";
 
-function App(){
+
+function App() {
   return (
-    <>
+    <Router>
       <TanyakNavbar />
-      <HeroSection />
-      {/* rest of your site */}
-    </>
+
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/outlet" element={<AboutUs />} />
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+      </Routes>
+    </Router>
   );
 }
+
 export default App;

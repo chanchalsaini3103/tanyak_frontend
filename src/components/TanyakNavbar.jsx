@@ -214,6 +214,7 @@ export default function TanyakNavbar() {
               <a href="/shop" className="nav-link" onClick={() => handleNavClick("/shop")}>Shop</a>
               <a href="/collections" className="nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
               <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
+              <a href="/outlet" className="nav-link" onClick={() => handleNavClick("/outlet")}>Outlet</a>
 
               <div
                 ref={categoriesWrapperRef}
@@ -329,11 +330,11 @@ export default function TanyakNavbar() {
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
-                    <FaBlog className="mobile-nav-icon" /> Blog / Inspiration
+                    <FaBlog className="mobile-nav-icon" /> Blog 
                   </button>
 
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/support")}>
-                    <FaQuestionCircle className="mobile-nav-icon" /> Support / FAQ
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/outlet")}>
+                    <FaQuestionCircle className="mobile-nav-icon" /> Outlet
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/about")}>
