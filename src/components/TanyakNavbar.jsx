@@ -9,6 +9,17 @@ import {
   FaEnvelope,
   FaTimes,
   FaChevronDown,
+  FaHome,
+  FaStore,
+  FaThLarge,
+  FaTags,
+  FaBlog,
+  FaQuestionCircle,
+  FaInfoCircle,
+  FaTools,
+  FaSignInAlt,
+  FaUserPlus,
+  FaRegUserCircle,
 } from "react-icons/fa";
 import "../styles/Navbar.css";
 
@@ -18,8 +29,10 @@ export default function TanyakNavbar() {
   const [showCategories, setShowCategories] = useState(false); // desktop dropdown
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
-  const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false); // inside mobile menu
-  const categoriesRef = useRef(null);
+
+  const categoriesWrapperRef = useRef(null);
+  const categoriesDropdownRef = useRef(null);
+  const hideTimer = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -27,14 +40,16 @@ export default function TanyakNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close desktop categories when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         showCategories &&
-        categoriesRef.current &&
-        !categoriesRef.current.contains(event.target)
+        categoriesWrapperRef.current &&
+        categoriesDropdownRef.current &&
+        !categoriesWrapperRef.current.contains(event.target) &&
+        !categoriesDropdownRef.current.contains(event.target)
       ) {
+        clearTimeout(hideTimer.current);
         setShowCategories(false);
       }
     };
@@ -42,6 +57,17 @@ export default function TanyakNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showCategories]);
 
+  const isDesktop = () => typeof window !== "undefined" && window.innerWidth >= 992;
+
+  const subcategories = [
+    "Structural Hardware",
+    "Functional Hardware",
+    "Decorative Hardware",
+    "Handles",
+    "Hinges",
+  ];
+
+  // full categories list (used in mobile if you want later)
   const categories = [
     "Electronics",
     "Fashion",
@@ -50,45 +76,74 @@ export default function TanyakNavbar() {
     "Sports & Fitness",
     "Books",
     "Toys & Games",
+    "Lighting",
+    "Hardware",
+    "Decor",
   ];
 
   const handleSearch = (e) => {
     e?.preventDefault();
     console.log("Search:", query);
-    // navigate to search results if needed
     setIsMobileSearchOpen(false);
   };
 
   const handleNavClick = (href) => {
-    // generic nav handler (if you later wire routing)
     setIsMobileMenuOpen(false);
-    setMobileCategoriesOpen(false);
     setShowCategories(false);
-    // window.location.href = href; // if needed
+    // optionally navigate: window.location.href = href;
+  };
+
+  // hover helpers for desktop categories
+  const clearHideTimer = () => {
+    if (hideTimer.current) {
+      clearTimeout(hideTimer.current);
+      hideTimer.current = null;
+    }
+  };
+  const scheduleHide = (delay = 80) => {
+    clearHideTimer();
+    hideTimer.current = setTimeout(() => {
+      setShowCategories(false);
+      hideTimer.current = null;
+    }, delay);
+  };
+
+  const onButtonEnter = () => {
+    if (isDesktop()) {
+      clearHideTimer();
+      setShowCategories(true);
+    }
+  };
+  const onButtonLeave = () => {
+    if (isDesktop()) scheduleHide();
+  };
+  const onDropdownEnter = () => {
+    if (isDesktop()) {
+      clearHideTimer();
+      setShowCategories(true);
+    }
+  };
+  const onDropdownLeave = () => {
+    if (isDesktop()) scheduleHide();
   };
 
   return (
     <>
       <header className={`tanyak-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="top-announcement text-center">
-          Order value must be 4,000 Rs. The Delivery Charges will be communicated
-          to you after packing your parcel.
+          Order value must be 4,000 Rs. The Delivery Charges will be communicated to you after packing your parcel.
         </div>
 
         {/* MAIN HEADER */}
         <div className="main-header">
           <Container fluid className="d-flex align-items-center flex-wrap">
-            {/* LOGO - left */}
+            {/* LOGO */}
             <a href="/" className="brand" onClick={() => handleNavClick("/")}>
               <div className="brand-placeholder">TANYAK</div>
             </a>
 
-            {/* Desktop search (hidden on small screens) */}
-            <form
-              className="search-form d-none d-md-flex"
-              onSubmit={handleSearch}
-              role="search"
-            >
+            {/* Desktop search */}
+            <form className="search-form d-none d-md-flex" onSubmit={handleSearch} role="search">
               <div className="search-wrapper">
                 <input
                   type="text"
@@ -98,21 +153,17 @@ export default function TanyakNavbar() {
                   onChange={(e) => setQuery(e.target.value)}
                   aria-label="Search products"
                 />
-                <button type="submit" className="search-icon-btn" aria-label="Search">
-                  <FaSearch />
-                </button>
+                <button type="submit" className="search-icon-btn" aria-label="Search"><FaSearch /></button>
               </div>
             </form>
 
-            {/* mobile right controls: search icon + hamburger (visible on md and below) */}
+            {/* mobile right controls */}
             <div className="mobile-controls d-md-none ms-auto d-flex align-items-center">
               <button
                 className="search-icon-mobile"
                 aria-label="open search"
-                onClick={() => {
-                  setIsMobileSearchOpen((s) => !s);
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => { setIsMobileSearchOpen(s => !s); setIsMobileMenuOpen(false); }}
+                title="Search"
               >
                 <FaSearch />
               </button>
@@ -120,10 +171,8 @@ export default function TanyakNavbar() {
               <button
                 className="hamburger"
                 aria-label="menu"
-                onClick={() => {
-                  setIsMobileMenuOpen((s) => !s);
-                  setIsMobileSearchOpen(false);
-                }}
+                onClick={() => { setIsMobileMenuOpen(s => !s); setIsMobileSearchOpen(false); }}
+                title="Menu"
               >
                 {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
               </button>
@@ -133,37 +182,29 @@ export default function TanyakNavbar() {
             <div className="contacts d-none d-md-flex">
               <div className="contact-block">
                 <div className="contact-left">
-                  <div className="contact-icon-wrap">
-                    <FaPhone />
-                  </div>
+                  <div className="contact-icon-wrap"><FaPhone /></div>
                 </div>
                 <div className="contact-right">
                   <div className="contact-label">Got Any Question</div>
-                  <a className="contact-sub" href="tel:+918700827231">
-                    +91 87008 27231
-                  </a>
+                  <a className="contact-sub" href="tel:+918700827231">+91 87008 27231</a>
                 </div>
               </div>
 
               <div className="contact-block">
                 <div className="contact-left">
-                  <div className="contact-icon-wrap">
-                    <FaEnvelope />
-                  </div>
+                  <div className="contact-icon-wrap"><FaEnvelope /></div>
                 </div>
                 <div className="contact-right">
                   <div className="contact-label">Email</div>
-                  <a className="contact-sub" href="mailto:support@tanyak.in">
-                    support@tanyak.in
-                  </a>
+                  <a className="contact-sub" href="mailto:support@tanyak.in">support@tanyak.in</a>
                 </div>
               </div>
             </div>
           </Container>
         </div>
 
-        {/* SECONDARY NAV (desktop) — hidden on small screens */}
-        <div className="secondary-nav d-none d-md-block">
+        {/* SECONDARY NAV (desktop) */}
+        <div className="secondary-nav d-none d-md-block" style={{ position: "relative" }}>
           <Container fluid className="d-flex align-items-center">
             <nav className="nav-left d-flex align-items-center">
               <a href="/" className="nav-link" onClick={() => handleNavClick("/")}>Home</a>
@@ -171,79 +212,58 @@ export default function TanyakNavbar() {
               <a href="/collections" className="nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
               <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
 
-              {/* Categories (no background) */}
-              <div className="categories-wrapper" ref={categoriesRef}>
+              <div
+                ref={categoriesWrapperRef}
+                className="categories-button-wrapper"
+                onMouseEnter={onButtonEnter}
+                onMouseLeave={onButtonLeave}
+                style={{ display: "inline-block" }}
+              >
                 <button
                   className="nav-link categories-toggle"
-                  onClick={() => setShowCategories((s) => !s)}
+                  onClick={() => { clearHideTimer(); setShowCategories(s => !s); }}
                   aria-expanded={showCategories}
                 >
                   Categories <FaChevronDown className={`arrow ${showCategories ? "rotated" : ""}`} />
                 </button>
-
-                {showCategories && (
-                  <div className="categories-menu-dropdown">
-                    <Container fluid>
-                      <div className="categories-grid">
-                        {categories.map((category, i) => (
-                          <a
-                            key={i}
-                            href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="category-item"
-                            onClick={() => {
-                              setShowCategories(false);
-                              // optionally navigate
-                            }}
-                          >
-                            {category}
-                          </a>
-                        ))}
-                      </div>
-                    </Container>
-                  </div>
-                )}
               </div>
-
-          
             </nav>
 
             <div className="flex-fill" />
 
             <div className="nav-actions d-flex align-items-center">
               <a href="/login" className="login-link me-3">Login / Register</a>
-
-              <a href="/wishlist" className="icon-btn me-2" title="Wishlist">
-                <FaHeart /><span className="badge">0</span>
-              </a>
-
-              <a href="/cart" className="icon-btn me-2" title="Cart">
-                <FaShoppingCart /><span className="badge">0</span>
-              </a>
-
+              <a href="/wishlist" className="icon-btn me-2" title="Wishlist"><FaHeart /><span className="badge">0</span></a>
+              <a href="/cart" className="icon-btn me-2" title="Cart"><FaShoppingCart /><span className="badge">0</span></a>
               <div className="cart-total d-none d-md-block">₹0.00</div>
             </div>
           </Container>
-        </div>
 
-        {/* DESKTOP categories full-width panel (when opened) */}
-        {showCategories && (
-          <div className="categories-menu" onMouseLeave={() => setShowCategories(false)}>
-            <Container fluid>
-              <div className="categories-grid">
-                {categories.map((category, i) => (
-                  <a
-                    key={i}
-                    href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="category-item"
-                    onClick={() => setShowCategories(false)}
-                  >
-                    {category}
-                  </a>
-                ))}
-              </div>
-            </Container>
-          </div>
-        )}
+          {/* FULL-WIDTH CATEGORIES DROPDOWN */}
+          {showCategories && (
+            <div
+              className="categories-fullwidth-dropdown"
+              ref={categoriesDropdownRef}
+              onMouseEnter={onDropdownEnter}
+              onMouseLeave={onDropdownLeave}
+            >
+              <Container fluid>
+                <div className="categories-grid-full">
+                  {subcategories.map((sub, i) => (
+                    <a
+                      key={i}
+                      href={`/category/${sub.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="category-full-item"
+                      onClick={() => setShowCategories(false)}
+                    >
+                      {sub}
+                    </a>
+                  ))}
+                </div>
+              </Container>
+            </div>
+          )}
+        </div>
 
         {/* MOBILE SEARCH OVERLAY */}
         {isMobileSearchOpen && (
@@ -265,48 +285,74 @@ export default function TanyakNavbar() {
           </div>
         )}
 
-        {/* MOBILE MENU */}
+        {/* MOBILE RIGHT-SIDE DRAWER */}
         {isMobileMenuOpen && (
-          <div className="mobile-menu">
-            <div className="mobile-menu-content">
-              <a href="/" className="mobile-nav-link" onClick={() => handleNavClick("/")}>Home</a>
-              <a href="/shop" className="mobile-nav-link" onClick={() => handleNavClick("/shop")}>Shop</a>
-              <a href="/collections" className="mobile-nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
-              <a href="/offers" className="mobile-nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
+          <div className="mobile-drawer-overlay" role="dialog" aria-modal="true">
+            <div className="mobile-drawer">
+              <div className="mobile-drawer-header">
+                <button className="drawer-close" onClick={() => setIsMobileMenuOpen(false)}><FaTimes /></button>
+                <div className="drawer-title">My TANYAK</div>
+              </div>
 
-              {/* Mobile categories toggler */}
-              <button
-                className="mobile-nav-link mobile-categories-toggle"
-                onClick={() => setMobileCategoriesOpen((s) => !s)}
-                aria-expanded={mobileCategoriesOpen}
-              >
-                Categories {mobileCategoriesOpen ? "▲" : "▼"}
-              </button>
-
-              {mobileCategoriesOpen && (
-                <div className="mobile-categories-list">
-                  {categories.map((category, i) => (
-                    <a
-                      key={i}
-                      href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="mobile-category-item"
-                      onClick={() => handleNavClick(`/category/${category.toLowerCase().replace(/\s+/g, "-")}`)}
-                    >
-                      {category}
-                    </a>
-                  ))}
+              <div className="mobile-drawer-body">
+                <div className="mobile-profile">
+                  <div className="mobile-profile-avatar"><FaRegUserCircle /></div>
+                  <div className="mobile-profile-text">
+                    <div className="mobile-profile-welcome">Welcome!</div>
+                    <div className="mobile-profile-guest">Guest</div>
+                  </div>
                 </div>
-              )}
 
-          
+                <nav className="mobile-nav-list" aria-label="Mobile navigation">
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/")}>
+                    <FaHome className="mobile-nav-icon" /> Home
+                  </button>
 
-              <div style={{ height: 8 }} />
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/shop")}>
+                    <FaStore className="mobile-nav-icon" /> Shop
+                  </button>
 
-              <a href="/login" className="mobile-nav-link" onClick={() => handleNavClick("/login")}>Login / Register</a>
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/collections")}>
+                    <FaThLarge className="mobile-nav-icon" /> Collections
+                  </button>
 
-              <div className="mobile-actions" style={{ marginTop: 20 }}>
-                <a href="/wishlist" className="mobile-action-btn">Wishlist</a>
-                <a href="/cart" className="mobile-action-btn">Cart</a>
+                  {/* Categories now normal item after Collections */}
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/categories")}>
+                    <FaTools className="mobile-nav-icon" /> Categories
+                  </button>
+
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/offers")}>
+                    <FaTags className="mobile-nav-icon" /> Offers / Deals
+                  </button>
+
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
+                    <FaBlog className="mobile-nav-icon" /> Blog / Inspiration
+                  </button>
+
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/support")}>
+                    <FaQuestionCircle className="mobile-nav-icon" /> Support / FAQ
+                  </button>
+
+                  <button className="mobile-nav-item" onClick={() => handleNavClick("/about")}>
+                    <FaInfoCircle className="mobile-nav-icon" /> About Us
+                  </button>
+                </nav>
+
+                <div className="mobile-divider" />
+
+                <div className="mobile-auth-buttons">
+                  <a className="btn-login" href="/login" onClick={() => handleNavClick("/login")}><FaSignInAlt /> Login</a>
+                  <a className="btn-signup" href="/signup" onClick={() => handleNavClick("/signup")}><FaUserPlus /> Sign Up</a>
+                </div>
+
+                <div className="mobile-contact-row">
+                  <div className="mobile-contact-item"><FaPhone /> +91 87008 27231</div>
+                  <div className="mobile-contact-item"><FaEnvelope /> support@tanyak.in</div>
+                </div>
+
+                <div className="mobile-footer">
+                  <small>© {new Date().getFullYear()} TANYAK. All rights reserved.</small>
+                </div>
               </div>
             </div>
           </div>
