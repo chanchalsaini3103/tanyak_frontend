@@ -1,0 +1,254 @@
+/* Collections Page Styles */
+.collections-page {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.collections-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.collections-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4b3b00;
+  margin-bottom: 15px;
+}
+
+.collections-header p {
+  font-size: 1.1rem;
+  color: #6b6b6b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Products Grid */
+.products-grid {
+  margin: 0 -15px;
+}
+
+.product-col {
+  margin-bottom: 30px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image */
+.product-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Like Button */
+.like-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b6b6b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.like-btn:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.like-btn.liked {
+  color: #ff6b6b;
+}
+
+/* Hover Actions */
+/* Hover Actions */
+.hover-actions {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 10;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b3b00;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.action-btn:hover {
+  background: #f0c419;
+  transform: scale(1.1);
+}
+
+.action-tooltip {
+  position: absolute;
+  top: -35px; /* Changed from bottom: -35px to top: -35px */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Product Info */
+.product-info {
+  padding: 20px;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4b3b00;
+  margin-bottom: 12px;
+  height: 52px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-amp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.current-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4b3b00;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #6b6b6b;
+}
+
+.discount {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.product-desc {
+  color: #6b6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.read-more-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #f0c419;
+  color: #4b3b00;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #f0c419;
+  color: #1f1f1f;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-col {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .collections-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .hover-actions {
+    gap: 10px;
+  }
+}
