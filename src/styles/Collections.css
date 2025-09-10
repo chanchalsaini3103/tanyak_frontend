@@ -93,8 +93,7 @@
   color: #ff6b6b;
 }
 
-/* Hover Actions */
-/* Hover Actions */
+/* Hover Actions *//* Hover Actions */
 .hover-actions {
   position: absolute;
   bottom: 15px;
@@ -138,7 +137,6 @@
   font-size: 0.75rem;
   white-space: nowrap;
 }
-
 /* Product Info */
 .product-info {
   padding: 20px;
@@ -250,5 +248,107 @@
   
   .hover-actions {
     gap: 10px;
+  }
+}/* Quick View Modal Styles */
+.quick-view-modal .modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.quick-view-modal .modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 15px 20px;
+}
+
+.quick-view-modal .modal-title {
+  font-weight: 600;
+  color: #4b3b00;
+}
+
+.quick-view-modal .modal-body {
+  padding: 20px;
+}
+
+.quick-view-image {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.quick-view-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quick-view-details {
+  padding: 10px;
+}
+
+.product-highlights {
+  margin: 20px 0;
+}
+
+.product-highlights h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4b3b00;
+  margin-bottom: 10px;
+}
+
+.product-highlights p {
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.quick-view-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.quick-view-actions .add-to-cart-btn,
+.quick-view-actions .wishlist-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.quick-view-actions .add-to-cart-btn {
+  background: #f0c419;
+  color: #1f1f1f;
+}
+
+.quick-view-actions .add-to-cart-btn:hover {
+  background: #e6b506;
+}
+
+.quick-view-actions .wishlist-btn {
+  background: #f8f9fa;
+  color: #4b3b00;
+  border: 1px solid #e9ecef;
+}
+
+.quick-view-actions .wishlist-btn:hover {
+  background: #e9ecef;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .quick-view-actions {
+    flex-direction: column;
+  }
+  
+  .quick-view-image {
+    height: 250px;
+    margin-bottom: 20px;
   }
 }
