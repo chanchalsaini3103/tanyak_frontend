@@ -1,0 +1,338 @@
+/* NewArrivals.css */
+.new-arrivals {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-arrivals::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffd700" fill-opacity="0.03" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ffd700;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.arrivals-container {
+  position: relative;
+  margin: 3rem 0;
+  padding: 1rem 0;
+}
+
+.scrolling-track {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.scrolling-items {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.scrolling-items:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 6 - 1.5rem * 6));
+  }
+}
+
+.arrival-card {
+  flex: 0 0 calc(33.333% - 1.5rem);
+  min-width: 280px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.arrival-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front {
+  background: linear-gradient(145deg, #2c2c2c, #1f1f1f);
+  padding: 1.5rem;
+  justify-content: space-between;
+}
+
+.card-back {
+  background: linear-gradient(145deg, #ffd700, #e6b800);
+  color: #000;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffd700;
+  color: #000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.product-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.arrival-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 0.5rem 0;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.card-back h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.card-back .product-price {
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.view-details-btn, .add-to-cart-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem 0;
+  width: 80%;
+}
+
+.view-details-btn {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.view-details-btn:hover {
+  background: #000;
+  color: #ffd700;
+}
+
+.add-to-cart-btn {
+  background: #000;
+  color: #ffd700;
+}
+
+.add-to-cart-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-btn {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.view-all-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #ffd700;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.view-all-btn:hover {
+  color: #000;
+}
+
+.view-all-btn:hover::before {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .arrival-card {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+  
+  .scrolling-items {
+    animation: scroll 25s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-280px * 6 - 1.5rem * 6));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .arrival-card {
+    flex: 0 0 calc(100% - 1.5rem);
+  }
+  
+  .scrolling-items {
+    animation: scroll 20s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-280px * 6 - 1.5rem * 6));
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .new-arrivals {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .arrival-card {
+    min-width: 250px;
+    height: 320px;
+  }
+}

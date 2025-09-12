@@ -238,8 +238,9 @@ export default function TanyakNavbar() {
             <div className="nav-actions d-flex align-items-center">
               <a href="/login" className="login-link me-3">Login / Register</a>
               <a href="/wishlist" className="icon-btn me-2" title="Wishlist"><FaHeart /><span className="badge">0</span></a>
-              <a href="/cart" className="icon-btn me-2" title="Cart"><FaShoppingCart /><span className="badge">0</span></a>
-              <div className="cart-total d-none d-md-block">₹0.00</div>
+              {/* <a href="/cart" className="icon-btn me-2" title="Cart"><
+               /><span className="badge">0</span></a>
+              <div className="cart-total d-none d-md-block">₹0.00</div> */}
             </div>
           </Container>
 

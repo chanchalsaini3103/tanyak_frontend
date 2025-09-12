@@ -1,0 +1,281 @@
+.about-us {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* Left Section - 50% width */
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-section {
+  flex: 60%;
+  padding-bottom: 2rem;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e67e22;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: #e67e22;
+}
+
+.about-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #34495e;
+}
+
+.landscape-container {
+  flex: 40%;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.landscape-image-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.landscape-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.landscape-image:hover {
+  transform: scale(1.03);
+}
+
+.image-info {
+  padding: 1.2rem;
+  background: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.image-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.image-info p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Right Section - 50% width */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-section {
+  flex: 20%;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+  font-weight: 500;
+}
+
+.portrait-container {
+  flex: 80%;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.portrait-image-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.portrait-image:hover {
+  transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+  }
+  
+  .stat-item {
+    margin-bottom: 1rem;
+  }
+  
+  .portrait-image-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-heading {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .landscape-image {
+    height: 180px;
+  }
+  
+  .portrait-image-container {
+    height: 300px;
+  }
+}

@@ -130,6 +130,12 @@ export default function HardwareCollections() {
     setSelectedProduct(null);
   };
 
+  const handleReadMore = (product) => {
+    // This would typically navigate to a product detail page
+    // For now, we'll just show the quick view modal
+    handleQuickView(product);
+  };
+
   return (
     <div className="collections-page">
       <Container>
@@ -191,19 +197,9 @@ export default function HardwareCollections() {
                   </div>
                 </div>
                 
-                {/* Product Info */}
-                <div className="product-info">
-                  <h3 className="product-name">{product.name}</h3>
-                  
-                  <div className="product-price">
-                    <span className="current-price">{product.price}</span>
-                    <span className="original-price">{product.originalPrice}</span>
-                    <span className="discount">{product.discount}</span>
-                  </div>
-                  
-                  <p className="product-desc">{product.description}</p>
-                  
-                  <button className="read-more-btn" onClick={() => handleQuickView(product)}>
+                {/* Product Info - Only Read More Button */}
+                <div className="product-info-simple">
+                  <button className="read-more-btn" onClick={() => handleReadMore(product)}>
                     Read More <FaArrowRight />
                   </button>
                 </div>
