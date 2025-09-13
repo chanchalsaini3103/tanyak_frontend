@@ -20,21 +20,46 @@ import {
   FaSignInAlt,
   FaUserPlus,
   FaRegUserCircle,
+  FaSun,
+  FaMoon
 } from "react-icons/fa";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.avif";
-
+import logoDark from "../assets/logo.avif"; // You might want a different logo for dark mode
 
 export default function TanyakNavbar() {
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showCategories, setShowCategories] = useState(false); // desktop dropdown
+  const [showCategories, setShowCategories] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const categoriesWrapperRef = useRef(null);
   const categoriesDropdownRef = useRef(null);
   const hideTimer = useRef(null);
+
+  // Initialize dark mode from localStorage or system preference
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedMode !== null) {
+      setDarkMode(savedMode === 'true');
+    } else {
+      setDarkMode(systemPrefersDark);
+    }
+  }, []);
+
+  // Apply dark mode class to body
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -69,7 +94,6 @@ export default function TanyakNavbar() {
     "Hinges",
   ];
 
-  // full categories list (used in mobile if you want later)
   const categories = [
     "Electronics",
     "Fashion",
@@ -92,7 +116,10 @@ export default function TanyakNavbar() {
   const handleNavClick = (href) => {
     setIsMobileMenuOpen(false);
     setShowCategories(false);
-    // optionally navigate: window.location.href = href;
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   // hover helpers for desktop categories
@@ -131,7 +158,7 @@ export default function TanyakNavbar() {
 
   return (
     <>
-      <header className={`tanyak-header ${isScrolled ? "scrolled" : ""}`}>
+      <header className={`tanyak-header ${isScrolled ? "scrolled" : ""} ${darkMode ? "dark-mode" : ""}`}>
         <div className="top-announcement text-center">
           Order value must be 4,000 Rs. The Delivery Charges will be communicated to you after packing your parcel.
         </div>
@@ -140,10 +167,9 @@ export default function TanyakNavbar() {
         <div className="main-header">
           <Container fluid className="d-flex align-items-center flex-wrap">
             {/* LOGO */}
-          <a href="/" className="brand" onClick={() => handleNavClick("/")}>
-  <img src={logo} alt="TANYAK" className="brand-img" />
-</a>
-
+            <a href="/" className="brand" onClick={() => handleNavClick("/")}>
+              <img src={darkMode ? logoDark : logo} alt="TANYAK" className="brand-img" />
+            </a>
 
             {/* Desktop search */}
             <form className="search-form d-none d-md-flex" onSubmit={handleSearch} role="search">
@@ -236,10 +262,18 @@ export default function TanyakNavbar() {
             <div className="flex-fill" />
 
             <div className="nav-actions d-flex align-items-center">
-              <a href="/login" className="login-link me-3">Login / Register</a>
+              {/* Dark/Light Mode Toggle Button */}
+              <button 
+                className="theme-toggle-btn"
+                onClick={toggleDarkMode}
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {darkMode ? <FaSun /> : <FaMoon />}
+              </button>
+              
               <a href="/wishlist" className="icon-btn me-2" title="Wishlist"><FaHeart /><span className="badge">0</span></a>
-              {/* <a href="/cart" className="icon-btn me-2" title="Cart"><
-               /><span className="badge">0</span></a>
+              {/* <a href="/cart" className="icon-btn me-2" title="Cart"><FaShoppingCart /><span className="badge">0</span></a>
               <div className="cart-total d-none d-md-block">₹0.00</div> */}
             </div>
           </Container>
@@ -321,7 +355,6 @@ export default function TanyakNavbar() {
                     <FaThLarge className="mobile-nav-icon" /> Collections
                   </button>
 
-                  {/* Categories now normal item after Collections */}
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/categories")}>
                     <FaTools className="mobile-nav-icon" /> Categories
                   </button>
@@ -344,6 +377,24 @@ export default function TanyakNavbar() {
                 </nav>
 
                 <div className="mobile-divider" />
+
+                {/* Dark Mode Toggle in Mobile Menu */}
+                <div className="mobile-theme-toggle">
+                  <button 
+                    className="mobile-theme-toggle-btn"
+                    onClick={toggleDarkMode}
+                  >
+                    {darkMode ? (
+                      <>
+                        <FaSun className="mobile-theme-icon" /> Light Mode
+                      </>
+                    ) : (
+                      <>
+                        <FaMoon className="mobile-theme-icon" /> Dark Mode
+                      </>
+                    )}
+                  </button>
+                </div>
 
                 <div className="mobile-auth-buttons">
                   <a className="btn-login" href="/login" onClick={() => handleNavClick("/login")}><FaSignInAlt /> Login</a>

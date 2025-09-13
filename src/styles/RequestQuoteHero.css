@@ -1,0 +1,264 @@
+/* THEME VARIABLES (light defaults) */
+:root {
+  --hero-overlay:transparent;
+  --topstrip-bg: rgba(0,0,0,0.7);
+  --text-on-hero: #fff;
+  --accent: #ffd54f;
+  --primary-btn-bg: #ffd54f;
+  --primary-btn-color: #000;
+  --secondary-btn-border: rgba(255,255,255,0.18);
+  --card-bg-light: rgba(255,255,255,0.95);
+  --card-shadow: rgba(0,0,0,0.2);
+  --muted: rgba(255,255,255,0.9);
+  --select-bg-light: #ffffff;
+  --select-text-light: #111;
+  --select-border-light: rgba(0,0,0,0.08);
+  --select-arrow-light: #111;
+  --select-bg-dark: rgba(255,255,255,0.06);
+  --select-text-dark: #fff;
+  --select-border-dark: rgba(255,255,255,0.15);
+  --select-arrow-dark: #fff;
+}
+
+/* dark theme overrides when body has dark-mode */
+body.dark-mode .rq-hero,
+.rq-hero.theme-dark {
+  --hero-overlay: rgba(0,0,0,0.6);
+  --topstrip-bg: rgba(0,0,0,0.7);
+  --text-on-hero: #fff;
+  --accent: #ffd54f;
+  --primary-btn-bg: #ffd54f;
+  --primary-btn-color: #000;
+  --secondary-btn-border: rgba(255,255,255,0.18);
+  --card-bg-light: rgba(40,40,40,0.95);
+  --card-shadow: rgba(0,0,0,0.6);
+  --muted: rgba(255,255,255,0.9);
+  --select-bg: var(--select-bg-dark);
+  --select-text: var(--select-text-dark);
+  --select-border: var(--select-border-dark);
+  --select-arrow: var(--select-arrow-dark);
+}
+
+/* light explicit (when not in dark mode) */
+.rq-hero.theme-light {
+  --hero-overlay: rgba(0,0,0,0.28);
+  --topstrip-bg: rgba(0,0,0,0.6);
+  --text-on-hero: #fff;
+  --primary-btn-bg: #ffd54f;
+  --primary-btn-color: #000;
+  --card-bg-light: rgba(255,255,255,0.95);
+  --card-shadow: rgba(0,0,0,0.18);
+  --muted: rgba(255,255,255,0.92);
+  --select-bg: var(--select-bg-light);
+  --select-text: var(--select-text-light);
+  --select-border: var(--select-border-light);
+  --select-arrow: var(--select-arrow-light);
+}
+
+/* component base */
+.rq-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--text-on-hero);
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  background-blend-mode: overlay;
+  /* overlay to ensure text legibility */
+}
+.rq-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, transparent 10%, var(--hero-overlay));
+  pointer-events: none;
+}
+
+/* top strip */
+.rq-topstrip {
+  background: var(--topstrip-bg);
+  color: var(--text-on-hero);
+  padding: 6px 12px;
+  font-size: 13px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* nav */
+.rq-navbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 32px;
+  color: var(--text-on-hero);
+  z-index: 10;
+}
+.rq-brand {
+  font-weight:700;
+  font-size:20px;
+  color: var(--accent);
+}
+.rq-actions { display:flex; gap:12px; align-items:center; }
+.rq-link { color: var(--text-on-hero); text-decoration:none; }
+
+/* buttons */
+.rq-btn {
+  border: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius:6px;
+  font-weight:600;
+}
+.rq-primary {
+  background: var(--primary-btn-bg);
+  color: var(--primary-btn-color);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+.rq-primary:hover { transform: translateY(-3px); filter:brightness(0.98); }
+.rq-secondary {
+  background: transparent;
+  color: var(--text-on-hero);
+  border: 1px solid var(--secondary-btn-border);
+  padding:9px 14px;
+  border-radius:6px;
+}
+
+/* layout */
+.rq-hero-inner {
+  display:flex;
+  gap:40px;
+  align-items:center;
+  justify-content:center;
+  padding:48px 80px;
+  position: relative;
+  z-index: 5;
+}
+
+/* left image card */
+.rq-left-image { flex: 1 1 420px; display:flex; align-items:center; justify-content:center; }
+.rq-left-card {
+  background: var(--card-bg-light);
+  padding:8px;
+  border-radius:12px;
+  box-shadow: 0 8px 30px var(--card-shadow);
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(.2,.9,.2,1), opacity 0.6s;
+}
+.rq-left-card img { width:360px; height:360px; object-fit:cover; border-radius:8px; }
+
+/* content */
+.rq-content { flex:1 1 640px; color: var(--text-on-hero); max-width:720px; transform: translateY(18px); opacity: 0; transition: transform 0.6s cubic-bezier(.2,.9,.2,1), opacity 0.6s; }
+.rq-h1 { font-size:40px; margin:0 0 12px 0; color:var(--text-on-hero); font-weight:800; text-shadow: 0 6px 18px rgba(0,0,0,0.45); }
+.rq-sub { margin:0 0 18px 0; color: var(--muted); font-size:18px; }
+
+/* CTAs & inline form */
+.rq-ctas { display:flex; gap:12px; align-items:center; margin-bottom:16px; }
+.rq-inline-form { display:flex; gap:8px; align-items:center; margin-top:8px; transform: translateY(18px); opacity: 0; transition: transform 0.6s cubic-bezier(.2,.9,.2,1), opacity 0.6s; }
+.rq-inline-form input, .rq-inline-form select { padding:10px 12px; border-radius:8px; border:1px solid var(--select-border); background: var(--select-bg); color:var(--select-text); min-width:160px; }
+.rq-inline-form input::placeholder { color: black; }
+
+/* messages */
+.rq-success { margin-top:12px; background: rgba(0,128,0,0.12); color:#eaffea; padding:10px 12px; border-radius:8px; }
+.rq-error { margin-top:12px; background: rgba(255,0,0,0.08); color:#ffdddd; padding:10px 12px; border-radius:8px; }
+
+/* modal */
+.rq-modal-backdrop { position:fixed; inset:0; background: rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:2000; }
+.rq-modal { background:#fff; width:720px; max-width:92%; border-radius:12px; padding:20px; box-shadow: 0 12px 40px rgba(0,0,0,0.4); color:#111; transform: translateY(12px); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; }
+.rq-modal-backdrop .rq-modal { transform: translateY(0); opacity: 1; }
+
+/* modal form */
+.rq-modal-form .row { display:flex; gap:12px; }
+.rq-modal-form label { display:block; flex:1; font-size:14px; color:#333; margin-bottom:8px; }
+.rq-modal-form input, .rq-modal-form textarea { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #ddd; }
+.modal-actions { display:flex; gap:12px; justify-content:flex-end; margin-top:12px; }
+.rq-outline { background:transparent; border:1px solid #ccc; padding:10px 14px; border-radius:8px; }
+
+/* Make <select> readable in both light & dark themes */
+.rq-inline-form select {
+  appearance: none;              /* remove native arrow so custom styles work consistently */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 40px 10px 12px;  /* space for custom arrow */
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--select-arrow) 50%),
+                    linear-gradient(135deg, var(--select-arrow) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Option text color - ensure readable on both themes */
+.rq-inline-form select option {
+  color: #111;
+  background: #fff;
+}
+
+/* When using dark theme, style the options differently */
+.rq-hero.theme-dark .rq-inline-form select option {
+  color: #fff;
+  background: #333;
+}
+
+/* Focus state for accessibility */
+.rq-inline-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 213, 79, 0.14); /* subtle yellow halo (theme accent) */
+  border-color: var(--accent);
+}
+
+/* Small screens: ensure it stretches nicely */
+@media (max-width: 520px) {
+  .rq-inline-form select { min-width: unset; width: 100%; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .rq-hero-inner { flex-direction:column; padding:28px 24px; }
+  .rq-left-card img { width:260px; height:260px; }
+  .rq-h1 { font-size:28px; }
+  .rq-inline-form { flex-direction:column; align-items:stretch; }
+  .rq-inline-form input, .rq-inline-form select { min-width:unset; }
+}
+@media (max-width: 520px) {
+  .rq-navbar { padding:12px 16px; }
+  .rq-topstrip { font-size:12px; }
+  .rq-left-card img { width:220px; height:220px; }
+  .rq-h1 { font-size:22px; }
+  .rq-ctas { flex-direction:column; align-items:flex-start; gap:8px; }
+}
+
+/* ANIMATION TRIGGER - when section becomes visible (class added by JS) */
+/* stagger: content -> inline-form -> left-card */
+.rq-hero.is-visible .rq-content {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.08s;
+}
+.rq-hero.is-visible .rq-inline-form {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.24s;
+}
+.rq-hero.is-visible .rq-left-card {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.36s;
+}
+
+/* Modal open class (modal already fades via backdrop) */
+.rq-modal-backdrop { animation: fadeInBackdrop 220ms ease; }
+@keyframes fadeInBackdrop { from { opacity: 0 } to { opacity: 1 } }
+
+/* Accessibility: reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .rq-left-card,
+  .rq-content,
+  .rq-inline-form,
+  .rq-modal { transition: none !important; transform: none !important; opacity: 1 !important; }
+  .rq-hero.is-visible .rq-content,
+  .rq-hero.is-visible .rq-inline-form,
+  .rq-hero.is-visible .rq-left-card { transition-delay: 0s !important; }
+}

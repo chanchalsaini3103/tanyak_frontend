@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/HeroSection.css";
 import NewArrivals from "./NewArrivals";
 import AboutUsHero from "./AboutUsHero";
-import WhyChooseUs from "./WhyChooseUs";
-
+import PremiumCTA from "./RequestQuoteHero";
+import CTASection from "./RequestQuoteHero";
+import RequestQuoteHero from "./RequestQuoteHero";
+import Testimonials from "./Testimonials";
+import Footer from "./Footer";
 const HeroSection = () => {
   return (
     <>
@@ -36,7 +39,9 @@ const HeroSection = () => {
     </section>
     <NewArrivals />
     <AboutUsHero />
-    <WhyChooseUs />
+   <RequestQuoteHero />
+   <Testimonials />
+   <Footer />
     </>
   );
 };
