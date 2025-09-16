@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/HeroSection.css";
 import NewArrivals from "./NewArrivals";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import AboutUsHero from "./AboutUsHero";
 import PremiumCTA from "./RequestQuoteHero";
 import CTASection from "./RequestQuoteHero";
@@ -23,8 +24,11 @@ const HeroSection = () => {
               Beautifully designed hardware that makes every home unique.
             </p>
             <div className="cta-buttons">
-              <button className="cta-btn primary">Shop Collection</button>
-              <button className="cta-btn secondary">Learn More</button>
+              <Link to="/our-craft"><button className="cta-btn primary">Shop Collection</button></Link>
+              
+                <Link to="/our-craft">
+                  <button className="cta-btn secondary">Learn More</button>
+                </Link>
             </div>
           </div>
         </div>

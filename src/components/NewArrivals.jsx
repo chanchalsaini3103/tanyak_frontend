@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/NewArrivals.css";
 
 const NewArrivals = () => {
   const [darkMode, setDarkMode] = useState(
-    () => document.body.classList.contains("dark-mode") || localStorage.getItem("darkMode") === "true"
+    () =>
+      document.body.classList.contains("dark-mode") ||
+      localStorage.getItem("darkMode") === "true"
   );
 
   // observe body class changes (so theme toggle from Navbar updates this component)
@@ -16,7 +18,7 @@ const NewArrivals = () => {
     return () => mo.disconnect();
   }, []);
 
-  // optional: also listen for storage events in case another tab changed theme
+  // also listen for storage events (theme changes from another tab)
   useEffect(() => {
     const onStorage = (e) => {
       if (e.key === "darkMode") setDarkMode(e.newValue === "true");
@@ -72,18 +74,26 @@ const NewArrivals = () => {
   ];
 
   return (
-    <section className={`new-arrivals ${darkMode ? "theme-dark" : "theme-light"}`}>
+    <section
+      className={`new-arrivals ${darkMode ? "theme-dark" : "theme-light"}`}
+    >
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">New Arrivals</h2>
-          <p className="section-subtitle">Discover our latest hardware collections</p>
+          <p className="section-subtitle">
+            Discover our latest hardware collections
+          </p>
         </div>
 
         <div className="arrivals-container">
           <div className="scrolling-track" aria-hidden>
             <div className="scrolling-items" role="list">
               {newArrivals.map((product) => (
-                <article key={product.id} className="arrival-card" role="listitem">
+                <article
+                  key={product.id}
+                  className="arrival-card"
+                  role="listitem"
+                >
                   <div className="card-inner" tabIndex={0}>
                     <div className="card-front">
                       <div className="product-badge">{product.badge}</div>
@@ -98,8 +108,12 @@ const NewArrivals = () => {
                     <div className="card-back" aria-hidden>
                       <h3>{product.name}</h3>
                       <div className="card-actions">
-                        <button className="view-details-btn">View Details</button>
-                        <button className="add-to-cart-btn">Add to Cart</button>
+                        <button className="view-details-btn">
+                          View Details
+                        </button>
+                        <button className="add-to-cart-btn">
+                          Add to Cart
+                        </button>
                       </div>
                     </div>
                   </div>
