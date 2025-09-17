@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/NewArrivals.css";
-import cabinetHandlesImg from "../images/newarrivals/1.jpg";
+import cabinetHandlesImg from "../images/newarrivals/2.jpg";
 import img2 from "../images/newarrivals/2.jpg";
 import img3 from "../images/newarrivals/3.jpg";
 import img4 from "../images/newarrivals/4.jpg";
