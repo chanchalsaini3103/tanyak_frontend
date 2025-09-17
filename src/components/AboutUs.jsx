@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import "../styles/AboutUs.css";
 import Footer from "./Footer";
+import founderImg from "../images/clients/pravin.jpg"; 
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState("outlet");
@@ -219,13 +220,17 @@ export default function AboutUs() {
                 <div className="team-section">
                   <h2 className="section-title">Meet Our Founder</h2>
                   <Row className="founder-info">
-                    <Col md={5}>
-                      <div className="founder-image animate-image">
-                        <div className="image-placeholder">
-                          <FaUser className="founder-icon" />
-                        </div>
-                      </div>
-                    </Col>
+                   <Col md={5}>
+  <div className="founder-image animate-image">
+    <img 
+      src={founderImg} 
+      alt="Founder" 
+      className="image-placeholder" 
+      loading="lazy"
+    />
+  </div>
+</Col>
+
                     <Col md={7}>
                       <div className="founder-details">
                         <h3>Praveen Jain</h3>

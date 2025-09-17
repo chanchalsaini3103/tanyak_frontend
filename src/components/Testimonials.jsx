@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Testimonials.css";
-
+import chanchal from "../images/clients/chanchal.jpeg";
+import deepak from "../images/clients/deepak.jpeg";
+import kiran from "../images/clients/kiran.jpeg";
+import pomu from "../images/clients/pomu.jpeg";
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -18,39 +21,39 @@ const Testimonials = () => {
   }, []);
 
   const testimonials = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      location: "New York, NY",
-      text: "The team at DecorHome transformed our living space completely. Their attention to detail and quality products exceeded our expectations. We couldn't be happier!",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 2,
-      name: "Michael Thompson",
-      location: "Chicago, IL",
-      text: "I've purchased furniture from many places, but nothing compares to the quality and style I found here. The pieces are conversation starters!",
-      rating: 4,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      location: "Los Angeles, CA",
-      text: "From consultation to delivery, the experience was flawless. The interior design suggestions were spot on and reflected my personal style perfectly.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 4,
-      name: "James Wilson",
-      location: "Miami, FL",
-      text: "The custom pieces we ordered were worth every penny. Excellent craftsmanship and they arrived right on schedule. Will definitely shop here again!",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    }
-  ];
+  {
+    id: 1,
+    name: "Chanchal Saini",
+    location: "Pune, India",
+    text: "The team at DecorHome transformed our living space completely. Their attention to detail and quality products exceeded our expectations. We couldn't be happier!",
+    rating: 5,
+    image: chanchal,
+  },
+  {
+    id: 2,
+    name: "Deepak Suthar",
+    location: "Pune, India",
+    text: "I've purchased furniture from many places, but nothing compares to the quality and style I found here. The pieces are conversation starters!",
+    rating: 4,
+    image: deepak,
+  },
+  {
+    id: 3,
+    name: "Kiran Suthar",
+    location: "Pune, India",
+    text: "From consultation to delivery, the experience was flawless. The interior design suggestions were spot on and reflected my personal style perfectly.",
+    rating: 5,
+    image: kiran,
+  },
+  {
+    id: 4,
+    name: "Pramod Suthar",
+    location: "Pune, India",
+    text: "The custom pieces we ordered were worth every penny. Excellent craftsmanship and they arrived right on schedule. Will definitely shop here again!",
+    rating: 5,
+    image: pomu, // ✅ no curly braces
+  },
+];
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
+import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,29 +8,29 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-logo">DecorHome</h3>
+            <h3 className="footer-logo">Tanyak</h3>
             <p className="footer-description">
               Transforming houses into homes with exquisite decor and furniture
-              since 2010. We believe in quality, style, and creating spaces that
+              since 2015. We believe in quality, style, and creating spaces that
               tell your story.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="social-link" aria-label="Pinterest">
-                <i className="fab fa-pinterest-p"></i>
-              </a>
-              <a href="#" className="social-link" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="social-link" aria-label="YouTube">
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div>
+  <a href="#" className="social-link" aria-label="Facebook">
+    <FaFacebookF />
+  </a>
+  <a href="#" className="social-link" aria-label="Instagram">
+    <FaInstagram />
+  </a>
+  <a href="#" className="social-link" aria-label="Pinterest">
+    <FaPinterestP />
+  </a>
+  <a href="#" className="social-link" aria-label="Twitter">
+    <FaTwitter />
+  </a>
+  <a href="#" className="social-link" aria-label="YouTube">
+    <FaYoutube />
+  </a>
+</div>
           </div>
 
           <div className="footer-section">
@@ -108,7 +109,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2023 DecorHome. All rights reserved.</p>
+            <p>&copy; 2025 Tanyak. All rights reserved.</p>
             <div className="footer-legal">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>

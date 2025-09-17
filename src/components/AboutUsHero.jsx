@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/AboutUsHero.css";
+import aboutPortrait from '../images/about-us-potrait.jpg';
 
 const AboutUsHero = () => {
   const [darkMode, setDarkMode] = useState(
-    () => document.body.classList.contains("dark-mode") || localStorage.getItem("darkMode") === "true"
+    () =>
+      document.body.classList.contains("dark-mode") ||
+      localStorage.getItem("darkMode") === "true"
   );
   const contentRef = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -12,7 +15,10 @@ const AboutUsHero = () => {
     const observer = new MutationObserver(() => {
       setDarkMode(document.body.classList.contains("dark-mode"));
     });
-    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -46,21 +52,36 @@ const AboutUsHero = () => {
         >
           {/* Left Section */}
           <div className="about-left">
-            <div className="info-section"> {/* Animates first */}
+            <div className="info-section">
+              {" "}
+              {/* Animates first */}
               <h2 className="section-title">About Us</h2>
-              <h3 className="about-heading">Crafting Beautiful Interiors Since 2010</h3>
+              <h3 className="about-heading">
+                Enhancing Homes with Premium Hardware Since 2010
+              </h3>
               <p className="about-description">
-                For over a decade, Pune Decor has been transforming houses into elegant, comfortable homes.
-                We bring you a handpicked collection of premium furnishings – from luxurious curtains and
-                wallpapers to bespoke sofas and mattresses – all backed by expert guidance.
+                For more than a decade, Tanyak has been bringing style and
+                strength into homes with our wide range of premium hardware and
+                accessories. From cabinet handles, mortise door handles, and
+                drawer knobs to curtain brackets, sofa legs, bathroom fittings,
+                and more—we offer solutions that combine durability with design.
               </p>
               <p className="about-description">
-                Our commitment to quality, style, and personal service ensures every space we touch reflects
-                your unique vision and personality. We are the only shop in Pune to offer a 100% satisfaction guarantee.
+                At Tanyak, we believe every detail matters. That’s why our
+                products are crafted to add both elegance and functionality to
+                your living spaces. With our best-selling collections and
+                exclusive Tanyak brand, we have earned the trust of countless
+                customers who value quality and reliability.
+              </p>
+              <p className="about-description">
+                Transform your interiors with Tanyak—where every piece reflects
+                a perfect balance of design, innovation, and everyday comfort.{" "}
               </p>
             </div>
 
-            <div className="landscape-container"> {/* Animates second */}
+            <div className="landscape-container">
+              {" "}
+              {/* Animates second */}
               <div className="landscape-image-container">
                 <img
                   src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
@@ -68,14 +89,15 @@ const AboutUsHero = () => {
                   className="landscape-image"
                   loading="lazy"
                 />
-               
               </div>
             </div>
           </div>
 
           {/* Right Section */}
           <div className="about-right">
-            <div className="stats-section"> {/* Animates third */}
+            <div className="stats-section">
+              {" "}
+              {/* Animates third */}
               <div className="stats-container">
                 <div className="stat-item">
                   <div className="stat-content">
@@ -98,14 +120,17 @@ const AboutUsHero = () => {
               </div>
             </div>
 
-            <div className="portrait-container"> {/* Animates fourth */}
+            <div className="portrait-container">
+              {" "}
+              {/* Animates fourth */}
               <div className="portrait-image-container">
                 <img
-                  src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="Interior Designer"
-                  className="portrait-image"
-                  loading="lazy"
-                />
+  src={aboutPortrait}
+  alt="Interior Designer"
+  className="portrait-image"
+  loading="lazy"
+/>
+
               </div>
             </div>
           </div>

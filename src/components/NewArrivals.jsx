@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/NewArrivals.css";
+import cabinetHandlesImg from "../images/newarrivals/1.jpg";
+import img2 from "../images/newarrivals/2.jpg";
+import img3 from "../images/newarrivals/3.jpg";
+import img4 from "../images/newarrivals/4.jpg";
+import img5 from "../images/newarrivals/5.jpg";
 
 const NewArrivals = () => {
   const [darkMode, setDarkMode] = useState(
@@ -31,46 +36,42 @@ const NewArrivals = () => {
   const newArrivals = [
     {
       id: 1,
-      name: "Laser-Cut Cabinet Handles",
+      name: " Cabinet Handles",
       image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
-      badge: "New",
+       cabinetHandlesImg,
+         badge: "New",
     },
     {
       id: 2,
       name: "Modern Drawer Pulls",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      image:img2,
       badge: "Trending",
     },
     {
       id: 3,
       name: "Black & Gold Hinges",
       image:
-        "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
-      badge: "Limited",
+        img3,   badge: "Limited",
     },
     {
       id: 4,
       name: "Designer Door Knobs",
       image:
-        "https://images.unsplash.com/photo-1595425970377-2f8ded7c7b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
-      badge: "Premium",
+       img4,      badge: "Premium",
     },
     {
       id: 5,
       name: "Matte Black Latches",
       image:
-        "https://images.unsplash.com/photo-1600353068446-9b5ae7712c9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
-      badge: "New",
+      img5,    badge: "New",
     },
-    {
-      id: 6,
-      name: "Vintage Style Locks",
-      image:
-        "https://images.unsplash.com/photo-1611238112651-2c13ef1f4c0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
-      badge: "Exclusive",
-    },
+    // {
+    //   id: 6,
+    //   name: "Vintage Style Locks",
+    //   image:
+    //     "https://images.unsplash.com/photo-1611238112651-2c13ef1f4c0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+    //   badge: "Exclusive",
+    // },
   ];
 
   return (

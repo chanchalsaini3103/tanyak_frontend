@@ -238,6 +238,7 @@ export default function TanyakNavbar() {
             <nav className="nav-left d-flex align-items-center">
               <a href="/" className="nav-link" onClick={() => handleNavClick("/")}>Home</a>
               <a href="/shop" className="nav-link" onClick={() => handleNavClick("/shop")}>Shop</a>
+              <a href="/blog" className="nav-link" onClick={() => handleNavClick("/blog")}>Gallery</a>
               <a href="/collections" className="nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
               <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
               <a href="/outlet" className="nav-link" onClick={() => handleNavClick("/outlet")}>Outlet</a>
@@ -364,7 +365,7 @@ export default function TanyakNavbar() {
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
-                    <FaBlog className="mobile-nav-icon" /> Blog 
+                    <FaBlog className="mobile-nav-icon" /> Gallery 
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/outlet")}>
