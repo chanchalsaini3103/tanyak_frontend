@@ -6,6 +6,7 @@ import img3 from "../images/newarrivals/3.jpg";
 import img4 from "../images/newarrivals/4.jpg";
 import img5 from "../images/newarrivals/5.jpg";
 
+
 const NewArrivals = () => {
   const [darkMode, setDarkMode] = useState(
     () =>
