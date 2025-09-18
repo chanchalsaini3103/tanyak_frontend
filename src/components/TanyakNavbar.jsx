@@ -34,6 +34,7 @@ export default function TanyakNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [wishlistCount, setWishlistCount] = useState(0);
 
   const categoriesWrapperRef = useRef(null);
   const categoriesDropdownRef = useRef(null);
@@ -61,12 +62,14 @@ export default function TanyakNavbar() {
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
+  // Scroll handler for header shadow
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // categories dropdown outside click handler
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -156,6 +159,41 @@ export default function TanyakNavbar() {
     if (isDesktop()) scheduleHide();
   };
 
+  // ------------------ Wishlist counter logic ------------------
+  const updateCountFromStorage = () => {
+    try {
+      const raw = localStorage.getItem("tanyak_wishlist");
+      const obj = raw ? JSON.parse(raw) : {};
+      // If you store as object of ids -> true, count keys; adapt if storing differently
+      const count = obj && typeof obj === "object" ? Object.keys(obj).length : 0;
+      setWishlistCount(count);
+    } catch (err) {
+      console.warn("Failed to read wishlist from storage", err);
+      setWishlistCount(0);
+    }
+  };
+
+  useEffect(() => {
+    // initial read
+    updateCountFromStorage();
+
+    // custom event listener (dispatched by Collections component)
+    const onCustom = () => updateCountFromStorage();
+    window.addEventListener("tanyak_wishlist_updated", onCustom);
+
+    // storage listener (other tabs)
+    const onStorage = (e) => {
+      if (e.key === "tanyak_wishlist") updateCountFromStorage();
+    };
+    window.addEventListener("storage", onStorage);
+
+    return () => {
+      window.removeEventListener("tanyak_wishlist_updated", onCustom);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
+  // ------------------------------------------------------------
+
   return (
     <>
       <header className={`tanyak-header ${isScrolled ? "scrolled" : ""} ${darkMode ? "dark-mode" : ""}`}>
@@ -242,22 +280,6 @@ export default function TanyakNavbar() {
               <a href="/collections" className="nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
               <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
               <a href="/outlet" className="nav-link" onClick={() => handleNavClick("/outlet")}>Outlet</a>
-
-              <div
-                ref={categoriesWrapperRef}
-                className="categories-button-wrapper"
-                onMouseEnter={onButtonEnter}
-                onMouseLeave={onButtonLeave}
-                style={{ display: "inline-block" }}
-              >
-                <button
-                  className="nav-link categories-toggle"
-                  onClick={() => { clearHideTimer(); setShowCategories(s => !s); }}
-                  aria-expanded={showCategories}
-                >
-                  Categories <FaChevronDown className={`arrow ${showCategories ? "rotated" : ""}`} />
-                </button>
-              </div>
             </nav>
 
             <div className="flex-fill" />
@@ -273,7 +295,10 @@ export default function TanyakNavbar() {
                 {darkMode ? <FaSun /> : <FaMoon />}
               </button>
               
-              <a href="/wishlist" className="icon-btn me-2" title="Wishlist"><FaHeart /><span className="badge">0</span></a>
+              <a href="/wishlist" className="icon-btn me-2" title="Wishlist" aria-label={`Wishlist: ${wishlistCount} items`}>
+                <FaHeart />
+                <span className="badge" aria-hidden>{wishlistCount}</span>
+              </a>
               {/* <a href="/cart" className="icon-btn me-2" title="Cart"><FaShoppingCart /><span className="badge">0</span></a>
               <div className="cart-total d-none d-md-block">₹0.00</div> */}
             </div>
@@ -354,10 +379,6 @@ export default function TanyakNavbar() {
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/collections")}>
                     <FaThLarge className="mobile-nav-icon" /> Collections
-                  </button>
-
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/categories")}>
-                    <FaTools className="mobile-nav-icon" /> Categories
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/offers")}>

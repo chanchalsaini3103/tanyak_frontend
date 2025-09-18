@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<HeroSection />} />
         <Route path="/outlet" element={<AboutUs />} />
         <Route path="/blog" element={<Gallery />} />
+        <Route path="/shop" element={<HardwareCollections />} />
         <Route path="/our-craft" element={<OurCraft />} />
         <Route path="/collections" element={<HardwareCollections />} />
         <Route path="*" element={<h2>404 - Page Not Found</h2>} />
