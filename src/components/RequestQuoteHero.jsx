@@ -58,22 +58,94 @@ export default function RequestQuoteHero({
     return () => io.disconnect();
   }, []);
 
-  const handleInlineSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setErrorMsg('');
+  // ----- WhatsApp helper (open or copy) -----
+  const WHATSAPP_NUMBER = "919552633490"; // target number (international format, no '+')
+  const [waStatus, setWaStatus] = useState('');
+
+  const buildWhatsAppMessageFromInline = () => {
+    const now = new Date().toLocaleString();
+    let msg = `Hello,\nI would like a quick quote.\n\n`;
+    msg += `Email: ${inline.email || '-'}\n`;
+    msg += `Company: ${inline.company || '-'}\n`;
+    msg += `Product of interest: ${inline.product || '-'}\n\n`;
+
     try {
-      const resp = await onSubmit({ type: 'quick', ...inline });
-      setSuccessMsg(`Thanks! We will contact you soon. Ref: ${resp.id || 'N/A'}`);
-      setInline({ email: '', company: '', product: '' });
-      setTimeout(() => setSuccessMsg(''), 6000);
-    } catch {
-      setErrorMsg('Something went wrong — try again later.');
-    } finally {
-      setLoading(false);
+      const brochureUrl = `${window.location.origin}/brochure.pdf`;
+      msg += `Brochure: ${brochureUrl}\n`;
+    } catch (err) {
+      // ignore if window not available
+    }
+
+    msg += `Sent at: ${now}\n\nThanks!`;
+    return msg;
+  };
+
+  const buildWhatsAppMessageFromModal = () => {
+    const now = new Date().toLocaleString();
+    let msg = `Hello,\nI am submitting a full quote request.\n\n`;
+    msg += `Name: ${modalData.name || '-'}\n`;
+    msg += `Company: ${modalData.company || '-'}\n`;
+    msg += `Email: ${modalData.email || '-'}\n`;
+    msg += `Phone: ${modalData.phone || '-'}\n`;
+    msg += `Product / SKU: ${modalData.product || '-'}\n`;
+    msg += `Qty: ${modalData.qty || '-'}\n`;
+    msg += `Notes: ${modalData.notes || '-'}\n\n`;
+
+    try {
+      const brochureUrl = `${window.location.origin}/brochure.pdf`;
+      msg += `Brochure: ${brochureUrl}\n`;
+    } catch (err) {}
+
+    msg += `Sent at: ${now}\n\nThanks!`;
+    return msg;
+  };
+
+  const openWhatsAppOrCopy = async ({ mode = 'quick' } = {}) => {
+    const msg = mode === 'quick' ? buildWhatsAppMessageFromInline() : buildWhatsAppMessageFromModal();
+    const encoded = encodeURIComponent(msg);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    setWaStatus('Opening WhatsApp...');
+
+    // Try to open WhatsApp
+    try {
+      const newWin = window.open(waUrl, '_blank', 'noopener,noreferrer');
+      if (newWin) {
+        setWaStatus('WhatsApp opened — remember to press Send.');
+        setTimeout(() => setWaStatus(''), 4000);
+        return;
+      }
+    } catch (err) {
+      // swallow and fallback
+    }
+
+    // Fallback: copy to clipboard
+    try {
+      await navigator.clipboard.writeText(msg);
+      setWaStatus('Message copied to clipboard — open WhatsApp and paste (Ctrl+V / ⌘V).');
+      setTimeout(() => setWaStatus(''), 6000);
+    } catch (err) {
+      // final fallback: show prompt/alert with message
+      // eslint-disable-next-line no-alert
+      alert(`Please send this message to +91 9552633490:\n\n${msg}`);
+      setWaStatus('');
     }
   };
 
+  // ----- Modified handlers -----
+  // Quick Quote: open WhatsApp (no onSubmit)
+  const handleInlineQuickQuote = (e) => {
+    e.preventDefault();
+    // basic validation
+    if (!inline.email || !inline.company) {
+      setWaStatus('Please enter email and company before sending.');
+      setTimeout(() => setWaStatus(''), 3000);
+      return;
+    }
+    openWhatsAppOrCopy({ mode: 'quick' });
+  };
+
+  // Modal submit: call onSubmit then open WhatsApp with modal data after success
   const handleModalSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -81,17 +153,20 @@ export default function RequestQuoteHero({
     try {
       const resp = await onSubmit({ type: 'full', ...modalData });
       setSuccessMsg(`Request submitted. Quote ID: ${resp.id || 'N/A'}`);
+      // after saving, open WhatsApp with modal details
+      openWhatsAppOrCopy({ mode: 'full' });
+      // clear modal fields & close
       setModalData({ name: '', email: '', phone: '', company: '', product: '', qty: '', notes: '' });
       setShowModal(false);
-      setTimeout(() => setSuccessMsg(''), 8000);
-    } catch {
+      setTimeout(() => setSuccessMsg(''), 7000);
+    } catch (err) {
       setErrorMsg('Failed to submit — please try again later.');
     } finally {
       setLoading(false);
     }
   };
 
-  /* SVG icons - unchanged */
+  /* SVG icons - unchanged (kept inline) */
   const EmailIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -236,7 +311,12 @@ export default function RequestQuoteHero({
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <a href="/brochure" className="rq-btn rq-secondary rq-btn-icon">
+            <a
+  href="/brochure.pdf"
+  className="rq-btn rq-secondary rq-btn-icon"
+  target="_blank"
+  rel="noopener noreferrer"
+>
               Download Brochure
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -244,7 +324,7 @@ export default function RequestQuoteHero({
                 <path d="M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="/products" className="rq-link small rq-link-icon">
+            <a href="/shop" className="rq-link small rq-link-icon">
               Explore Products
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -252,7 +332,7 @@ export default function RequestQuoteHero({
             </a>
           </div>
 
-          <form className="rq-inline-form" onSubmit={handleInlineSubmit}>
+          <form className="rq-inline-form" onSubmit={handleInlineQuickQuote}>
             <div className="rq-input-with-icon">
               <EmailIcon />
               <input
@@ -287,7 +367,7 @@ export default function RequestQuoteHero({
               </select>
             </div>
             <button className="rq-btn rq-inline rq-btn-icon" type="submit" disabled={loading}>
-              {loading ? <LoadingSpinner /> : 'Quick Quote'}
+              {loading ? <LoadingSpinner /> : 'Quick Quote (WhatsApp)'}
               {!loading && <CheckIcon />}
             </button>
           </form>
@@ -302,6 +382,12 @@ export default function RequestQuoteHero({
             <div className="rq-error rq-message-with-icon" role="alert">
               <CloseIcon />
               {errorMsg}
+            </div>
+          )}
+
+          {waStatus && (
+            <div className="rq-wa-status" role="status" aria-live="polite">
+              {waStatus}
             </div>
           )}
         </div>
@@ -410,7 +496,7 @@ export default function RequestQuoteHero({
                   className="rq-btn rq-primary rq-btn-icon"
                   disabled={loading}
                 >
-                  {loading ? <LoadingSpinner /> : 'Submit Request'}
+                  {loading ? <LoadingSpinner /> : 'Submit Request (Save & WhatsApp)'}
                   {!loading && <CheckIcon />}
                 </button>
               </div>

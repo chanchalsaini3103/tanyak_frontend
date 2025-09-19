@@ -47,7 +47,7 @@
 
 .rq-hero.theme-dark {
   /* per your request: pure black background for dark theme */
-  --rq-bg: #000000;
+  --rq-bg: #0f0f0f;
   --rq-text: #f8fafc;
   --rq-text-muted: #94a3b8;
   --rq-primary: #f59e0b; /* Yellow-600 */

@@ -1,5 +1,5 @@
 /* Navbar.css - Dark Mode Support
-   Full consolidated file with secondary-nav collapse+slide hide behavior
+   Full consolidated file with secondary-nav + announcement hide behavior
 */
 
 /* ---------- Root variables (light) ---------- */
@@ -12,12 +12,13 @@
   --border-color: #dee2e6;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --card-bg: #ffffff;
-  --nav-bg: #fff3cc;
+  --nav-bg: #ffe135   ;
   --nav-text: #4b3b00;
   --nav-hover: rgba(75, 59, 0, 0.06);
 
   /* secondary nav height used for smooth max-height animation */
   --sec-nav-height: 64px; /* tweak if your secondary nav is taller */
+  --announce-height: 36px; /* height of announcement bar (adjust if different) */
 }
 
 /* ---------- Dark mode variable overrides ---------- */
@@ -48,6 +49,39 @@ body.dark-mode {
   font-size: 14px;
   text-align: center;
   padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+
+  /* collapse/slide support */
+  max-height: var(--announce-height);
+  overflow: hidden;
+  transition:
+    transform 0.28s cubic-bezier(.2,.9,.25,1),
+    opacity 0.22s ease,
+    max-height 0.28s cubic-bezier(.2,.9,.25,1),
+    padding 0.22s ease,
+    border-bottom-color 0.22s ease;
+  will-change: transform, opacity, max-height;
+}
+
+/* Visible/hidden states for announcement */
+.top-announcement.visible {
+  transform: translateY(0);
+  opacity: 1;
+  max-height: var(--announce-height);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom-color: var(--border-color);
+  pointer-events: auto;
+}
+
+.top-announcement.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom-color: transparent;
+  pointer-events: none;
 }
 
 /* ---------- Header (sticky) ---------- */
@@ -203,6 +237,8 @@ body.dark-mode {
     border-top-color 0.22s ease;
 
   will-change: transform, opacity, max-height;
+  font-size: 16px; /* <-- try 20–24px for nav links */
+  font-weight: 450;
 }
 
 /* inner container layout for secondary nav */
@@ -224,21 +260,24 @@ body.dark-mode {
 /* nav links */
 .nav-link {
   text-decoration: none;
-  font-weight: 600;
-  padding: 6px 8px;
+  font-weight: 700;
+  padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.18s ease, transform 0.12s ease;
   color: var(--nav-text);
+
 }
+
 .nav-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(75, 59, 0, 0.06);
-  background: var(--nav-hover);
+  
 }
 .nav-link.active {
   background: rgba(75, 59, 0, 0.08);
   padding: 8px 14px;
   border-radius: 22px;
+  font-weight: 800px;
 }
 
 /* categories toggle button (if used) */
@@ -524,6 +563,19 @@ body.dark-mode {
 
   /* hide the full-width categories dropdown (you might want to keep it mobile) */
   .categories-fullwidth-dropdown { position: static; box-shadow: none; border-top: 1px solid var(--border-color); }
+
+  /* For mobile, keep announcement visible and static */
+  .top-announcement,
+  .top-announcement.visible,
+  .top-announcement.hidden {
+    transform: none !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    pointer-events: auto !important;
+    border-bottom-color: var(--border-color) !important;
+  }
 }
 
 /* ---------- Responsive adjustments ---------- */
@@ -547,7 +599,10 @@ body.dark-mode {
   .secondary-nav.visible,
   .search-input,
   .search-icon-btn,
-  .theme-toggle-btn {
+  .theme-toggle-btn,
+  .top-announcement,
+  .top-announcement.visible,
+  .top-announcement.hidden {
     transition: none !important;
   }
 }

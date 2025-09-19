@@ -13,7 +13,7 @@
 
 /* Dark theme overrides when body has dark-mode */
 body.dark-mode {
-  --bg-about: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  --bg-about: #0f0f0f;
   --text-primary: #eaeaea;
   --text-secondary: #cccccc;
   --heading-color: #ffffff;

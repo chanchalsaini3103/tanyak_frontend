@@ -3,7 +3,7 @@
   --bg-page: #1a1a1a;
   --bg-panel: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
   --text-primary: #ffffff;
-  --text-muted: #e0e0e0;
+  --text-muted: #ffffff;
   --accent: #ffd700;
   --card-bg: rgba(255,255,255,0.04);
   --card-front-grad: linear-gradient(145deg, #2c2c2c, #1f1f1f);
@@ -16,7 +16,7 @@
 /* Dark theme (applies when body.dark-mode is present) */
 body.dark-mode {
   --bg-page: #0f0f0f;
-  --bg-panel: linear-gradient(to bottom, #0f0f0f, #1f1f1f);
+  --bg-panel: #0f0f0f;
   --text-primary: #ffffff;
   --text-muted: #bfbfbf;
   --accent: #ffd700;
@@ -31,13 +31,13 @@ body.dark-mode {
 /* Light theme (explicit class on section or when body not dark) */
 body:not(.dark-mode) {
   --bg-page: linear-gradient(to bottom, #ffffff, #fcfcfc);
-  --bg-panel: linear-gradient(to bottom, #ffffff, #f6f6f6);
+  --bg-panel: #ffffff;
   --text-primary: #111111;
   --text-muted: #555555;
   --accent: #b36b00; /* warmer accent for light mode */
   --card-bg: #ffffff;
   --card-front-grad: linear-gradient(145deg,#f6f6f6,#ededed);
-  --card-back-grad: linear-gradient(145deg,#ffd700,#e6b800);
+  --card-back-grad: #ffd700 ;
   --shadow: rgba(0,0,0,0.06);
   --btn-bg: #111;
   --btn-text: #ffd700;
@@ -228,9 +228,13 @@ body:not(.dark-mode) {
   margin-bottom: 0.35rem;
   color: var(--text-primary);
 }
+body.dark-mode .product-name,
+body.dark-mode .card-back h3 {
+  color: #fff !important;
+}
 
 /* card back actions */
-.card-back h3 { font-size: 1.05rem; margin-bottom: 0.8rem; color: #111; }
+.card-back h3 { font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--text-primary); }
 .card-actions { display:flex; flex-direction:column; gap:0.6rem; width: 100%; align-items:center; }
 
 /* buttons */

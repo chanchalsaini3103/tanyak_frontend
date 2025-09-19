@@ -16,8 +16,8 @@
 
 /* dark theme overrides (applied when body.dark-mode is present) */
 .theme-dark {
-  --bg-start: #0c0c0c;
-  --bg-end: #1a1a1a;
+  --bg-start: #0f0f0f;
+  --bg-end: #0f0f0f;
   --text-primary: #e6e6e6;
   --muted: #b0b0b0;
   --card-bg: linear-gradient(145deg, #1e1e1e 0%, #232323 100%);

@@ -32,7 +32,7 @@ const HeroSection = () => {
                 Beautifully designed hardware that makes every home unique.
               </p>
               <div className="cta-buttons">
-                <Link to="/our-craft">
+                <Link to="/shop">
                   <button className="cta-btn primary">Shop Collection</button>
                 </Link>
 

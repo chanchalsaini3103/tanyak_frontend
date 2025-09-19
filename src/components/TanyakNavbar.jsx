@@ -33,9 +33,10 @@ export default function TanyakNavbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [wishlistCount, setWishlistCount] = useState(0);
 
-  // NEW: only show secondary nav when at very top of page
+  // NEW: only show secondary + announcement when at very top of page (desktop)
   const [showSecondary, setShowSecondary] = useState(true);
-  const TOP_SHOW = 40; // px from top where secondary nav becomes visible
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const TOP_SHOW = 40; // px from top where secondary nav & announcement remain visible
 
   const categoriesWrapperRef = useRef(null);
   const categoriesDropdownRef = useRef(null);
@@ -70,45 +71,36 @@ export default function TanyakNavbar() {
     return () => window.removeEventListener("scroll", handleScrollForShadow);
   }, []);
 
-  // ---------- New: show secondary nav ONLY when near top (desktop) ----------
+  // ---------- Show/hide secondary nav + announcement ONLY when near top (desktop) ----------
   useEffect(() => {
     const isDesktopWidth = () => typeof window !== "undefined" && window.innerWidth >= 992;
 
-    const onScroll = () => {
+    const onScrollOrResize = () => {
       const currentY = window.scrollY;
 
-      // On non-desktop, keep it visible
+      // On non-desktop, keep both visible
       if (!isDesktopWidth()) {
         setShowSecondary(true);
+        setShowAnnouncement(true);
         return;
       }
 
-      // Only visible when near the top (<= TOP_SHOW)
-      if (currentY <= TOP_SHOW) {
-        setShowSecondary(true);
-      } else {
-        setShowSecondary(false);
-      }
+      // For desktop: visible only when near the top (<= TOP_SHOW)
+      const nearTop = currentY <= TOP_SHOW;
+      setShowSecondary(nearTop);
+      setShowAnnouncement(nearTop);
     };
 
-    const onResize = () => {
-      // ensure behavior updates when switching sizes
-      if (!isDesktopWidth()) {
-        setShowSecondary(true);
-      } else {
-        // recalc visibility based on current scroll when entering desktop
-        setShowSecondary(window.scrollY <= TOP_SHOW);
-      }
-    };
+    // add both listeners to handle viewport changes and scroll
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
-    // run once to initialize correctly
-    onScroll();
+    // initialize properly
+    onScrollOrResize();
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
     };
   }, []);
 
@@ -235,7 +227,11 @@ export default function TanyakNavbar() {
   return (
     <>
       <header className={`tanyak-header ${isScrolled ? "scrolled" : ""} ${darkMode ? "dark-mode" : ""}`}>
-        <div className="top-announcement text-center">
+        {/* TOP ANNOUNCEMENT (now hideable like secondary nav) */}
+        <div
+          className={`top-announcement ${showAnnouncement ? "visible" : "hidden"}`}
+          aria-hidden={!showAnnouncement}
+        >
           Order value must be 4,000 Rs. The Delivery Charges will be communicated to you after packing your parcel.
         </div>
 
@@ -318,7 +314,7 @@ export default function TanyakNavbar() {
               <a href="/" className="nav-link" onClick={() => handleNavClick("/")}>Home</a>
               <a href="/shop" className="nav-link" onClick={() => handleNavClick("/shop")}>Shop</a>
               <a href="/blog" className="nav-link" onClick={() => handleNavClick("/blog")}>Gallery</a>
-              <a href="/collections" className="nav-link" onClick={() => handleNavClick("/collections")}>Collections</a>
+            
               <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
               <a href="/outlet" className="nav-link" onClick={() => handleNavClick("/outlet")}>Outlet</a>
             </nav>
@@ -416,9 +412,7 @@ export default function TanyakNavbar() {
                     <FaStore className="mobile-nav-icon" /> Shop
                   </button>
 
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/collections")}>
-                    <FaThLarge className="mobile-nav-icon" /> Collections
-                  </button>
+                 
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/offers")}>
                     <FaTags className="mobile-nav-icon" /> Offers / Deals
