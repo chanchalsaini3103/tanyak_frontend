@@ -1,6 +1,8 @@
-/* Navbar.css - Dark Mode Support */
+/* Navbar.css - Dark Mode Support
+   Full consolidated file with secondary-nav collapse+slide hide behavior
+*/
 
-/* Dark mode variables */
+/* ---------- Root variables (light) ---------- */
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
@@ -13,8 +15,12 @@
   --nav-bg: #fff3cc;
   --nav-text: #4b3b00;
   --nav-hover: rgba(75, 59, 0, 0.06);
+
+  /* secondary nav height used for smooth max-height animation */
+  --sec-nav-height: 64px; /* tweak if your secondary nav is taller */
 }
 
+/* ---------- Dark mode variable overrides ---------- */
 .dark-mode {
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
@@ -35,7 +41,7 @@ body.dark-mode {
   color: var(--text-primary);
 }
 
-/* Top announcement */
+/* ---------- Top announcement ---------- */
 .top-announcement {
   background: var(--bg-secondary);
   color: var(--text-primary);
@@ -44,7 +50,7 @@ body.dark-mode {
   padding: 8px 0;
 }
 
-/* Header */
+/* ---------- Header (sticky) ---------- */
 .tanyak-header {
   background: var(--bg-primary);
   position: sticky;
@@ -52,192 +58,20 @@ body.dark-mode {
   z-index: 1100;
   transition: all 0.25s ease;
 }
+
+/* inner shadow when scrolled */
 .tanyak-header.scrolled {
   box-shadow: 0 6px 20px var(--shadow-color);
 }
 
-/* Main header */
+/* ---------- Main header ---------- */
 .main-header {
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   padding: 16px 0;
 }
 
-/* Search input */
-.search-input {
-  border: 2px solid var(--accent-color);
-  background: var(--card-bg);
-  color: var(--text-primary);
-}
-
-/* Contacts */
-.contact-label {
-  color: var(--text-primary);
-}
-.contact-sub {
-  color: var(--text-secondary);
-}
-.contact-sub:hover {
-  color: var(--accent-color);
-}
-
-/* Secondary nav */
-.secondary-nav {
-  background: var(--nav-bg);
-  padding: 12px 0;
-  border-top: 1px solid var(--border-color);
-}
-/* .secondary-nav {
-  background: #fff3cc;
-  padding: 12px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.02);
-  position: relative;
-  z-index: 1100;
-} */
-/* Nav links */
-.nav-link {
-  color: var(--nav-text);
-}
-.nav-link:hover {
-  background: var(--nav-hover);
-}
-
-/* Categories dropdown */
-.categories-fullwidth-dropdown {
-  background: var(--card-bg);
-  border-top: 1px solid var(--border-color);
-  box-shadow: 0 12px 30px var(--shadow-color);
-}
-.category-full-item {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-.category-full-item:hover {
-  
-  background: var(--nav-hover);
-  
-}
-
-/* Theme toggle button */
-.theme-toggle-btn {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle-btn:hover {
-  background: var(--accent-color);
-  color: #000;
-  transform: scale(1.05);
-}
-
-/* Icon buttons */
-.icon-btn {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-/* Mobile drawer */
-.mobile-drawer {
-  background: var(--bg-primary);
-}
-
-.mobile-drawer-header {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.drawer-close {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-.mobile-nav-item {
-  color: var(--text-primary);
-}
-.mobile-nav-item:hover {
-  background: var(--nav-hover);
-}
-
-.mobile-divider {
-  background: var(--border-color);
-}
-
-/* Mobile theme toggle */
-.mobile-theme-toggle {
-  padding: 10px 0;
-  margin-bottom: 10px;
-}
-
-.mobile-theme-toggle-btn {
-  width: 100%;
-  padding: 12px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.mobile-theme-toggle-btn:hover {
-  background: var(--accent-color);
-  color: #000;
-}
-
-.mobile-theme-icon {
-  font-size: 1.2rem;
-}
-
-/* Auth buttons */
-.btn-signup {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-/* Mobile contact items */
-.mobile-contact-item {
-  color: var(--text-secondary);
-}
-
-/* Mobile footer */
-.mobile-footer {
-  border-top: 1px solid var(--border-color);
-  color: var(--text-secondary);
-}
-
-/* Hamburger and search icons */
-.search-icon-mobile,
-.hamburger {
-  color: var(--text-primary);
-}
-
-/* Cart total */
-.cart-total {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-/* Existing styles with dark mode support */
-.site-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 18px;
-}
-
+/* controls container inside main header */
 .main-header .container-fluid {
   display: flex;
   align-items: center;
@@ -245,25 +79,24 @@ body.dark-mode {
   flex-wrap: wrap;
 }
 
+/* brand */
 .brand {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-.brand-placeholder {
+.brand-img {
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 20px;
-  color: #4b3b00;
-  background: #f0e68c;
-  padding: 0 14px;
-  border-radius: 6px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 576px) {
+  .brand-img { height: 32px; }
 }
 
+/* search form */
 .search-form {
   flex: 1 1 600px;
   display: flex;
@@ -279,6 +112,9 @@ body.dark-mode {
   padding: 12px 50px 12px 20px;
   border-radius: 30px;
   font-size: 16px;
+  border: 2px solid var(--accent-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
 }
 .search-input:focus {
   outline: none;
@@ -302,17 +138,17 @@ body.dark-mode {
   cursor: pointer;
 }
 
-.mobile-controls {
-  gap: 8px;
-}
-.search-icon-mobile,
-.hamburger {
+/* mobile controls (search + hamburger) */
+.mobile-controls { gap: 8px; }
+.search-icon-mobile, .hamburger {
   background: none;
   border: none;
   font-size: 1.1rem;
   padding: 8px;
+  color: var(--text-primary);
 }
 
+/* ---------- Contacts (visible on md+) ---------- */
 .contacts {
   display: flex;
   gap: 20px;
@@ -336,27 +172,47 @@ body.dark-mode {
   color: #b36b00;
   background: #fffef6;
 }
-.contact-right {
-  display: flex;
-  flex-direction: column;
-}
-.contact-label {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
+.contact-right { display: flex; flex-direction: column; }
+.contact-label { font-size: 15px; font-weight: 700; margin-bottom: 2px; color: var(--text-primary); }
 .contact-sub {
   font-size: 13px;
   text-decoration: none;
   font-weight: 600;
+  color: var(--text-secondary);
+}
+.contact-sub:hover { color: var(--accent-color); }
+
+/* ---------- Secondary nav (desktop) ---------- */
+/* single authoritative base rule for secondary nav (visible by default) */
+.secondary-nav {
+  background: var(--nav-bg);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid var(--border-color);
+
+  /* collapse/slide support */
+  --sec-nav-height: var(--sec-nav-height); /* fallback var usage */
+  max-height: var(--sec-nav-height);
+  overflow: hidden;
+
+  transition:
+    transform 0.28s cubic-bezier(.2,.9,.25,1),
+    opacity 0.22s ease,
+    max-height 0.28s cubic-bezier(.2,.9,.25,1),
+    padding 0.22s ease,
+    border-top-color 0.22s ease;
+
+  will-change: transform, opacity, max-height;
 }
 
+/* inner container layout for secondary nav */
 .secondary-nav .container-fluid {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* nav-left (link group) */
 .nav-left {
   margin-left: 20px;
   display: flex;
@@ -364,16 +220,20 @@ body.dark-mode {
   gap: 28px;
   flex: 0 0 auto;
 }
+
+/* nav links */
 .nav-link {
   text-decoration: none;
   font-weight: 600;
   padding: 6px 8px;
   border-radius: 8px;
   transition: background 0.18s ease, transform 0.12s ease;
+  color: var(--nav-text);
 }
 .nav-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(75, 59, 0, 0.06);
+  background: var(--nav-hover);
 }
 .nav-link.active {
   background: rgba(75, 59, 0, 0.08);
@@ -381,6 +241,7 @@ body.dark-mode {
   border-radius: 22px;
 }
 
+/* categories toggle button (if used) */
 .categories-toggle {
   background: transparent;
   border: none;
@@ -391,10 +252,14 @@ body.dark-mode {
   gap: 6px;
   cursor: pointer;
 }
-.categories-toggle:hover {
-  transform: translateY(-1px);
-}
+.categories-toggle:hover { transform: translateY(-1px); }
 
+/* categories grid dropdown */
+.categories-fullwidth-dropdown {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px var(--shadow-color);
+}
 .categories-grid-full {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -413,12 +278,16 @@ body.dark-mode {
   text-decoration: none;
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
   box-shadow: 0 6px 14px rgba(75, 59, 0, 0.04);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 .category-full-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(75, 59, 0, 0.12);
+  background: var(--nav-hover);
 }
 
+/* ---------- Nav actions (right) ---------- */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -434,6 +303,8 @@ body.dark-mode {
   justify-content: center;
   border-radius: 50%;
   font-size: 1.1rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 .icon-btn .badge {
   position: absolute;
@@ -449,12 +320,38 @@ body.dark-mode {
   align-items: center;
   justify-content: center;
 }
+
+/* theme toggle */
+.theme-toggle-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+.theme-toggle-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* cart total */
 .cart-total {
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
+/* ---------- Mobile drawer, profile, nav list ---------- */
 .mobile-drawer-overlay {
   position: fixed;
   inset: 0;
@@ -474,12 +371,14 @@ body.dark-mode {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background: var(--bg-primary);
 }
 .mobile-drawer-header {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
+  border-bottom: 1px solid var(--border-color);
 }
 .drawer-close {
   width: 36px;
@@ -490,22 +389,18 @@ body.dark-mode {
   justify-content: center;
   font-size: 1rem;
   cursor: pointer;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
-.drawer-title {
-  font-weight: 700;
-  font-size: 16px;
-}
+.drawer-title { font-weight: 700; font-size: 16px; }
+
 .mobile-drawer-body {
   padding: 12px 14px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  color: var(--text-primary);
 }
-.mobile-profile {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 6px;
-}
+.mobile-profile { display: flex; gap: 12px; align-items: center; padding: 10px 6px; }
 .mobile-profile-avatar {
   border-radius: 50%;
   width: 56px;
@@ -514,20 +409,13 @@ body.dark-mode {
   align-items: center;
   justify-content: center;
   font-size: 28px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
-.mobile-profile-text {
-  display: flex;
-  flex-direction: column;
-}
-.mobile-profile-welcome {
-  font-weight: 700;
-}
-.mobile-nav-list {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+.mobile-profile-text { display: flex; flex-direction: column; }
+.mobile-profile-welcome { font-weight: 700; }
+
+.mobile-nav-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
 .mobile-nav-item {
   display: flex;
   align-items: center;
@@ -540,19 +428,12 @@ body.dark-mode {
   cursor: pointer;
   font-weight: 600;
   border-radius: 8px;
+  color: var(--text-primary);
 }
-.mobile-nav-icon {
-  width: 20px;
-  min-width: 20px;
-  font-size: 16px;
-}
-.mobile-auth-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-.btn-login,
-.btn-signup {
+.mobile-nav-item:hover { background: var(--nav-hover); }
+
+.mobile-auth-buttons { display: flex; gap: 10px; margin-top: 12px; }
+.btn-login, .btn-signup {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -566,75 +447,107 @@ body.dark-mode {
   box-shadow: 0 6px 18px rgba(240, 196, 25, 0.12);
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
-.btn-login {
-  background: var(--accent-color);
-  color: #111;
-}
-.btn-login:hover,
-.btn-login:focus {
+.btn-login { background: var(--accent-color); color: #111; }
+.btn-login:hover, .btn-login:focus {
   background: #e7b712;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(240, 196, 25, 0.18);
   outline: none;
 }
-.btn-login:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-.btn-login svg {
-  color: inherit;
-  font-size: 1rem;
-}
-.mobile-contact-row {
-  display: flex;
-  gap: 12px;
-  margin-top: 14px;
-  align-items: center;
-  flex-wrap: wrap;
-  font-weight: 600;
-}
-.mobile-footer {
-  margin-top: 18px;
-  padding-top: 12px;
-  text-align: center;
-  font-size: 13px;
-}
 
-.brand-img {
+/* mobile contact */
+.mobile-contact-row { display: flex; gap: 12px; margin-top: 14px; align-items: center; flex-wrap: wrap; font-weight: 600; color: var(--text-primary); }
+.mobile-footer { margin-top: 18px; padding-top: 12px; text-align: center; font-size: 13px; border-top: 1px solid var(--border-color); color: var(--text-secondary); }
+
+/* ---------- Utilities & small rules ---------- */
+.brand-placeholder {
   height: 40px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #4b3b00;
+  background: #f0e68c;
+  padding: 0 14px;
+  border-radius: 6px;
 }
 
-@media (max-width: 576px) {
-  .brand-img {
-    height: 32px;
+.contact-left .contact-icon-wrap,
+.contact-icon-wrap {
+  color: #b36b00;
+}
+
+/* focus outline for keyboard users */
+.tanyak-header a:focus,
+.tanyak-header button:focus {
+  outline: 3px solid rgba(240, 196, 25, 0.12);
+  outline-offset: 4px;
+}
+
+/* ---------- Secondary-nav hide/show states (collapsed + slide) ---------- */
+/* Visible state */
+.secondary-nav.visible {
+  transform: translateY(0);
+  opacity: 1;
+  max-height: var(--sec-nav-height);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid var(--border-color);
+  pointer-events: auto;
+}
+
+/* Hidden: slide up + collapse so no white bar remains */
+.secondary-nav.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top-color: transparent;
+  pointer-events: none;
+}
+
+/* On small screens (mobile/tablet) never collapse/hide — both states are neutralized */
+@media (max-width: 991.98px) {
+  .secondary-nav,
+  .secondary-nav.hidden,
+  .secondary-nav.visible {
+    transform: none !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    pointer-events: auto !important;
+    border-top-color: var(--border-color) !important;
   }
+
+  /* hide the full-width categories dropdown (you might want to keep it mobile) */
+  .categories-fullwidth-dropdown { position: static; box-shadow: none; border-top: 1px solid var(--border-color); }
 }
 
+/* ---------- Responsive adjustments ---------- */
 @media (max-width: 768px) {
-  .secondary-nav {
-    display: none;
-  }
-  .contacts {
-    display: none;
-  }
-  .search-form {
-    display: none;
-  }
-  .mobile-controls {
-    display: flex;
-  }
+  .secondary-nav { display: none; } /* keep only main header on smaller devices (you had this) */
+  .contacts { display: none; }
+  .search-form { display: none; }
+  .mobile-controls { display: flex; }
+  .brand-img { height: 32px; }
 }
 
 @media (max-width: 576px) {
-  .brand-placeholder {
-    height: 32px;
-    font-size: 18px;
-    padding: 0 10px;
-  }
-  .cart-total {
-    display: none;
+  .brand-placeholder { height: 32px; font-size: 18px; padding: 0 10px; }
+  .cart-total { display: none; }
+}
+
+/* ---------- Accessibility: reduced motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .secondary-nav,
+  .secondary-nav.hidden,
+  .secondary-nav.visible,
+  .search-input,
+  .search-icon-btn,
+  .theme-toggle-btn {
+    transition: none !important;
   }
 }

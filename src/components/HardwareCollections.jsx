@@ -308,7 +308,7 @@ export default function HardwareCollections() {
                   </h3>
                   <p className="product-description">{product.description}</p>
 
-                  <div style={{ height: 8 }} />
+                 
 
                   <button className="read-more-btn" onClick={() => handleQuickView(product)}>
                     View Details <FaArrowRight />

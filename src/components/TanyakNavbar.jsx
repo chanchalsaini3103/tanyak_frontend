@@ -3,12 +3,10 @@ import { Container } from "react-bootstrap";
 import {
   FaSearch,
   FaHeart,
-  FaShoppingCart,
   FaBars,
   FaPhone,
   FaEnvelope,
   FaTimes,
-  FaChevronDown,
   FaHome,
   FaStore,
   FaThLarge,
@@ -16,7 +14,6 @@ import {
   FaBlog,
   FaQuestionCircle,
   FaInfoCircle,
-  FaTools,
   FaSignInAlt,
   FaUserPlus,
   FaRegUserCircle,
@@ -25,7 +22,7 @@ import {
 } from "react-icons/fa";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.avif";
-import logoDark from "../assets/logo.avif"; // You might want a different logo for dark mode
+import logoDark from "../assets/logo.avif";
 
 export default function TanyakNavbar() {
   const [query, setQuery] = useState("");
@@ -36,17 +33,21 @@ export default function TanyakNavbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [wishlistCount, setWishlistCount] = useState(0);
 
+  // NEW: only show secondary nav when at very top of page
+  const [showSecondary, setShowSecondary] = useState(true);
+  const TOP_SHOW = 40; // px from top where secondary nav becomes visible
+
   const categoriesWrapperRef = useRef(null);
   const categoriesDropdownRef = useRef(null);
   const hideTimer = useRef(null);
 
   // Initialize dark mode from localStorage or system preference
   useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+    const savedMode = localStorage.getItem("darkMode");
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
     if (savedMode !== null) {
-      setDarkMode(savedMode === 'true');
+      setDarkMode(savedMode === "true");
     } else {
       setDarkMode(systemPrefersDark);
     }
@@ -55,18 +56,60 @@ export default function TanyakNavbar() {
   // Apply dark mode class to body
   useEffect(() => {
     if (darkMode) {
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.classList.remove("dark-mode");
     }
-    localStorage.setItem('darkMode', darkMode);
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   // Scroll handler for header shadow
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScrollForShadow = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScrollForShadow, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollForShadow);
+  }, []);
+
+  // ---------- New: show secondary nav ONLY when near top (desktop) ----------
+  useEffect(() => {
+    const isDesktopWidth = () => typeof window !== "undefined" && window.innerWidth >= 992;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+
+      // On non-desktop, keep it visible
+      if (!isDesktopWidth()) {
+        setShowSecondary(true);
+        return;
+      }
+
+      // Only visible when near the top (<= TOP_SHOW)
+      if (currentY <= TOP_SHOW) {
+        setShowSecondary(true);
+      } else {
+        setShowSecondary(false);
+      }
+    };
+
+    const onResize = () => {
+      // ensure behavior updates when switching sizes
+      if (!isDesktopWidth()) {
+        setShowSecondary(true);
+      } else {
+        // recalc visibility based on current scroll when entering desktop
+        setShowSecondary(window.scrollY <= TOP_SHOW);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    // run once to initialize correctly
+    onScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   // categories dropdown outside click handler
@@ -94,7 +137,7 @@ export default function TanyakNavbar() {
     "Functional Hardware",
     "Decorative Hardware",
     "Handles",
-    "Hinges",
+    "Hinges"
   ];
 
   const categories = [
@@ -107,7 +150,7 @@ export default function TanyakNavbar() {
     "Toys & Games",
     "Lighting",
     "Hardware",
-    "Decor",
+    "Decor"
   ];
 
   const handleSearch = (e) => {
@@ -125,7 +168,7 @@ export default function TanyakNavbar() {
     setDarkMode(!darkMode);
   };
 
-  // hover helpers for desktop categories
+  // hover helpers for desktop categories (unchanged)
   const clearHideTimer = () => {
     if (hideTimer.current) {
       clearTimeout(hideTimer.current);
@@ -164,7 +207,6 @@ export default function TanyakNavbar() {
     try {
       const raw = localStorage.getItem("tanyak_wishlist");
       const obj = raw ? JSON.parse(raw) : {};
-      // If you store as object of ids -> true, count keys; adapt if storing differently
       const count = obj && typeof obj === "object" ? Object.keys(obj).length : 0;
       setWishlistCount(count);
     } catch (err) {
@@ -174,14 +216,10 @@ export default function TanyakNavbar() {
   };
 
   useEffect(() => {
-    // initial read
     updateCountFromStorage();
-
-    // custom event listener (dispatched by Collections component)
     const onCustom = () => updateCountFromStorage();
     window.addEventListener("tanyak_wishlist_updated", onCustom);
 
-    // storage listener (other tabs)
     const onStorage = (e) => {
       if (e.key === "tanyak_wishlist") updateCountFromStorage();
     };
@@ -271,7 +309,10 @@ export default function TanyakNavbar() {
         </div>
 
         {/* SECONDARY NAV (desktop) */}
-        <div className="secondary-nav d-none d-md-block" style={{ position: "relative" }}>
+        <div
+          className={`secondary-nav d-none d-md-block ${showSecondary ? "visible" : "hidden"}`}
+          style={{ position: "relative" }}
+        >
           <Container fluid className="d-flex align-items-center">
             <nav className="nav-left d-flex align-items-center">
               <a href="/" className="nav-link" onClick={() => handleNavClick("/")}>Home</a>
@@ -286,7 +327,7 @@ export default function TanyakNavbar() {
 
             <div className="nav-actions d-flex align-items-center">
               {/* Dark/Light Mode Toggle Button */}
-              <button 
+              <button
                 className="theme-toggle-btn"
                 onClick={toggleDarkMode}
                 aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
@@ -294,13 +335,11 @@ export default function TanyakNavbar() {
               >
                 {darkMode ? <FaSun /> : <FaMoon />}
               </button>
-              
+
               <a href="/wishlist" className="icon-btn me-2" title="Wishlist" aria-label={`Wishlist: ${wishlistCount} items`}>
                 <FaHeart />
                 <span className="badge" aria-hidden>{wishlistCount}</span>
               </a>
-              {/* <a href="/cart" className="icon-btn me-2" title="Cart"><FaShoppingCart /><span className="badge">0</span></a>
-              <div className="cart-total d-none d-md-block">₹0.00</div> */}
             </div>
           </Container>
 
@@ -386,7 +425,7 @@ export default function TanyakNavbar() {
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
-                    <FaBlog className="mobile-nav-icon" /> Gallery 
+                    <FaBlog className="mobile-nav-icon" /> Gallery
                   </button>
 
                   <button className="mobile-nav-item" onClick={() => handleNavClick("/outlet")}>
@@ -402,7 +441,7 @@ export default function TanyakNavbar() {
 
                 {/* Dark Mode Toggle in Mobile Menu */}
                 <div className="mobile-theme-toggle">
-                  <button 
+                  <button
                     className="mobile-theme-toggle-btn"
                     onClick={toggleDarkMode}
                   >
