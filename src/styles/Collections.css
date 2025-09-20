@@ -430,3 +430,109 @@ html[data-theme="dark"] .modal-content {
   transform: translateY(0);
   pointer-events: auto;
 }
+/* ---------- Layout tweak: show 2 items per row on small screens ---------- */
+
+/* Ensure bootstrap grid gutters play nicely on very small screens */
+.products-grid {
+  margin: 0 -8px; /* reduce horizontal gutter on small devices */
+}
+
+/* Slightly reduce column side padding for small devices */
+.product-col {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Keep card visuals untouched but allow them to adapt */
+.product-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Slightly smaller image heights for smaller widths already defined,
+   but tighten a bit more for tiny screens to keep aspect ratio */
+@media (max-width: 576px) {
+  .product-image {
+    height: 180px; /* remains same as before */
+  }
+  .product-col {
+    /* Two items per row = each column ~50% width; ensure spacing is good */
+    max-width: 50%;
+  }
+}
+
+/* Make sure the grid respects two columns on very small viewports */
+@media (max-width: 420px) {
+  .product-col {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .product-image img {
+    object-position: center;
+  }
+}
+/* ---------- Mobile visibility tweaks (no visual styling changes) ---------- */
+
+/* Mobile-only controls wrapper (already present in JSX uses d-md-none) */
+/* Ensure category-buttons are hidden by default on mobile; toggle via inline style from React.
+   But we also make sure when not toggled they are hidden on small screens. */
+@media (max-width: 767.98px) {
+  .category-buttons {
+    display: none; /* hide by default on mobile; React will override inline style when toggled */
+  }
+
+  /* When the advanced filters aren't open, collapse their container fully on mobile */
+  .advanced-filters {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+  .advanced-filters.open {
+    max-height: 560px; /* same as desktop behavior when opened */
+    opacity: 1;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  /* Hide product description on mobile */
+  .product-description {
+    display: none !important;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove arrow icon from read-more button on mobile (keep text) */
+  .read-more-btn .read-more-arrow {
+    display: none;
+  }
+
+  /* Slightly reduce card padding to fit two columns */
+  .product-col {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  /* Ensure two items per row naturally via bootstrap columns (xs=6 already set)
+     but force product-card to fill its column */
+  .product-card {
+    width: 100%;
+  }
+}
+
+/* Desktop/tablet keep original appearance */
+@media (min-width: 768px) {
+  .category-buttons {
+    display: flex !important;
+  }
+}
+
+/* a tiny helper so mobile toggles look OK when React sets inline style to display:flex */
+.mobile-filter-controls .filter-toggle {
+  flex: 0 0 auto;
+}
+
+/* keep everything else unchanged */

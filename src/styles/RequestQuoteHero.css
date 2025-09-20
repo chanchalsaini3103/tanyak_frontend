@@ -492,3 +492,128 @@
     gap: 0.75rem;
   }
 }
+/* ---------- Responsive layout tweaks (layout-only — no styling changes) ---------- */
+
+/* Small laptops / tablets: stack columns, constrain large images */
+@media (max-width: 1024px) {
+  .rq-hero-inner {
+    grid-template-columns: 1fr; /* stack left image + content vertically */
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .rq-left-card {
+    width: 100%;
+    max-width: 420px;    /* ensure the image isn't too large */
+    margin-left: 0;      /* remove large left offset on smaller screens */
+    margin-right: 0;
+    display: block;
+  }
+
+  .rq-left-card img {
+    width: 100%;
+    height: auto;        /* preserve aspect ratio */
+    max-height: 420px;   /* keeps it reasonable on tall screens */
+    object-fit: cover;
+  }
+
+  .rq-content {
+    max-width: 760px;    /* let content breathe but not overflow */
+    margin: 0 auto;
+  }
+
+  .rq-ctas {
+    justify-content: center;
+  }
+
+  .rq-inline-form {
+    grid-template-columns: 1fr; /* stack inline inputs */
+  }
+}
+
+/* Phones and small tablets: tighter spacing and full-width CTAs/inputs */
+@media (max-width: 768px) {
+  .rq-hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rq-hero-inner {
+    gap: 1.5rem;
+  }
+
+  .rq-left-card {
+    max-width: 360px;
+  }
+
+  .rq-left-card img {
+    max-height: 360px;
+  }
+
+  /* Make CTA buttons and inline CTA full width but do not change their visual styles */
+  .rq-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .rq-ctas > .rq-btn,
+  .rq-ctas > .rq-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Inline quick-quote button and inputs full width */
+  .rq-inline-form {
+    gap: 0.75rem;
+  }
+  .rq-input-with-icon input,
+  .rq-input-with-icon select,
+  .rq-inline {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rq-navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Small phones: conserve space; keep visual styles intact */
+@media (max-width: 480px) {
+  .rq-left-card {
+    max-width: 320px;
+  }
+  .rq-left-card img {
+    max-height: 300px;
+  }
+
+  .rq-h1 {
+    /* don't alter weight/line-height; only allow wrapping earlier */
+    word-break: break-word;
+  }
+
+  .rq-sub {
+    max-width: 100%;
+  }
+
+  .modal-actions {
+    justify-content: stretch; /* stack modal actions (keeps button styling) */
+  }
+
+  .modal-actions .rq-btn {
+    width: 100%;
+  }
+}
+
+/* Extra small: ensure inputs remain usable */
+@media (max-width: 360px) {
+  .rq-inline-form input,
+  .rq-inline-form select {
+    padding-left: 2.25rem; /* keep icon spacing usable on very small devices */
+  }
+  .rq-btn {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}

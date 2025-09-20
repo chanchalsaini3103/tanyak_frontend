@@ -1,5 +1,7 @@
+// src/components/TanyakNavbar.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import {
   FaSearch,
   FaHeart,
@@ -9,22 +11,22 @@ import {
   FaTimes,
   FaHome,
   FaStore,
-  FaThLarge,
   FaTags,
   FaBlog,
   FaQuestionCircle,
-  FaInfoCircle,
-  FaSignInAlt,
-  FaUserPlus,
   FaRegUserCircle,
   FaSun,
-  FaMoon
+  FaMoon,
+  FaSignInAlt,
+  FaUserPlus
 } from "react-icons/fa";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.avif";
 import logoDark from "../assets/logo.avif";
 
 export default function TanyakNavbar() {
+  const navigate = useNavigate();
+
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
@@ -151,9 +153,22 @@ export default function TanyakNavbar() {
     setIsMobileSearchOpen(false);
   };
 
+  // Unified nav handler: close mobile UI then navigate via react-router
   const handleNavClick = (href) => {
+    // close menus immediately for better UX
     setIsMobileMenuOpen(false);
     setShowCategories(false);
+
+    // if href is an internal path, navigate client-side
+    if (typeof href === "string" && href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+
+    // fallback: go to url (external etc.)
+    if (typeof href === "string") {
+      window.location.href = href;
+    }
   };
 
   const toggleDarkMode = () => {
@@ -239,7 +254,14 @@ export default function TanyakNavbar() {
         <div className="main-header">
           <Container fluid className="d-flex align-items-center flex-wrap">
             {/* LOGO */}
-            <a href="/" className="brand" onClick={() => handleNavClick("/")}>
+            <a
+              href="/"
+              className="brand"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("/");
+              }}
+            >
               <img src={darkMode ? logoDark : logo} alt="TANYAK" className="brand-img" />
             </a>
 
@@ -265,6 +287,7 @@ export default function TanyakNavbar() {
                 aria-label="open search"
                 onClick={() => { setIsMobileSearchOpen(s => !s); setIsMobileMenuOpen(false); }}
                 title="Search"
+                type="button"
               >
                 <FaSearch />
               </button>
@@ -274,6 +297,7 @@ export default function TanyakNavbar() {
                 aria-label="menu"
                 onClick={() => { setIsMobileMenuOpen(s => !s); setIsMobileSearchOpen(false); }}
                 title="Menu"
+                type="button"
               >
                 {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
               </button>
@@ -311,12 +335,11 @@ export default function TanyakNavbar() {
         >
           <Container fluid className="d-flex align-items-center">
             <nav className="nav-left d-flex align-items-center">
-              <a href="/" className="nav-link" onClick={() => handleNavClick("/")}>Home</a>
-              <a href="/shop" className="nav-link" onClick={() => handleNavClick("/shop")}>Shop</a>
-              <a href="/blog" className="nav-link" onClick={() => handleNavClick("/blog")}>Gallery</a>
-            
-              <a href="/offers" className="nav-link" onClick={() => handleNavClick("/offers")}>Offers</a>
-              <a href="/outlet" className="nav-link" onClick={() => handleNavClick("/outlet")}>Outlet</a>
+              <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick("/"); }}>Home</a>
+              <a href="/shop" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick("/shop"); }}>Shop</a>
+              <a href="/blog" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick("/blog"); }}>Gallery</a>
+              <a href="/offers" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick("/offers"); }}>Offers</a>
+              <a href="/outlet" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick("/outlet"); }}>Outlet</a>
             </nav>
 
             <div className="flex-fill" />
@@ -328,11 +351,18 @@ export default function TanyakNavbar() {
                 onClick={toggleDarkMode}
                 aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
                 title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                type="button"
               >
                 {darkMode ? <FaSun /> : <FaMoon />}
               </button>
 
-              <a href="/wishlist" className="icon-btn me-2" title="Wishlist" aria-label={`Wishlist: ${wishlistCount} items`}>
+              <a
+                href="/wishlist"
+                className="icon-btn me-2"
+                title="Wishlist"
+                aria-label={`Wishlist: ${wishlistCount} items`}
+                onClick={(e) => { e.preventDefault(); handleNavClick("/wishlist"); }}
+              >
                 <FaHeart />
                 <span className="badge" aria-hidden>{wishlistCount}</span>
               </a>
@@ -354,7 +384,7 @@ export default function TanyakNavbar() {
                       key={i}
                       href={`/category/${sub.toLowerCase().replace(/\s+/g, "-")}`}
                       className="category-full-item"
-                      onClick={() => setShowCategories(false)}
+                      onClick={(e) => { e.preventDefault(); setShowCategories(false); handleNavClick(`/category/${sub.toLowerCase().replace(/\s+/g, "-")}`); }}
                     >
                       {sub}
                     </a>
@@ -390,7 +420,7 @@ export default function TanyakNavbar() {
           <div className="mobile-drawer-overlay" role="dialog" aria-modal="true">
             <div className="mobile-drawer">
               <div className="mobile-drawer-header">
-                <button className="drawer-close" onClick={() => setIsMobileMenuOpen(false)}><FaTimes /></button>
+                <button className="drawer-close" onClick={() => setIsMobileMenuOpen(false)} type="button"><FaTimes /></button>
                 <div className="drawer-title">My TANYAK</div>
               </div>
 
@@ -404,30 +434,24 @@ export default function TanyakNavbar() {
                 </div>
 
                 <nav className="mobile-nav-list" aria-label="Mobile navigation">
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/")}>
+                  <button type="button" className="mobile-nav-item" onClick={() => handleNavClick("/")}>
                     <FaHome className="mobile-nav-icon" /> Home
                   </button>
 
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/shop")}>
+                  <button type="button" className="mobile-nav-item" onClick={() => handleNavClick("/shop")}>
                     <FaStore className="mobile-nav-icon" /> Shop
                   </button>
 
-                 
-
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/offers")}>
-                    <FaTags className="mobile-nav-icon" /> Offers / Deals
+                  <button type="button" className="mobile-nav-item" onClick={() => handleNavClick("/offers")}>
+                    <FaTags className="mobile-nav-icon" /> Offers
                   </button>
 
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
+                  <button type="button" className="mobile-nav-item" onClick={() => handleNavClick("/blog")}>
                     <FaBlog className="mobile-nav-icon" /> Gallery
                   </button>
 
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/outlet")}>
+                  <button type="button" className="mobile-nav-item" onClick={() => handleNavClick("/outlet")}>
                     <FaQuestionCircle className="mobile-nav-icon" /> Outlet
-                  </button>
-
-                  <button className="mobile-nav-item" onClick={() => handleNavClick("/about")}>
-                    <FaInfoCircle className="mobile-nav-icon" /> About Us
                   </button>
                 </nav>
 
@@ -438,6 +462,7 @@ export default function TanyakNavbar() {
                   <button
                     className="mobile-theme-toggle-btn"
                     onClick={toggleDarkMode}
+                    type="button"
                   >
                     {darkMode ? (
                       <>
@@ -452,8 +477,8 @@ export default function TanyakNavbar() {
                 </div>
 
                 <div className="mobile-auth-buttons">
-                  <a className="btn-login" href="/login" onClick={() => handleNavClick("/login")}><FaSignInAlt /> Login</a>
-                  <a className="btn-signup" href="/signup" onClick={() => handleNavClick("/signup")}><FaUserPlus /> Sign Up</a>
+                  <a className="btn-login" href="/login" onClick={(e) => { e.preventDefault(); handleNavClick("/login"); }}><FaSignInAlt /> Login</a>
+                  <a className="btn-signup" href="/signup" onClick={(e) => { e.preventDefault(); handleNavClick("/signup"); }}><FaUserPlus /> Sign Up</a>
                 </div>
 
                 <div className="mobile-contact-row">

@@ -140,6 +140,19 @@
   color: #000;
   margin-left: -200px;
 }
+.primary {
+  background-color: #ffd700; /* Yellow */
+  color: #000;
+  margin-left: -200px; /* Default for laptop/desktop */
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .primary {
+    margin-left: 0; /* Reset on tablets & smaller devices */
+  }
+}
+
 
 .primary:hover {
   background-color: #ffc400;
