@@ -153,6 +153,19 @@
   }
 }
 
+.floating-element {
+  position: absolute;
+  border: 2px solid #ffd700;
+  border-radius: 8px !important; /* Force square corners */
+  background: rgba(255, 215, 0, 0.1);
+  backdrop-filter: blur(5px);
+
+  /* Explicitly lock aspect ratio */
+  aspect-ratio: auto !important;
+}
+.hero-section .floating-element {
+  border-radius: 8px !important;
+}
 
 .primary:hover {
   background-color: #ffc400;

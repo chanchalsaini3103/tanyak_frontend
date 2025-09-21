@@ -1,4 +1,4 @@
-.footer {
+  .footer {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   padding: 60px 0 20px;
@@ -203,4 +203,37 @@
   .social-links {
     justify-content: center;
   }
+} /* ---------- Ensure footer links are grey in light theme (Quick Links & Categories) ---------- */
+
+/* Target footer when NOT marked as dark (keeps dark theme untouched) */
+.footer:not(.dark) .footer-links a {
+  color: var(--text-secondary) !important; /* grey like other footer text */
+}
+
+/* Keep hover / focus color as intended */
+.footer:not(.dark) .footer-links a:hover,
+.footer:not(.dark) .footer-links a:focus {
+  color: #c8a97e !important;
+}
+
+/* Also ensure the 'footer-legal' links follow same gray on light theme */
+.footer:not(.dark) .footer-legal a {
+  color: var(--text-secondary) !important;
+}
+.footer:not(.dark) .footer-legal a:hover,
+.footer:not(.dark) .footer-legal a:focus {
+  color: #c8a97e !important;
+}
+/* ---------- Light theme overrides for footer text ---------- */
+
+/* Ensure description text is grey in light theme */
+.footer:not(.dark) .footer-description {
+  color: var(--text-secondary) !important;
+}
+
+/* Ensure contact info text is grey in light theme */
+.footer:not(.dark) .contact-info,
+.footer:not(.dark) .contact-info p,
+.footer:not(.dark) .contact-info span {
+  color: var(--text-secondary) !important;
 }

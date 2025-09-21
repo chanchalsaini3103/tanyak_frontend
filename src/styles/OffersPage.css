@@ -1,0 +1,332 @@
+/* === OffersPage.css (updated: animations + light-theme white background) === */
+
+/* ====== Base (your existing styling preserved) ====== */
+.offers-premium {
+  --gold: #ffd54a;
+  --gold-2: #f2b400;
+  --muted: #6b7280;
+  --bg-dark: #06050a;
+  --glass: rgba(255,255,255,0.06);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #08101a;
+  background: #ffffff; /* <-- Light theme default: white background (explicit) */
+  transition: background-color 0.45s ease, color 0.35s ease;
+}
+
+/* Allow theme-light explicit (keeps white) */
+.offers-premium.theme-light {
+  background: #ffffff;
+  color: #08101a;
+}
+
+/* HERO */
+.op-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  padding: 80px 0;
+  box-shadow: inset 0 160px 120px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+/* animated subtle parallax motion for hero overlay */
+.op-hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(135deg, rgba(255, 213, 74, 0.06) 0%, rgba(242, 180, 0, 0.08) 100%);
+  z-index: 0;
+  transform-origin: center;
+  animation: heroOverlayFloat 18s linear infinite;
+  opacity: 0.95;
+}
+
+@keyframes heroOverlayFloat {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-12px) rotate(1deg) scale(1.01); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+.offers-premium.is-visible .op-hero {
+  opacity: 1;
+  transform: none;
+}
+
+/* container z-index */
+.op-hero > .container { position: relative; z-index: 2; }
+
+/* Badge */
+.op-badge {
+  animation: pulse 2.8s infinite;
+  font-size: 0.9rem;
+  padding: 8px 16px !important;
+  transform-origin: center;
+}
+
+/* Title animation: stronger entrance with slight overshoot */
+.op-title {
+  font-weight: 800;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: all 0.7s cubic-bezier(.2,.9,.28,1);
+}
+.offers-premium.is-visible .op-title {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.14s;
+}
+
+/* subtitle entrance */
+.op-sub {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.7s cubic-bezier(.2,.9,.28,1);
+}
+.offers-premium.is-visible .op-sub {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.28s;
+}
+
+/* qualification row reveal */
+.op-key-line {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.64s ease;
+}
+.offers-premium.is-visible .op-key-line {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.42s;
+}
+
+/* subtle stagger for CTAs */
+.op-ctas { opacity: 0; transform: translateY(6px); transition: all 0.6s ease; }
+.offers-premium.is-visible .op-ctas { opacity: 1; transform: none; transition-delay: 0.52s; }
+
+/* CTA primary shimmer & subtle pop */
+.op-btn-primary {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-2) 120%);
+  border: none;
+  color: #08101a;
+  box-shadow: 0 12px 40px rgba(242,180,0,0.16);
+  transition: transform 0.36s cubic-bezier(.2,.9,.28,1), box-shadow 0.36s ease;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* shimmer animation on focus/hover for primary */
+.op-btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.38), rgba(255,255,255,0.0));
+  transform: skewX(-12deg);
+  transition: left 0.7s cubic-bezier(.2,.9,.28,1);
+}
+.op-btn-primary:hover::after,
+.op-btn-primary:focus::after { left: 140%; }
+
+/* subtle pop on hover */
+.op-btn-primary:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 60px rgba(242,180,0,0.2); }
+
+/* outline & ghost remain but with micro-animations */
+.op-btn-outline { transition: transform 0.28s ease, border-color 0.28s ease; }
+.op-btn-outline:hover { transform: translateY(-4px); }
+
+/* secondary links micro movement */
+.link-like { transition: transform 0.22s ease, background 0.28s ease; }
+.link-like:hover { transform: translateY(-3px); }
+
+/* right card entrance and lift */
+.op-card {
+  animation: none;
+  opacity: 0;
+  transform: translateX(28px) scale(0.995);
+  transition: all 0.72s cubic-bezier(.2,.9,.28,1);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+.offers-premium.is-visible .op-card {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0.46s;
+}
+
+/* list items subtle slide in */
+.op-include-list .list-group-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.46s ease;
+}
+.offers-premium.is-visible .op-include-list .list-group-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.op-include-list .list-group-item:nth-child(1) { transition-delay: 0.52s; }
+.op-include-list .list-group-item:nth-child(2) { transition-delay: 0.58s; }
+.op-include-list .list-group-item:nth-child(3) { transition-delay: 0.64s; }
+.op-include-list .list-group-item:nth-child(4) { transition-delay: 0.70s; }
+.op-include-list .list-group-item:nth-child(5) { transition-delay: 0.76s; }
+
+/* dot micro-pulse */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex: 0 0 auto;
+  margin-top: 6px;
+  animation: dotPulse 2.4s infinite;
+}
+@keyframes dotPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.82; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* DETAILS section entrance */
+.op-details { background: #fff; color: #07121a; animation: none; padding-top: 48px; }
+.offers-premium.is-visible .op-details { animation: fadeIn 0.9s ease forwards; animation-delay: 0.96s; }
+
+/* features grid: staggered card reveals with gentle tilt on hover */
+.op-feature {
+  transition: transform 0.38s cubic-bezier(.2,.9,.28,1), box-shadow 0.38s ease;
+  border-radius: 12px;
+  will-change: transform;
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(10px) scale(0.995);
+}
+.offers-premium.is-visible .op-feature { opacity: 1; transform: translateY(0) scale(1); }
+.op-grid .op-feature:nth-child(1) { transition-delay: 0.18s; }
+.op-grid .op-feature:nth-child(2) { transition-delay: 0.26s; }
+.op-grid .op-feature:nth-child(3) { transition-delay: 0.34s; }
+
+/* tilt on hover */
+.op-feature:hover { transform: translateY(-8px) rotate3d(0.02, 0.02, 0, 1deg) scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,0.08); }
+
+/* Grow animation fallback (kept) */
+.hvr-grow { display: inline-block; vertical-align: middle; transform: perspective(1px) translateZ(0); box-shadow: 0 0 1px rgba(0, 0, 0, 0); transition-duration: 0.3s; transition-property: transform; }
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active { transform: scale(1.05); }
+
+/* Animations (keyframes kept or added) */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 213, 74, 0.38); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 213, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 213, 74, 0); }
+}
+
+/* Small screens responsiveness plus simpler animations to preserve perf */
+@media (max-width: 992px) {
+  .op-hero { min-height: auto; padding: 60px 0; background-attachment: scroll; }
+  .op-card { margin-top: 40px; transform: none !important; opacity: 1 !important; }
+  .op-include-list .list-group-item { transform: none !important; opacity: 1 !important; transition: none !important; }
+  .op-feature { transform: none !important; opacity: 1 !important; }
+}
+
+/* Light / Dark theme scoping (kept from before) */
+.offers-premium.theme-dark {
+  --gold: #ffd54a;
+  --gold-2: #f2b400;
+  --muted: #9aa6b2;
+  background: #07080a;
+  color: #e6eef6;
+}
+
+/* Make hero overlay a touch darker in theme-dark to keep readability */
+.offers-premium.theme-dark .op-hero::before {
+  background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 100%);
+}
+
+/* Card adjustments inside the offers component for dark theme only */
+.offers-premium.theme-dark .op-card,
+.offers-premium.theme-dark .op-card .card-body,
+.offers-premium.theme-dark .op-card .card-header,
+.offers-premium.theme-dark .op-card .card-footer {
+  background: rgba(255,255,255,0.03) !important;
+  color: #e6eef6 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Ensure list items readable */
+.offers-premium.theme-dark .op-include-list .list-group-item {
+  color: #e6eef6 !important;
+  border-color: rgba(255,255,255,0.04) !important;
+}
+
+/* Buttons: keep same look but ensure outlines/text readable in dark */
+.offers-premium.theme-dark .op-btn-outline {
+  color: #e6eef6;
+  border-color: rgba(255,255,255,0.12);
+}
+.offers-premium.theme-dark .op-btn-outline:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Details section (light background in light theme) — keep it slightly darker in dark theme */
+.offers-premium.theme-dark .op-details {
+  background: #07080a;
+  color: #dfe8ef;
+}
+.offers-premium.theme-dark .op-desc { color: #9aa6b2; }
+
+/* Feature cards */
+.offers-premium.theme-dark .op-feature {
+  background: rgba(255,255,255,0.02);
+  color: #e6eef6;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* icons (emoji fallback) visibility */
+.offers-premium.theme-dark .icon { filter: none; }
+
+/* Make sure badge still looks good */
+.offers-premium.theme-dark .op-badge {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-2) 120%) !important;
+  color: #08101a !important;
+}
+
+/* Accessibility tweak */
+.offers-premium.theme-dark .op-btn:focus,
+.offers-premium.theme-dark .op-card-cta:focus,
+.offers-premium.theme-dark .link-like:focus {
+  outline: 3px solid rgba(255,213,74,0.18);
+  outline-offset: 3px;
+}
+
+/* Accessibility: focus states for light theme (ensure strong contrast) */
+.offers-premium.theme-light .op-btn:focus,
+.offers-premium.theme-light .link-like:focus {
+  outline: 3px solid rgba(8,16,26,0.08);
+  outline-offset: 3px;
+}

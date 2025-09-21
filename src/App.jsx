@@ -6,6 +6,8 @@ import AboutUs from "./components/AboutUs";
 import HardwareCollections from "./components/HardwareCollections";
 import OurCraft from "./components/OurCraft";
 import Gallery from "./components/Gallery";
+import Wishlist from "./components/Wishlist";
+import OffersPage from "./components/OffersPage";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/our-craft" element={<OurCraft />} />
         <Route path="/collections" element={<HardwareCollections />} />
         <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+        <Route path="/wishlist" element={<Wishlist />} />
+         <Route path="/offers" element={<OffersPage />} />
       </Routes>
     </Router>
   );
