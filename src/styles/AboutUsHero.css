@@ -92,15 +92,17 @@ body.dark-mode {
   box-shadow: 0 15px 30px var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: var(--card-bg);
+   width: 650px;
+  height: 300px;
 }
 .landscape-image-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px var(--card-shadow);
 }
 .landscape-image {
-  width: 100%;
+    width: 650px;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .image-info {

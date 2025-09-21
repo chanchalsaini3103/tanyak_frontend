@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "../styles/RequestQuoteHero.css";
 // leftImage still comes from local import (kept as you had it)
-import leftImage from '../images/quote.jpg';
-
+// import leftImage from '../images/quote.jpg';
+import leftImage from '/images/newimgs/quote.jpg';
 export default function RequestQuoteHero({
   // heroImageProp not used for background anymore, but kept as prop if you want it elsewhere
   heroImageProp = '',

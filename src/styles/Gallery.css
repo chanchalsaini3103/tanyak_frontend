@@ -7,7 +7,7 @@
   --accent-2: #00cec9;
   --card-bg: #ffffff;
   --shadow: rgba(0,0,0,0.1);
-  --brochure-gradient: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+  --brochure-gradient: linear-gradient(135deg, #ffd700 0%, #ffae00 100%); /* yellow gradient */
   --button-bg: #ffffff;
   --button-text: var(--accent-1);
 }
@@ -21,7 +21,7 @@
   --accent-2: #34e6d0;
   --card-bg: #0f1315;
   --shadow: rgba(0,0,0,0.6);
-  --brochure-gradient: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+  --brochure-gradient: linear-gradient(135deg, #ffd700 0%, #ffae00 100%);
   --button-bg: #162025;
   --button-text: #e6f7f4;
 }

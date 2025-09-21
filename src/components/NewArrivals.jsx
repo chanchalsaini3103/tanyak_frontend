@@ -5,6 +5,8 @@ import img2 from "../images/newarrivals/2.jpg";
 import img3 from "../images/newarrivals/3.jpg";
 import img4 from "../images/newarrivals/4.jpg";
 import img5 from "../images/newarrivals/5.jpg";
+import { Link } from "react-router-dom"; // ⬅️ add this at the top
+
 
 
 const NewArrivals = () => {
@@ -37,32 +39,32 @@ const NewArrivals = () => {
   const newArrivals = [
     {
       id: 1,
-      name: " Cabinet Handles",
+      name: "Handles",
       image:
        cabinetHandlesImg,
          badge: "New",
     },
     {
       id: 2,
-      name: "Modern Drawer Pulls",
+      name: "Drawer Pulls",
       image:img2,
       badge: "Trending",
     },
     {
       id: 3,
-      name: "Black & Gold Hinges",
+      name: "Hinges",
       image:
         img3,   badge: "Limited",
     },
     {
       id: 4,
-      name: "Designer Door Knobs",
+      name: "Knobs",
       image:
        img4,      badge: "Premium",
     },
     {
       id: 5,
-      name: "Matte Black Latches",
+      name: "Latches",
       image:
       img5,    badge: "New",
     },
@@ -125,9 +127,12 @@ const NewArrivals = () => {
           </div>
         </div>
 
-        <div className="view-all-container">
-          <button className="view-all-btn">View All New Arrivals</button>
-        </div>
+       <div className="view-all-container">
+  <Link to="/shop" className="view-all-btn">
+    View All New Arrivals
+  </Link>
+</div>
+
       </div>
     </section>
   );

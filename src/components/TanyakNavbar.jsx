@@ -22,7 +22,7 @@ import {
 } from "react-icons/fa";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.avif";
-import logoDark from "../assets/logo.avif";
+import logoDark from "../assets/logo-ddark.png";
 
 export default function TanyakNavbar() {
   const navigate = useNavigate();

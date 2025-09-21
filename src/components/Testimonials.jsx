@@ -21,14 +21,14 @@ const Testimonials = () => {
   }, []);
 
   const testimonials = [
-  {
-    id: 1,
-    name: "Chanchal Saini",
-    location: "Pune, India",
-    text: "The team at DecorHome transformed our living space completely. Their attention to detail and quality products exceeded our expectations. We couldn't be happier!",
-    rating: 5,
-    image: chanchal,
-  },
+  // {
+  //   id: 1,
+  //   name: "Chanchal Saini",
+  //   location: "Pune, India",
+  //   text: "The team at DecorHome transformed our living space completely. Their attention to detail and quality products exceeded our expectations. We couldn't be happier!",
+  //   rating: 5,
+  //   image: chanchal,
+  // },
   {
     id: 2,
     name: "Deepak Suthar",

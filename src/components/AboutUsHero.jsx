@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/AboutUsHero.css";
 import aboutPortrait from '../images/about-us-potrait.jpg';
-
+import aboutLandscape from '/images/newimgs/landscape.jpg';
 const AboutUsHero = () => {
   const [darkMode, setDarkMode] = useState(
     () =>
@@ -83,12 +83,8 @@ const AboutUsHero = () => {
               {" "}
               {/* Animates second */}
               <div className="landscape-image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Interior Design Project"
-                  className="landscape-image"
-                  loading="lazy"
-                />
+              <img src={aboutLandscape} alt="Landscape" />
+
               </div>
             </div>
           </div>

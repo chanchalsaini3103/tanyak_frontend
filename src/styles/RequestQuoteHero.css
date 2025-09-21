@@ -219,7 +219,8 @@
 
 .rq-left-card {
   width: 600px;
-  margin-left: 80px;
+  height: 600px;
+  margin-left: 100px;
   position: relative;
   border-radius: 16px;
   overflow: hidden;

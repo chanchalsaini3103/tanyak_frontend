@@ -18,7 +18,7 @@ const OFFER = {
   ],
   dateRange: "Campaign running now — enquire for eligibility & T&C",
   heroImage:
-    "https://images.unsplash.com/photo-1549887534-64a2f8b3f7d6?auto=format&fit=crop&w=1600&q=80"
+    "https://t3.ftcdn.net/jpg/05/77/59/10/360_F_577591022_ghBvlMtxm7nyXLo3xqd8XnPq9py3IoWB.jpg"
 };
 
 export default function OffersPage() {
@@ -115,12 +115,8 @@ export default function OffersPage() {
                   </div>
 
                   <div className="op-secondary-actions mt-3">
-                    <a href="#details" className="link-like me-3">
-                      <i className="fas fa-info-circle me-2" aria-hidden></i> Details
-                    </a>
-                    <a href="#brochure" className="link-like">
-                      <i className="fas fa-download me-2" aria-hidden></i> Download Brochure
-                    </a>
+                   
+                   
                   </div>
                 </div>
               </Col>
