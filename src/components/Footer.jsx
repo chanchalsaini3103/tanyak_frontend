@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
-          <div className="footer-section">
+          <div className="footer-section footer-about">
             <h3 className="footer-logo">Tanyak</h3>
             <p className="footer-description">
               Transforming houses into homes with exquisite decor and furniture
@@ -15,79 +15,54 @@ const Footer = () => {
               tell your story.
             </p>
             <div className="social-links">
-  <a href="#" className="social-link" aria-label="Facebook">
-    <FaFacebookF />
-  </a>
-  <a href="#" className="social-link" aria-label="Instagram">
-    <FaInstagram />
-  </a>
-  <a href="#" className="social-link" aria-label="Pinterest">
-    <FaPinterestP />
-  </a>
-  <a href="#" className="social-link" aria-label="Twitter">
-    <FaTwitter />
-  </a>
-  <a href="#" className="social-link" aria-label="YouTube">
-    <FaYoutube />
-  </a>
-</div>
+              <a href="#" className="social-link" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="social-link" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="#" className="social-link" aria-label="Pinterest">
+                <FaPinterestP />
+              </a>
+              <a href="#" className="social-link" aria-label="Twitter">
+                <FaTwitter />
+              </a>
+              <a href="#" className="social-link" aria-label="YouTube">
+                <FaYoutube />
+              </a>
+            </div>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section footer-quicklinks">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Shop</a>
-              </li>
-              <li>
-                <a href="#">Collections</a>
-              </li>
-              <li>
-                <a href="#">Gallery</a>
-              </li>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Testimonials</a>
-              </li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Testimonials</a></li>
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section footer-categories">
             <h4 className="footer-heading">Categories</h4>
             <ul className="footer-links">
-              <li>
-                <a href="#">Living Room</a>
-              </li>
-              <li>
-                <a href="#">Bedroom</a>
-              </li>
-              <li>
-                <a href="#">Dining Room</a>
-              </li>
-              <li>
-                <a href="#">Office</a>
-              </li>
-              <li>
-                <a href="#">Outdoor</a>
-              </li>
-              <li>
-                <a href="#">Decor Accessories</a>
-              </li>
+              <li><a href="#">Living Room</a></li>
+              <li><a href="#">Bedroom</a></li>
+              <li><a href="#">Dining Room</a></li>
+              <li><a href="#">Office</a></li>
+              <li><a href="#">Outdoor</a></li>
+              <li><a href="#">Decor Accessories</a></li>
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section footer-contact">
             <h4 className="footer-heading">Contact Info</h4>
             <div className="contact-info">
               <div className="contact-item">
                 <i className="fas fa-map-marker-alt"></i>
                 <p>
-                  {" "}
                   Tanisha Impex <br />
                   No 4, Matro Shree Garden, <br />
                   Opp Dharmavat Petrol Pump <br />

@@ -695,3 +695,25 @@ input:focus {
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .oc-cta-btn {
+    width: 100%;
+    max-width: 360px;     /* prevents very wide buttons on larger phones */
+    margin: 0;            /* ensure no offset */
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  /* If you want the secondary to look like an outline in dark-mode too: */
+  body.dark-mode .oc-cta-btn.secondary {
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--hero-text);
+  }
+}

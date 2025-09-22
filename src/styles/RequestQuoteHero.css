@@ -618,3 +618,256 @@
     padding-right: 0.6rem;
   }
 }
+/* ------------------ Mobile-only override: show only .rq-content ------------------ */
+/* Add this at the very end of RequestQuoteHero.css (won't change desktop behavior) */
+
+@media (max-width: 768px) {
+  /* Hide navbar and any hero-left / extra columns, keep only .rq-content visible */
+  .rq-navbar { display: none !important; }
+  .rq-hero-inner > *:not(.rq-content) { display: none !important; }
+
+  /* Ensure .rq-content is centered and takes full width */
+  .rq-content {
+    display: block !important;
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 420px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Show only the headings, subtitle and CTAs inside .rq-content; hide any extra children */
+  .rq-content > *:not(.rq-h1):not(.rq-sub):not(.rq-ctas) {
+    display: none !important;
+  }
+
+  /* Headline lines: make them visible and appropriately sized on mobile */
+  .rq-h1 { margin: 0 0 0.4rem 0; }
+  .rq-h1 .rq-title-line { display: block; font-size: 1.9rem; line-height: 1.05; }
+
+  /* Typing animation applied to the FIRST title line only */
+  .rq-h1 .rq-title-line:first-child {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: content-box;
+    border-right: 3px solid currentColor;
+    width: 0ch; /* will expand with typing animation */
+    font-weight: 800;
+    animation:
+      rq-typing 1.6s steps(16, end) 0.25s 1 forwards,
+      rq-blink-caret 900ms step-end infinite;
+  }
+
+  /* Subtitle visible and styled */
+  .rq-sub {
+    display: block !important;
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--rq-text-muted);
+  }
+
+  /* CTAs stacked and full width */
+  .rq-ctas {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+    margin: 1rem auto 0 auto;
+    width: 100%;
+    max-width: 360px;
+  }
+  .rq-ctas > .rq-btn,
+  .rq-ctas > .rq-link {
+    width: 100% !important;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  /* Keep Explore Products link visible (it's inside the .rq-ctas block you requested).
+     If you want to hide Explore Products on mobile, change to:
+     .rq-ctas > .rq-link.small { display: none !important; }
+  */
+
+  /* Hide inline form & other controls that might still be inside .rq-content */
+  .rq-inline-form, .rq-input-with-icon, .rq-success, .rq-error, .rq-wa-status {
+    display: none !important;
+  }
+
+  /* Typing keyframes */
+  @keyframes rq-typing {
+    from { width: 0ch; }
+    to   { width: 14ch; } /* ~14 chars covers "Got a Project?" — tweak if your font differs */
+  }
+  @keyframes rq-blink-caret {
+    50% { border-color: transparent; }
+  }
+
+  /* Respect reduced motion: disable animations if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .rq-h1 .rq-title-line:first-child {
+      animation: none;
+      border-right: none;
+      width: auto;
+    }
+  }
+}
+
+/* end mobile-only override */
+/* ---- Mobile tweaks: bigger headline + less bottom whitespace ---- */
+@media (max-width: 768px) {
+  /* Reduce overall hero vertical footprint on mobile */
+  .rq-hero {
+    min-height: auto !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  /* Make title larger and tighter so it fills more of the screen */
+  .rq-h1 { margin-bottom: 0.25rem !important; }
+  .rq-h1 .rq-title-line {
+    font-size: 2.4rem !important;   /* was ~1.9rem — bigger now */
+    line-height: 1.02 !important;
+    letter-spacing: -0.6px;
+  }
+
+  /* Typing animation: ensure it covers the full phrase and looks natural at this size */
+  .rq-h1 .rq-title-line:first-child {
+    font-size: 2.4rem !important;
+    border-right-width: 3px;
+    animation: rq-typing-lg 1.6s steps(22, end) 0.25s 1 forwards, rq-blink-caret 900ms step-end infinite;
+  }
+  @keyframes rq-typing-lg {
+    from { width: 0ch; }
+    to   { width: 22ch; } /* wider to match larger font and full phrase */
+  }
+
+  /* Subtitle closer to headline */
+  .rq-sub {
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.9rem !important;
+    font-size: 1.06rem !important;
+  }
+
+  /* Move CTAs up slightly and keep them comfortable */
+  .rq-ctas {
+    margin-top: 0.6rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Slightly reduce top/bottom space of buttons to compact layout */
+  .rq-ctas > .rq-btn,
+  .rq-ctas > .rq-link {
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .rq-h1 .rq-title-line:first-child {
+      animation: none !important;
+      border-right: none !important;
+      width: auto !important;
+    }
+  }
+}
+/* Mobile overflow fixes — paste inside or after your existing mobile @media (max-width: 768px) */
+@media (max-width: 768px) {
+  /* hide the large left image/card on phones (you asked to only show content + CTAs) */
+  .rq-left-image,
+  .rq-left-card,
+  .rq-floating-tag {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ensure hero uses normal document flow and doesn't force viewport width */
+  .rq-hero,
+  .rq-hero-inner,
+  .rq-content {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow-x: hidden !important;
+  }
+
+  /* keep title lines wrapping safely and prevent overflow by long words */
+  .rq-h1,
+  .rq-h1 .rq-title-line {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* clamp headline size so it fits in most phones */
+  .rq-h1 .rq-title-line {
+    font-size: 2rem !important;   /* adjust down if still overflow; increase if you want bigger */
+    line-height: 1.02 !important;
+    margin: 0 !important;
+  }
+
+  /* reduce the large fixed widths and margins that caused overflow */
+  .rq-left-card img,
+  .rq-left-card,
+  .rq-ctas > .rq-btn,
+  .rq-ctas > .rq-link {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* make CTA area stack nicely and not overflow */
+  .rq-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    margin: 0.6rem 0 !important;
+    width: 100% !important;
+  }
+
+  /* Ensure inline form is hidden on mobile if you don't want it */
+  .rq-inline-form {
+    display: none !important;
+  }
+
+  /* keep subtitle and buttons within viewport */
+  .rq-sub {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Typing animation: limit max width so animation doesn't expand beyond viewport */
+  .rq-h1 .rq-title-line:first-child {
+    box-sizing: border-box;
+    max-width: 100ch; /* large cap but never exceed viewport */
+    width: auto !important;
+  }
+
+  /* remove any horizontal margin or big left offset that pushed content off-screen */
+  .rq-left-card { margin-left: 0 !important; }
+
+  /* If any element still causes horizontal scroll, this will reveal it during debugging:
+     remove the outline rule in production. */
+  /* .rq-hero * { outline: none !important; } */
+
+  /* final guarantee: prevent body horizontal overflow if something sneaks through */
+  body {
+    overflow-x: hidden !important;
+  }
+}

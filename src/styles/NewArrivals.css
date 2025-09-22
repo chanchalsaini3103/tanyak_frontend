@@ -43,36 +43,33 @@ body:not(.dark-mode) {
   --btn-text: #ffd700;
 }
 
-
 /* ===== NewArrivals image sizing override (minimal, no JSX change) ===== */
 .new-arrivals .product-image {
-  height: 260px;       /* container height you already set */
+  height: 260px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ensure image fits the container instead of using fixed 360px */
 .new-arrivals .product-image img {
   width: 100%;
-  height: 100%;        /* fill container height */
-  object-fit: cover;   /* crop nicely */
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.45s ease;
 }
 
-
 /* SECTION LAYOUT */
 .new-arrivals {
-  padding: 5rem 0;
+  padding-top: 70px;
+  padding-bottom: 30px;
   background: var(--bg-panel);
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
 }
 
-/* subtle decorative wave using SVG (very faint) */
 .new-arrivals::before {
   content: "";
   position: absolute;
@@ -94,9 +91,9 @@ body:not(.dark-mode) {
   z-index: 2;
 }
 
-/* header - UPDATED TO CENTER THE TITLE */
+/* header */
 .section-header {
-  text-align: center; /* This centers both title and subtitle */
+  text-align: center;
   margin-bottom: 3rem;
 }
 .section-title {
@@ -105,14 +102,14 @@ body:not(.dark-mode) {
   color: var(--accent);
   margin-bottom: 0px;
   display: inline-block;
-  text-align: center; /* Added to ensure centering */
-  width: 100%; /* Ensures it takes full width for proper centering */
+  text-align: center;
+  width: 100%;
 }
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--text-muted);
   max-width: 680px;
-  margin: 0px;
+  margin: 0px auto;
   padding-bottom: 0px;
 }
 
@@ -120,33 +117,52 @@ body:not(.dark-mode) {
 .arrivals-container {
   position: relative;
   margin: 0 0 1rem 0;
-  padding: 0px 0 0rem 0;
+  padding: 0;
 }
 
-.scrolling-track { overflow: hidden; position: relative; padding: 20px 0; }
+.scrolling-track {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
 
-/* items row with automatic scroll */
+/* === IMPORTANT: display as a single nowrap row and duplicate list helps seamless loop === */
 .scrolling-items {
   display: flex;
   gap: 1.25rem;
-  padding-top: 0px;
-  
-  animation: scroll 28s linear infinite;
+  padding-top: 0;
+  align-items: stretch;
+  flex-wrap: nowrap; /* single row */
+  will-change: transform;
+
+  /* fallback default distance (string) used until JS sets px value */
+  --scroll-distance: -50%;
+  animation: scroll 22s linear infinite; /* desktop default duration */
 }
 
-.scrolling-items:hover { animation-play-state: paused; }
+/* paused class (added on touch/pointer down) */
+.scrolling-items.is-paused,
+.scrolling-items:hover,
+.scrolling-items:focus-within {
+  animation-play-state: paused;
+}
 
-/* calculate translate based on each card size; keep it conservative */
+/* Ensure each card doesn't shrink and keeps its width */
+.scrolling-items > .arrival-card {
+  flex: 0 0 300px; /* fixed width for predictability */
+  min-width: 260px;
+  box-sizing: border-box;
+}
+
+/* Keyframes: translate by runtime-set --scroll-distance (pixel value set by JS) */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* safe looping - images repeat visually when enough items */
+  100% { transform: translateX(var(--scroll-distance)); }
 }
 
 /* Card */
 .arrival-card {
-  flex: 0 0 300px;
-  min-width: 260px;
-  height:360px;
+  height: 360px;
   perspective: 1000px;
   outline: none;
 }
@@ -168,7 +184,8 @@ body:not(.dark-mode) {
   transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -213,8 +230,7 @@ body:not(.dark-mode) {
   z-index: 2;
 }
 
-/* image */
-/*  */
+/* hover image zoom */
 .arrival-card:hover .product-image img,
 .arrival-card:focus-within .product-image img {
   transform: scale(1.08);
@@ -279,23 +295,59 @@ body.dark-mode .card-back h3 {
 }
 
 /* Responsive adjustments */
+
+/* Desktop smaller widths */
 @media (max-width: 992px) {
-  .arrival-card { flex: 0 0 calc(50% - 1.25rem); min-width: 260px; }
-  .scrolling-items { animation-duration: 22s; }
+  .scrolling-items > .arrival-card { flex: 0 0 calc(50% - 1.25rem); min-width: 260px; }
+  /* medium screens: slightly faster */
+  .scrolling-items { animation-duration: 16s; }
 }
+
+/* Tablet and mobile: durations tuned (smaller duration = faster scroll) */
 @media (max-width: 768px) {
   .section-title { font-size: 2rem; }
-  .arrival-card { flex: 0 0 calc(100% - 1.25rem); min-width: 260px; height: 320px; }
-  .scrolling-items { animation-duration: 18s; }
+  .scrolling-items > .arrival-card { flex: 0 0 calc(100% - 1.25rem); min-width: 260px; height: 320px; }
+  .scrolling-items { animation-duration: 14s; } /* mobile */
 }
+
+/* Very small phones: fastest */
 @media (max-width: 576px) {
-  .new-arrivals { padding: 3rem 0; }
+  .new-arrivals { padding: 3rem 0; padding-bottom: 10px; }
   .section-title { font-size: 1.6rem; }
   .arrival-card { min-width: 240px; height: 300px; }
+  .scrolling-items { animation-duration: 12s; } /* smallest phones */
 }
 
 /* Accessibility: prefer-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .scrolling-items, .product-image img { animation: none; transition: none; }
   .arrival-card:hover .card-inner { transform: none; }
+}
+
+/* Optional: prevent pointer events / focus on duplicated visual copy */
+.scrolling-items [aria-hidden="true"] { pointer-events: none; }
+.scrolling-items [aria-hidden="true"] .card-inner { opacity: 1; }
+.view-all-btn {
+  display:inline-block;
+  text-decoration:none;
+  padding:0.85rem 1.8rem;
+  border-radius:8px;
+  font-weight:700;
+  border:2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s;
+}
+.view-all-btn:hover,
+.view-all-btn:focus {
+  background: var(--accent);
+  color: #111;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* dark-mode tweak (optional) */
+body.dark-mode .view-all-btn {
+  color: var(--accent);
+  border-color: rgba(255,215,0,0.9);
 }

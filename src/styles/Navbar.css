@@ -606,3 +606,14 @@ body.dark-mode {
     transition: none !important;
   }
 }
+/* Put this inside your existing @media (max-width: 991.98px) { ... } block
+   or add it after your CSS so it overrides previous rules. */
+@media (max-width: 991.98px) {
+  .top-announcement {
+    display: none !important;
+    /* keep accessibility attributes intact; we hide visually but it's removed from layout */
+  }
+
+  /* If you want to reclaim the header vertical space, you can reduce main-header padding on mobile */
+  .main-header { padding: 12px 0; }
+}

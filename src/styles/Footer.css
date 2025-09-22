@@ -237,3 +237,119 @@
 .footer:not(.dark) .contact-info span {
   color: var(--text-secondary) !important;
 }
+/* ---------------- Mobile-only layout tweaks (center + quicklinks & categories same row) ---------------- */
+/* Target phones — you can adjust breakpoint if you want slightly larger devices included */
+@media (max-width: 480px) {
+  /* Make everything centered */
+  .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Use flex wrap so we can control which sections are full width vs half width */
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center all columns */
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  /* Brand and contact should be full-width and centered */
+  .footer-about,
+  .footer-contact {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Quick links & categories should sit side-by-side (two columns) */
+  .footer-quicklinks,
+  .footer-categories {
+    flex: 0 0 46%;      /* two columns with some gap */
+    max-width: 46%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reduce heading underline width so it looks nicer centered */
+  .footer-section h4.footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+  }
+
+  /* Center logo and description */
+  .footer-logo {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .footer-description {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  /* Center social icons */
+  .social-links {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  /* Center quick links list */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  .footer-links a {
+    text-align: center;
+  }
+
+  /* Contact info center adjustments */
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .contact-item i {
+    margin-top: 0;
+  }
+
+  /* Footer bottom stacked and centered */
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-legal {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Slightly reduce paddings so mobile looks compact */
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 18px;
+  }
+}
