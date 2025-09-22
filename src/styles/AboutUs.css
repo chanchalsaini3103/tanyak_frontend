@@ -679,3 +679,138 @@
   display: none !important;
 }
 */
+/* ---------------- Mobile: center everything ---------------- */
+@media (max-width: 768px) {
+  .about-us-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Tabs: stack & center */
+  .about-tabs {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px;
+  }
+  .tab-btn {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 16px;
+  }
+
+  /* Tab content wrapper centered */
+  .tab-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Columns stack and center */
+  .tab-content .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .tab-content .col-md-6,
+  .tab-content .col-lg-8,
+  .tab-content .mx-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Outlet info: center */
+  .outlet-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .outlet-info .section-title,
+  .outlet-info .outlet-description {
+    text-align: center;
+  }
+
+  /* Detail items stacked and centered */
+  .store-details {
+    width: 100%;
+  }
+  .detail-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .detail-icon-wrapper {
+    margin: 0 0 12px 0;
+  }
+  .detail-item > div h5,
+  .detail-item > div p {
+    text-align: center;
+  }
+
+  /* Map: full width and centered overlay */
+  .map-container {
+    padding: 18px;
+  }
+  .map-wrapper iframe {
+    width: 100% !important;
+    height: 260px !important;
+  }
+  .map-overlay {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 14px;
+    left: auto;
+  }
+
+  /* Story / mission-vision: center content & cards */
+  .story-section .section-title,
+  .story-section .animate-text,
+  .mv-card {
+    text-align: center;
+  }
+  .mission-vision .mv-card {
+    margin: 0 auto;
+    max-width: 420px;
+  }
+
+  /* Team / founder: stack & center */
+  .founder-info {
+    padding: 18px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .founder-image .image-placeholder,
+  .image-placeholder img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+  }
+  .founder-details h3,
+  .founder-details .title,
+  .founder-details p {
+    text-align: center;
+  }
+  .founder-quote {
+    margin-top: 18px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Reduce large paddings so next section sits closer */
+  .about-us-page {
+    padding-bottom: 40px;
+  }
+
+  /* Footer spacing on mobile */
+  .about-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
