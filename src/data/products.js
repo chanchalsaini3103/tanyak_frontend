@@ -13,21 +13,21 @@ const products = [
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
     category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    colors: ["Gold","R.Gold","Black","Antique"],
+    sizes: ["250mm"],
     inStock: true,
   }, {
     id: 2,
-    name: "Glass Main Door Handle",
+    name: "Key Stand",
     model: "TK-KS-01",
     image: "/images/new/TK-KS-01.JPG",
     hoverImage: "/images/new/TK-KS-01.JPG",
     description: "Durable main door handle with elegant finish.",
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    category: "Key Stand",
+    colors: ["Gold","Antique","Copper"],
+    sizes: ["Standard"],
     inStock: true,
   },
   {
@@ -40,8 +40,8 @@ const products = [
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
     category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    colors: ["Gold","R.Gold","Black","Antique"],
+    sizes: ["250mm"],
     inStock: true,
   },
  
@@ -126,16 +126,16 @@ const products = [
     inStock: true,
   },{
     id: 10,
-    name: "Glass Main Door Handle",
+    name: "Conceal Handle",
     model: "TK-SH 03",
     image: "/images/new/TK-SH 03.JPG",
     hoverImage: "/images/new/TK-SH 03.JPG",
     description: "Durable main door handle with elegant finish.",
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    category: "Conceal Handle",
+    colors: ["Gold","R.Gold","Grey"],
+    sizes: ["8 Inch", "10 Inch","12 Inch"],
     inStock: true,
   },{
     id: 11,
