@@ -23,7 +23,7 @@
 
 /* ---------- Dark mode variable overrides ---------- */
 .dark-mode {
-  --bg-primary: #1a1a1a;
+  --bg-primary: black;
   --bg-secondary: #2d2d2d;
   --text-primary: #f1f1f1;
   --text-secondary: #a0a0a0;
