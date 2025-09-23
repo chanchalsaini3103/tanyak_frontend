@@ -3,8 +3,182 @@
 // Put your images in public/images/newimg/ so these paths work without bundler imports.
 
 const products = [
-  {
+   {
     id: 1,
+    name: "Glass Main Door Handle",
+    model: "TY-GH-01",
+    image: "/images/new/TY-GH-01.JPG",
+    hoverImage: "/images/new/TY-GH-01.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  }, {
+    id: 2,
+    name: "Glass Main Door Handle",
+    model: "TK-KS-01",
+    image: "/images/new/TK-KS-01.JPG",
+    hoverImage: "/images/new/TK-KS-01.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Glass Main Door Handle",
+    model: "TY-GH-02",
+    image: "/images/new/TY-GH-02.JPG",
+    hoverImage: "/images/new/TY-GH-02.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },
+ 
+  {
+    id: 4,
+    name: "Glass Main Door Handle",
+    model: "DH-05",
+    image: "/images/new/DH-05.JPG",
+    hoverImage: "/images/new/DH-05.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 5,
+    name: "Glass Main Door Handle",
+    model: "DH-01",
+    image: "/images/new/DH-01.JPG",
+    hoverImage: "/images/new/DH-01.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 6,
+    name: "Glass Main Door Handle",
+    model: "DH-02",
+    image: "/images/new/DH-02.JPG",
+    hoverImage: "/images/new/DH-02.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 7,
+    name: "Glass Main Door Handle",
+    model: "TY 25-05",
+    image: "/images/new/TY 25-05.JPG",
+    hoverImage: "/images/new/TY 25-05.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Glass Main Door Handle",
+    model: "TY 25-07",
+    image: "/images/new/TY 25-07.JPG",
+    hoverImage: "/images/new/TY 25-07.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 9,
+    name: "Glass Main Door Handle",
+    model: "TY25-MH 02",
+    image: "/images/new/TY25-MH 02.JPG",
+    hoverImage: "/images/new/TY25-MH 02.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 10,
+    name: "Glass Main Door Handle",
+    model: "TK-SH 03",
+    image: "/images/new/TK-SH 03.JPG",
+    hoverImage: "/images/new/TK-SH 03.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 11,
+    name: "Glass Main Door Handle",
+    model: "TY25-MH 01",
+    image: "/images/new/TY25-MH 01.JPG",
+    hoverImage: "/images/new/TY25-MH 01.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 12,
+    name: "Glass Main Door Handle",
+    model: "TY25-KB 902",
+    image: "/images/new/TY25-KB 902.JPG",
+    hoverImage: "/images/new/TY25-KB 902.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },{
+    id: 13,
+    name: "Glass Main Door Handle",
+    model: "TY25-MH 01",
+    image: "/images/new/TY25-MH 01.JPG",
+    hoverImage: "/images/new/TY25-MH 01.JPG",
+    description: "Durable main door handle with elegant finish.",
+    fullDescription:
+      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
+    category: "Glass Main Door Handle",
+    colors: ["R.Gold-Corian"],
+    sizes: ["96mm", "160mm"],
+    inStock: true,
+  },
+  {
+    id: 14,
     name: "Main Door Handle",
     model: "LX/MD-01",
     image: "/images/newimgs/md1.jpg",
@@ -18,7 +192,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 2,
+    id: 15,
     name: "Main Door Handle",
     model: "LX/MD-03",
     image: "/images/newimgs/md3.jpg",
@@ -32,7 +206,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 3,
+    id: 16,
     name: "Main Door Handle",
     model: "LX/MD-04",
     image: "/images/newimgs/md4.jpg",
@@ -46,7 +220,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 4,
+    id: 17,
     name: "Main Door Handle",
     model: "LX/MD-05",
     image: "/images/newimgs/md5.jpg",
@@ -60,7 +234,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 5,
+    id: 18,
     name: "Main Door Handle",
     model: "LX/MD-06",
     image: "/images/newimgs/md6.jpg",
@@ -74,7 +248,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 6,
+    id: 19,
     name: "Main Door Handle",
     model: "LX/MD-07",
     image: "/images/newimgs/md7.jpg",
@@ -88,7 +262,7 @@ const products = [
     inStock: true,
   },
    {
-    id: 7,
+    id: 20,
     name: "Main Door Handle",
     model: "LX/MD-08",
     image: "/images/newimgs/md8.jpg",
@@ -102,7 +276,7 @@ const products = [
     inStock: true,
   },
    {
-    id: 8,
+    id: 21,
     name: "Main Door Handle",
     model: "LX/MD-09",
     image: "/images/newimgs/md9.jpg",
@@ -116,7 +290,7 @@ const products = [
     inStock: true,
   },
    {
-    id: 9,
+    id: 22,
     name: "Main Door Handle",
     model: "LX/MD-10",
     image: "/images/newimgs/md10.jpg",
@@ -130,7 +304,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 10,
+    id: 23,
     name: "Main Door Handle",
     model: "LX/MD-11",
     image: "/images/newimgs/md11.jpg",
@@ -144,7 +318,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 11,
+    id: 24,
     name: "Main Door Handle",
     model: "LX/MD-12",
     image: "/images/newimgs/md12.jpg",
@@ -158,7 +332,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 12,
+    id: 25,
     name: "Main Door Handle",
     model: "LX/MD-13",
     image: "/images/newimgs/md13.jpg",
@@ -172,7 +346,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 13,
+    id: 26,
     name: "Main Door Handle",
     model: "LX/MD-14",
     image: "/images/newimgs/md14.jpg",
@@ -186,7 +360,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 14,
+    id: 27,
     name: "Main Door Handle",
     model: "LX/MD-15",
     image: "/images/newimgs/md15.jpg",
@@ -200,7 +374,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 15,
+    id: 28,
     name: "Main Door Handle",
     model: "LX/MD-16",
     image: "/images/newimgs/md16.jpg",
@@ -214,7 +388,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 16,
+    id: 29,
     name: "Main Door Handle",
     model: "LX/MD-17",
     image: "/images/newimgs/md17.jpg",
@@ -228,7 +402,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 17,
+    id: 30,
     name: "Mortise Handle",
     model: "LX/MZ-01",
     image: "/images/newimgs/mz1.jpg",
@@ -242,7 +416,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 18,
+    id: 31,
     name: "Mortise Handle",
     model: "LX/MZ-02",
     image: "/images/newimgs/mz2.jpg",
@@ -256,7 +430,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 19,
+    id: 32,
     name: "Mortise Handle",
     model: "LX/MZ-03",
     image: "/images/newimgs/mz3.jpg",
@@ -270,7 +444,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 20,
+    id: 33,
     name: "Mortise Handle",
     model: "LX/MZ-04",
     image: "/images/newimgs/mz4.jpg",
@@ -284,7 +458,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 21,
+    id: 34,
     name: "Mortise Handle",
     model: "LX/MZ-05",
     image: "/images/newimgs/mz5.jpg",
@@ -298,7 +472,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 22,
+    id: 35,
     name: "Mortise Handle",
     model: "LX/MZ-06",
     image: "/images/newimgs/mz6.jpg",
@@ -312,7 +486,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 23,
+    id: 36,
     name: "Mortise Handle",
     model: "LX/MZ-07",
     image: "/images/newimgs/mz7.jpg",
@@ -326,7 +500,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 24,
+    id: 37,
     name: "Mortise Handle",
     model: "LX/MZ-08",
     image: "/images/newimgs/mz8.jpg",
@@ -340,7 +514,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 25,
+    id: 38,
     name: "Mortise Handle",
     model: "LX/MZ-09",
     image: "/images/newimgs/mz9.jpg",
@@ -356,7 +530,7 @@ const products = [
   // Cabinet handle items LX/CH-05 through LX/CH-29 (ids 26..50)
 // Images: /images/newimgs/ch5.jpg ... /images/newimgs/ch29.jpg
   {
-    id: 26,
+    id: 39,
     name: "Cabinet Handle",
     model: "LX/CH-05",
     image: "/images/newimgs/ch5.jpg",
@@ -370,7 +544,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 27,
+    id: 40,
     name: "Cabinet Handle",
     model: "LX/CH-06",
     image: "/images/newimgs/ch6.jpg",
@@ -384,7 +558,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 28,
+    id: 41,
     name: "Cabinet Handle",
     model: "LX/CH-07",
     image: "/images/newimgs/ch7.jpg",
@@ -398,7 +572,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 29,
+    id: 42,
     name: "Cabinet Handle",
     model: "LX/CH-08",
     image: "/images/newimgs/ch8.jpg",
@@ -412,7 +586,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 30,
+    id: 43,
     name: "Cabinet Handle",
     model: "LX/CH-09",
     image: "/images/newimgs/ch9.jpg",
@@ -426,7 +600,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 31,
+    id: 44,
     name: "Cabinet Handle",
     model: "LX/CH-10",
     image: "/images/newimgs/ch10.jpg",
@@ -440,7 +614,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 32,
+    id: 45,
     name: "Cabinet Handle",
     model: "LX/CH-11",
     image: "/images/newimgs/ch11.jpg",
@@ -454,7 +628,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 33,
+    id: 46,
     name: "Cabinet Handle",
     model: "LX/CH-12",
     image: "/images/newimgs/ch12.jpg",
@@ -468,7 +642,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 34,
+    id: 47,
     name: "Cabinet Handle",
     model: "LX/CH-13",
     image: "/images/newimgs/ch13.jpg",
@@ -482,7 +656,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 35,
+    id: 48,
     name: "Cabinet Handle",
     model: "LX/CH-14",
     image: "/images/newimgs/ch14.jpg",
@@ -496,7 +670,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 36,
+    id: 49,
     name: "Cabinet Handle",
     model: "LX/CH-15",
     image: "/images/newimgs/ch15.jpg",
@@ -510,7 +684,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 37,
+    id: 50,
     name: "Cabinet Handle",
     model: "LX/CH-16",
     image: "/images/newimgs/ch16.jpg",
@@ -524,7 +698,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 38,
+    id: 51,
     name: "Cabinet Handle",
     model: "LX/CH-17",
     image: "/images/newimgs/ch17.jpg",
@@ -538,7 +712,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 39,
+    id: 52,
     name: "Cabinet Handle",
     model: "LX/CH-18",
     image: "/images/newimgs/ch18.jpg",
@@ -552,7 +726,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 40,
+    id: 53,
     name: "Cabinet Handle",
     model: "LX/CH-19",
     image: "/images/newimgs/ch19.jpg",
@@ -566,7 +740,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 41,
+    id: 54,
     name: "Cabinet Handle",
     model: "LX/CH-20",
     image: "/images/newimgs/ch20.jpg",
@@ -580,7 +754,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 42,
+    id: 55,
     name: "Cabinet Handle",
     model: "LX/CH-21",
     image: "/images/newimgs/ch21.jpg",
@@ -594,7 +768,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 43,
+    id: 56,
     name: "Cabinet Handle",
     model: "LX/CH-22",
     image: "/images/newimgs/ch22.jpg",
@@ -608,7 +782,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 44,
+    id: 57,
     name: "Cabinet Handle",
     model: "LX/CH-23",
     image: "/images/newimgs/ch23.jpg",
@@ -622,7 +796,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 45,
+    id: 58,
     name: "Cabinet Handle",
     model: "LX/CH-24",
     image: "/images/newimgs/ch24.jpg",
@@ -636,7 +810,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 46,
+    id: 59,
     name: "Cabinet Handle",
     model: "LX/CH-25",
     image: "/images/newimgs/ch25.jpg",
@@ -650,7 +824,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 47,
+    id: 60,
     name: "Cabinet Handle",
     model: "LX/CH-26",
     image: "/images/newimgs/ch26.jpg",
@@ -664,7 +838,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 48,
+    id: 61,
     name: "Cabinet Handle",
     model: "LX/CH-27",
     image: "/images/newimgs/ch27.jpg",
@@ -678,7 +852,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 49,
+    id: 62,
     name: "Cabinet Handle",
     model: "LX/CH-28",
     image: "/images/newimgs/ch28.jpg",
@@ -692,7 +866,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 50,
+    id: 63,
     name: "Cabinet Handle",
     model: "LX/CH-29",
     image: "/images/newimgs/ch29.jpg",
@@ -708,7 +882,7 @@ const products = [
  // Wardrobe handle items LX/WH-01 through LX/WH-07 (ids 51..57)
 // Images: /images/newimgs/wh1.jpg ... /images/newimgs/wh7.jpg
   {
-    id: 51,
+    id: 64,
     name: "Wardrobe Handle",
     model: "LX/WH-01",
     image: "/images/newimgs/wh1.jpg",
@@ -722,7 +896,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 52,
+    id: 65,
     name: "Wardrobe Handle",
     model: "LX/WH-02",
     image: "/images/newimgs/wh2.jpg",
@@ -736,7 +910,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 53,
+    id: 66,
     name: "Wardrobe Handle",
     model: "LX/WH-03",
     image: "/images/newimgs/wh3.jpg",
@@ -750,7 +924,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 54,
+    id: 67,
     name: "Wardrobe Handle",
     model: "LX/WH-04",
     image: "/images/newimgs/wh4.jpg",
@@ -764,7 +938,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 55,
+    id: 68,
     name: "Wardrobe Handle",
     model: "LX/WH-05",
     image: "/images/newimgs/wh5.jpg",
@@ -778,7 +952,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 56,
+    id: 69,
     name: "Wardrobe Handle",
     model: "LX/WH-06",
     image: "/images/newimgs/wh6.jpg",
@@ -796,7 +970,7 @@ const products = [
 // Images: /images/newimgs/kh1.jpg ... /images/newimgs/kh6.jpg
 
   {
-    id: 57,
+    id: 70,
     name: "Conceal Handle",
     model: "LX/KH-01",
     image: "/images/newimgs/kh1.jpg",
@@ -810,7 +984,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 58,
+    id: 71,
     name: "Conceal Handle",
     model: "LX/KH-02",
     image: "/images/newimgs/kh2.jpg",
@@ -824,7 +998,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 59,
+    id: 72,
     name: "Conceal Handle",
     model: "LX/KH-03",
     image: "/images/newimgs/kh3.jpg",
@@ -838,7 +1012,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 60,
+    id: 73,
     name: "Conceal Handle",
     model: "LX/KH-04",
     image: "/images/newimgs/kh4.jpg",
@@ -852,7 +1026,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 61,
+    id: 74,
     name: "Conceal Handle",
     model: "LX/KH-05",
     image: "/images/newimgs/kh5.jpg",
@@ -866,7 +1040,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 62,
+    id: 75,
     name: "Conceal Handle",
     model: "LX/KH-06",
     image: "/images/newimgs/kh6.jpg",
@@ -883,7 +1057,7 @@ const products = [
 // Images cycle nb5.jpg ... nb11.jpg; hoverImage uses the next image (wraps to nb5)
 
   {
-    id: 63,
+    id: 76,
     name: "Knob",
     model: "LX/NB-05",
     image: "/images/newimgs/nb5.jpg",
@@ -897,7 +1071,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 64,
+    id: 77,
     name: "Knob",
     model: "LX/NB-06",
     image: "/images/newimgs/nb6.jpg",
@@ -911,7 +1085,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 65,
+    id: 78,
     name: "Knob",
     model: "LX/NB-07",
     image: "/images/newimgs/nb7.jpg",
@@ -925,7 +1099,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 66,
+    id: 79,
     name: "Knob",
     model: "LX/NB-08",
     image: "/images/newimgs/nb8.jpg",
@@ -939,7 +1113,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 67,
+    id: 80,
     name: "Knob",
     model: "LX/NB-09",
     image: "/images/newimgs/nb9.jpg",
@@ -953,7 +1127,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 68,
+    id: 81,
     name: "Knob",
     model: "LX/NB-10",
     image: "/images/newimgs/nb10.jpg",
@@ -967,7 +1141,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 69,
+    id: 82,
     name: "Knob",
     model: "LX/NB-11",
     image: "/images/newimgs/nb11.jpg",
@@ -981,7 +1155,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 70,
+    id: 83,
     name: "Knob",
     model: "LX/NB-12",
     image: "/images/newimgs/nb12.jpg",
@@ -995,7 +1169,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 71,
+    id: 84,
     name: "Knob",
     model: "LX/NB-13",
     image: "/images/newimgs/nb13.jpg",
@@ -1009,7 +1183,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 72,
+    id: 85,
     name: "Knob",
     model: "LX/NB-14",
     image: "/images/newimgs/nb14.jpg",
@@ -1023,7 +1197,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 73,
+    id: 86,
     name: "Knob",
     model: "LX/NB-15",
     image: "/images/newimgs/nb15.jpg",
@@ -1037,7 +1211,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 74,
+    id: 87,
     name: "Knob",
     model: "LX/NB-16",
     image: "/images/newimgs/nb16.jpg",
@@ -1051,7 +1225,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 75,
+    id: 88,
     name: "Knob",
     model: "LX/NB-17",
     image: "/images/newimgs/nb17.jpg",
@@ -1065,7 +1239,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 76,
+    id: 89,
     name: "Knob",
     model: "LX/NB-18",
     image: "/images/newimgs/nb18.jpg",
@@ -1079,7 +1253,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 77,
+    id: 90,
     name: "Knob",
     model: "LX/NB-19",
     image: "/images/newimgs/nb19.jpg",
@@ -1093,7 +1267,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 78,
+    id: 91,
     name: "Knob",
     model: "LX/NB-20",
     image: "/images/newimgs/nb20.jpg",
@@ -1107,7 +1281,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 79,
+    id: 92,
     name: "Knob",
     model: "LX/NB-21",
     image: "/images/newimgs/nb21.jpg",
@@ -1121,7 +1295,7 @@ const products = [
     inStock: true,
   },
   {
-    id: 80,
+    id: 93,
     name: "Knob",
     model: "LX/NB-22",
     image: "/images/newimgs/nb22.jpg",
@@ -1136,7 +1310,7 @@ const products = [
   },
 
   {
-    id: 81,
+    id: 94,
     name: "Bathroom Accessories",
     model: "LX/BA-1",
     image: "/images/newimgs/ba1.jpg",
@@ -1149,7 +1323,7 @@ const products = [
     inStock: true
   },
   {
-    id: 82,
+    id: 95,
     name: "Bathroom Accessories",
     model: "LX/BA-2",
     image: "/images/newimgs/ba2.jpg",
@@ -1162,7 +1336,7 @@ const products = [
     inStock: true
   },
   {
-    id: 83,
+    id: 96,
     name: "Bathroom Accessories",
     model: "LX/BA-3",
     image: "/images/newimgs/ba3.jpg",
@@ -1175,7 +1349,7 @@ const products = [
     inStock: true
   },
   {
-    id: 84,
+    id: 97,
     name: "Bathroom Accessories",
     model: "LX/BA-4",
     image: "/images/newimgs/ba4.jpg",
@@ -1188,7 +1362,7 @@ const products = [
     inStock: true
   },
   {
-    id: 85,
+    id: 98,
     name: "Bathroom Accessories",
     model: "LX/BA-5",
     image: "/images/newimgs/ba5.jpg",
@@ -1201,7 +1375,7 @@ const products = [
     inStock: true
   },
   {
-    id: 86,
+    id: 99,
     name: "Bathroom Accessories",
     model: "LX/BA-6",
     image: "/images/newimgs/ba6.jpg",
@@ -1214,325 +1388,13 @@ const products = [
     inStock: true
   },
   {
-    id: 87,
+    id: 100,
     name: "Bathroom Accessories",
     model: "LX/BA-7",
     image: "/images/newimgs/ba7.jpg",
     hoverImage: "/images/newimgs/ba7.jpg",
     description: "Concealed hinge with adjustable tension.",
     fullDescription: "Suitable for heavy-duty main door usage.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 88,
-    name: "Bathroom Accessories",
-    model: "LX/BA-8",
-    image: "/images/newimgs/ba8.jpg",
-    hoverImage: "/images/newimgs/ba8.jpg",
-    description: "3D concealed hinge with adjustable setting.",
-    fullDescription: "Enhanced screw adjustability in 3 axes.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 89,
-    name: "Bathroom Accessories",
-    model: "LX/BA-9",
-    image: "/images/newimgs/ba9.jpg",
-    hoverImage: "/images/newimgs/ba9.jpg",
-    description: "Heavy-duty planet hinge.",
-    fullDescription: "Suitable for reinforced wooden frames needing pivot strength.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 90,
-    name: "Bathroom Accessories",
-    model: "LX/BA-10",
-    image: "/images/newimgs/ba10.jpg",
-    hoverImage: "/images/newimgs/ba10.jpg",
-    description: "Concealed door hinge.",
-    fullDescription: "Invisible hinge when door closed. Stylish and robust.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 91,
-    name: "Bathroom Accessories",
-    model: "LX/BA-11",
-    image: "/images/newimgs/ba11.jpg",
-    hoverImage: "/images/newimgs/ba11.jpg",
-    description: "Heavy duty hinge with grease-filled pivot.",
-    fullDescription: "Designed to reduce friction on door swing.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 92,
-    name: "Bathroom Accessories",
-    model: "LX/BA-12",
-    image: "/images/newimgs/ba12.jpg",
-    hoverImage: "/images/newimgs/ba12.jpg",
-    description: "Adjustable spiral concealed hinge.",
-    fullDescription: "High precision spiral hinge for premium doors.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 93,
-    name: "Bathroom Accessories",
-    model: "LX/BA-13",
-    image: "/images/newimgs/ba13.jpg",
-    hoverImage: "/images/newimgs/ba13.jpg",
-    description: "Stainless steel concealed hinge.",
-    fullDescription: "Corrosion-resistant hinge for moisture-prone areas.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 94,
-    name: "Bathroom Accessories",
-    model: "LX/BA-14",
-    image: "/images/newimgs/ba14.jpg",
-    hoverImage: "/images/newimgs/ba14.jpg",
-    description: "Premium zinc-concealed hinge.",
-    fullDescription: "Heavy-grade zinc alloy for longevity and strength.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 95,
-    name: "Bathroom Accessories",
-    model: "LX/BA-15",
-    image: "/images/newimgs/ba15.jpg",
-    hoverImage: "/images/newimgs/ba15.jpg",
-    description: "Soft-close concealed hinge.",
-    fullDescription: "Smooth closing action with in-built damping system.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 96,
-    name: "Bathroom Accessories",
-    model: "LX/BA-16",
-    image: "/images/newimgs/ba16.jpg",
-    hoverImage: "/images/newimgs/ba16.jpg",
-    description: "3D adjustable concealed hinge.",
-    fullDescription: "Three-dimensional adjustment for precise fit.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 97,
-    name: "Bathroom Accessories",
-    model: "LX/BA-17",
-    image: "/images/newimgs/ba17.jpg",
-    hoverImage: "/images/newimgs/ba17.jpg",
-    description: "Corrosion-proof concealed hinge.",
-    fullDescription: "Special coating to resist rust and wear.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 98,
-    name: "Bathroom Accessories",
-    model: "LX/BA-18",
-    image: "/images/newimgs/ba18.jpg",
-    hoverImage: "/images/newimgs/ba18.jpg",
-    description: "Heavy-duty adjustable spiral hinge.",
-    fullDescription: "Designed for heavy wood with adjustable tension.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 99,
-    name: "Bathroom Accessories",
-    model: "LX/BA-19",
-    image: "/images/newimgs/ba19.jpg",
-    hoverImage: "/images/newimgs/ba19.jpg",
-    description: "Concealed hinge with dual springs.",
-    fullDescription: "Extra tension control for double-layered doors.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 100,
-    name: "Bathroom Accessories",
-    model: "LX/BA-20",
-    image: "/images/newimgs/ba20.jpg",
-    hoverImage: "/images/newimgs/ba20.jpg",
-    description: "Compact mini hinge concealed type.",
-    fullDescription: "For compact door systems.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 101,
-    name: "Bathroom Accessories",
-    model: "LX/BA-21",
-    image: "/images/newimgs/ba21.jpg",
-    hoverImage: "/images/newimgs/ba21.jpg",
-    description: "Wide frame concealed hinge.",
-    fullDescription: "Designed for wider doors with heavyweight capacity.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 102,
-    name: "Bathroom Accessories",
-    model: "LX/BA-22",
-    image: "/images/newimgs/ba22.jpg",
-    hoverImage: "/images/newimgs/ba22.jpg",
-    description: "Flush concealed hinge with built-in bumper.",
-    fullDescription: "Offers both flush closure and noise cushioning.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 103,
-    name: "Bathroom Accessories",
-    model: "LX/BA-23",
-    image: "/images/newimgs/ba23.jpg",
-    hoverImage: "/images/newimgs/ba23.jpg",
-    description: "360° rotatable hinge concealed.",
-    fullDescription: "Provides complete sweep for doors with angular settings.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 104,
-    name: "Bathroom Accessories",
-    model: "LX/BA-24",
-    image: "/images/newimgs/ba24.jpg",
-    hoverImage: "/images/newimgs/ba24.jpg",
-    description: "Door pivot concealed hinge with damper.",
-    fullDescription: "Ideal for door dampening and smooth pivot movement.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 105,
-    name: "Bathroom Accessories",
-    model: "LX/BA-25",
-    image: "/images/newimgs/ba25.jpg",
-    hoverImage: "/images/newimgs/ba25.jpg",
-    description: "Extended arm concealed hinge.",
-    fullDescription: "Designed for extended applications in wide frames.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 106,
-    name: "Bathroom Accessories",
-    model: "LX/BA-26",
-    image: "/images/newimgs/ba26.jpg",
-    hoverImage: "/images/newimgs/ba26.jpg",
-    description: "Concealed hinge with locking mechanism.",
-    fullDescription: "Built-in lock support for security-sensitive setups.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 107,
-    name: "Bathroom Accessories",
-    model: "LX/BA-27",
-    image: "/images/newimgs/ba27.jpg",
-    hoverImage: "/images/newimgs/ba27.jpg",
-    description: "T-type concealed hinge for narrow frames.",
-    fullDescription: "T-profile fits standard modular doors and partitions.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 108,
-    name: "Bathroom Accessories",
-    model: "LX/BA-28",
-    image: "/images/newimgs/ba28.jpg",
-    hoverImage: "/images/newimgs/ba28.jpg",
-    description: "Roller concealed hinge for motion enhancer.",
-    fullDescription: "Smooth motion aided by built-in roller mechanism.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 109,
-    name: "Bathroom Accessories",
-    model: "LX/BA-29",
-    image: "/images/newimgs/ba29.jpg",
-    hoverImage: "/images/newimgs/ba29.jpg",
-    description: "Click-fit concealed hinge.",
-    fullDescription: "Snap-on installation for quicker assembly.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 110,
-    name: "Bathroom Accessories",
-    model: "LX/BA-30",
-    image: "/images/newimgs/ba30.jpg",
-    hoverImage: "/images/newimgs/ba30.jpg",
-    description: "Mini silent-close concealed hinge.",
-    fullDescription: "Near silent movement with hidden damping.",
-    category: "Bathroom Accessories",
-    colors: ["Black", "R.Gold"],
-    sizes: ["Standard"],
-    inStock: true
-  },
-  {
-    id: 111,
-    name: "Bathroom Accessories",
-    model: "LX/BA-31",
-    image: "/images/newimgs/ba31.jpg",
-    hoverImage: "/images/newimgs/ba31.jpg",
-    description: "Compact adjustable door hinge.",
-    fullDescription: "Allows adjustments across multiple axis for perfect alignment.",
     category: "Bathroom Accessories",
     colors: ["Black", "R.Gold"],
     sizes: ["Standard"],

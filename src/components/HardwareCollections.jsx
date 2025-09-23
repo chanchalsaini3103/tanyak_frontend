@@ -1,11 +1,14 @@
+// src/components/HardwareCollections.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import { Container, Row, Col, Modal, Form, Badge } from "react-bootstrap";
-import { FaHeart, FaEye, FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { FaHeart, FaEye, FaArrowRight, FaWhatsapp, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import products from "../data/products";
 import "../styles/Collections.css";
 import Footer from "./Footer";
 
 export default function HardwareCollections() {
+  const ITEMS_PER_PAGE = 12;
+
   const [likedItems, setLikedItems] = useState({});
   const [hoveredItem, setHoveredItem] = useState(null);
   const [hoveredAction, setHoveredAction] = useState(null);
@@ -14,11 +17,8 @@ export default function HardwareCollections() {
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [showFilters, setShowFilters] = useState(false);
-
-  // NEW: mobile toggles
   const [showCategoriesMobile, setShowCategoriesMobile] = useState(false);
 
-  // Theme detection (follows NewArrivals pattern)
   const [darkMode, setDarkMode] = useState(() => {
     try {
       if (typeof document === "undefined") return false;
@@ -35,7 +35,6 @@ export default function HardwareCollections() {
     if (typeof document === "undefined") return;
     const body = document.body;
     const root = document.documentElement;
-
     const update = () => {
       const isDark =
         body.classList.contains("dark-mode") ||
@@ -43,22 +42,17 @@ export default function HardwareCollections() {
         (root.getAttribute("data-theme") || "").toLowerCase() === "dark";
       setDarkMode(isDark);
     };
-
     const mo = new MutationObserver(update);
     mo.observe(body, { attributes: true, attributeFilter: ["class"] });
     mo.observe(root, { attributes: true, attributeFilter: ["data-theme", "class"] });
-
     const onStorage = (e) => {
       if (e.key === "darkMode" || e.key === "tanyak_theme") update();
     };
     window.addEventListener("storage", onStorage);
-
     const handler = () => update();
     window.addEventListener("darkmode_changed", handler);
     window.addEventListener("tanyak_theme_changed", handler);
-
     update();
-
     return () => {
       mo.disconnect();
       window.removeEventListener("storage", onStorage);
@@ -67,10 +61,8 @@ export default function HardwareCollections() {
     };
   }, []);
 
-  // Products
   const hardwareProducts = products || [];
 
-  // Derived filters
   const categories = useMemo(
     () => ["All", ...Array.from(new Set(hardwareProducts.map((p) => p.category || "Uncategorized")))],
     [hardwareProducts]
@@ -85,6 +77,9 @@ export default function HardwareCollections() {
 
   const [filteredProducts, setFilteredProducts] = useState(hardwareProducts);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     let res = [...hardwareProducts];
     if (selectedCategory !== "All") res = res.filter((p) => p.category === selectedCategory);
@@ -96,6 +91,8 @@ export default function HardwareCollections() {
     if (filterAvailability === "inStock") res = res.filter((p) => p.inStock);
     if (filterAvailability === "outOfStock") res = res.filter((p) => !p.inStock);
     setFilteredProducts(res);
+    // Reset to first page when filters or products change
+    setCurrentPage(1);
   }, [selectedCategory, filterColor, filterSize, filterAvailability, hardwareProducts]);
 
   // wishlist persistence
@@ -152,6 +149,96 @@ export default function HardwareCollections() {
     setFilterAvailability("");
   };
 
+  // --- Pagination computations ---
+  const totalItems = filteredProducts.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / ITEMS_PER_PAGE));
+
+  // clamp currentPage to valid range (in case filteredProducts shrank)
+  useEffect(() => {
+    setCurrentPage((p) => {
+      if (p > totalPages) return totalPages;
+      if (p < 1) return 1;
+      return p;
+    });
+  }, [totalPages]);
+
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
+  const gotoPage = (n) => {
+    const page = Math.min(Math.max(1, n), totalPages);
+    setCurrentPage(page);
+    // scroll into view (optional): keep experience on long pages
+    if (typeof window !== "undefined") window.scrollTo({ top: 200, behavior: "smooth" });
+  };
+
+  const renderPageNumbers = () => {
+    // Show windowed page numbers (e.g., current +/- 2) with first/last shortcuts
+    const delta = 2;
+    const range = [];
+    const left = Math.max(1, currentPage - delta);
+    const right = Math.min(totalPages, currentPage + delta);
+
+    for (let i = left; i <= right; i++) range.push(i);
+
+    return (
+      <div className="pagination-numbers" role="navigation" aria-label="Pagination">
+        <button
+          className="page-btn nav-first"
+          onClick={() => gotoPage(1)}
+          disabled={currentPage === 1}
+          title="First page"
+        >
+          {"<<"}
+        </button>
+
+        <button
+          className="page-btn nav-prev"
+          onClick={() => gotoPage(currentPage - 1)}
+          disabled={currentPage === 1}
+          aria-label="Previous page"
+        >
+          <FaAngleLeft />
+        </button>
+
+        {left > 1 && <span className="dots">…</span>}
+
+        {range.map((n) => (
+          <button
+            key={n}
+            className={`page-btn ${n === currentPage ? "active" : ""}`}
+            onClick={() => gotoPage(n)}
+            aria-current={n === currentPage ? "page" : undefined}
+          >
+            {n}
+          </button>
+        ))}
+
+        {right < totalPages && <span className="dots">…</span>}
+
+        <button
+          className="page-btn nav-next"
+          onClick={() => gotoPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          aria-label="Next page"
+        >
+          <FaAngleRight />
+        </button>
+
+        <button
+          className="page-btn nav-last"
+          onClick={() => gotoPage(totalPages)}
+          disabled={currentPage === totalPages}
+          title="Last page"
+        >
+          {">>"}
+        </button>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className={`collections-page ${darkMode ? "theme-dark" : "theme-light"}`}>
@@ -161,7 +248,6 @@ export default function HardwareCollections() {
             <p>Discover premium hardware — pricing on request</p>
           </div>
 
-          {/* MOBILE TOGGLES: visible only on small screens */}
           <div className="d-md-none mb-3 mobile-filter-controls" style={{ display: "flex", gap: 8 }}>
             <button
               type="button"
@@ -190,12 +276,10 @@ export default function HardwareCollections() {
             </button>
           </div>
 
-          {/* Filters */}
           <div className="categories-filter">
             <div className="filter-header">
               <h3>Filters</h3>
               <div className="filter-controls">
-                {/* Desktop controls remain as before */}
                 <button className="filter-toggle d-none d-md-inline-block" onClick={handleResetFilters} title="Reset filters" style={{ marginLeft: 8 }}>
                   Reset
                 </button>
@@ -211,13 +295,11 @@ export default function HardwareCollections() {
               </div>
             </div>
 
-            {/* Category buttons: show on desktop always; on mobile show depending on toggle */}
             <div
               className="category-buttons"
               role="tablist"
               aria-label="Product categories"
               style={{ display: showCategoriesMobile ? "flex" : undefined }}
-              /* if showCategoriesMobile=false on mobile the CSS below will hide via media query, but inline style allows toggling */
             >
               {categories.map((c) => (
                 <button
@@ -231,7 +313,6 @@ export default function HardwareCollections() {
               ))}
             </div>
 
-            {/* advanced filters: on desktop controlled by showFilters; on mobile, also toggled by mobile button */}
             <div className={`advanced-filters ${showFilters ? "open" : ""}`}>
               <div className="advanced-row">
                 <div className="advanced-col">
@@ -278,7 +359,7 @@ export default function HardwareCollections() {
 
           {/* Product grid */}
           <Row className="products-grid gx-3 gy-4">
-            {filteredProducts.map((product) => (
+            {paginatedProducts.map((product) => (
               <Col key={product.id} xs={6} sm={6} md={6} lg={4} className="product-col">
                 <div
                   className="product-card"
@@ -320,9 +401,7 @@ export default function HardwareCollections() {
                         type="button"
                       >
                         <FaEye />
-                        {hoveredAction === `view-${product.id}` && (
-                          <span className="action-tooltip">Quick View</span>
-                        )}
+                        {hoveredAction === `view-${product.id}` && <span className="action-tooltip">Quick View</span>}
                       </button>
                     </div>
                   </div>
@@ -332,10 +411,8 @@ export default function HardwareCollections() {
                       {product.name} <span style={{ fontWeight: 600, fontSize: "0.9rem" }}>({product.model || ""})</span>
                     </h3>
 
-                    {/* Product description is hidden on small screens via CSS (see Collections.css changes) */}
                     <p className="product-description">{product.description}</p>
 
-                    {/* "View Details" button - arrow hidden on mobile via CSS (see Collections.css changes) */}
                     <button className="read-more-btn" onClick={() => handleQuickView(product)} type="button">
                       View Details <FaArrowRight className="read-more-arrow" />
                     </button>
@@ -343,7 +420,30 @@ export default function HardwareCollections() {
                 </div>
               </Col>
             ))}
+
+            {/* if no items in current page show helpful message */}
+            {paginatedProducts.length === 0 && (
+              <Col xs={12}>
+                <div className="no-results" style={{ padding: 24, textAlign: "center" }}>
+                  <strong>No products found.</strong>
+                  <div style={{ marginTop: 8 }}>Try resetting filters or choose another category.</div>
+                </div>
+              </Col>
+            )}
           </Row>
+
+          {/* Pagination controls */}
+          <div className="collections-pagination" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 12, marginTop: 18 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 14, color: "var(--muted)" }}>
+                Showing {(totalItems === 0) ? 0 : ( (currentPage - 1) * ITEMS_PER_PAGE + 1 )} -
+                {Math.min(currentPage * ITEMS_PER_PAGE, totalItems)} of {totalItems}
+              </span>
+            </div>
+
+            {renderPageNumbers()}
+          </div>
+
         </Container>
 
         {/* Quick View modal */}

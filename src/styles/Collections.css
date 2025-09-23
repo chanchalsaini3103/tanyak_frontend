@@ -166,7 +166,7 @@ body {
 /* Image area */
 .product-image {
   position: relative;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
   background: var(--control-bg);
   display: flex;
@@ -536,3 +536,34 @@ html[data-theme="dark"] .modal-content {
 }
 
 /* keep everything else unchanged */
+/* Pagination styling */
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.page-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+.page-btn.active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+.page-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.pagination-numbers .dots {
+  padding: 0 6px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.collections-pagination .page-info {
+  color: var(--muted);
+}
