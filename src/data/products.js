@@ -9,10 +9,9 @@ const products = [
     model: "TY-GH-01",
     image: "/images/new/TY-GH-01.JPG",
     hoverImage: "/images/new/TY-GH-01.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",    category: "Glass Main Door Handle",
     colors: ["Gold","R.Gold","Black","Antique"],
     sizes: ["250mm"],
     inStock: true,
@@ -22,10 +21,10 @@ const products = [
     model: "TK-KS-01",
     image: "/images/new/TK-KS-01.JPG",
     hoverImage: "/images/new/TK-KS-01.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Key Stand",
+   description: "Wall-mounted key stand with a simple design.",
+  fullDescription:
+    "A compact and stylish key stand designed to keep your keys organized in one place. Perfect for homes and offices, it adds convenience while maintaining a neat look.",
+  category: "Key Stand",
     colors: ["Gold","Antique","Copper"],
     sizes: ["Standard"],
     inStock: true,
@@ -36,10 +35,9 @@ const products = [
     model: "TY-GH-02",
     image: "/images/new/TY-GH-02.JPG",
     hoverImage: "/images/new/TY-GH-02.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",   category: "Glass Main Door Handle",
     colors: ["Gold","R.Gold","Black","Antique"],
     sizes: ["250mm"],
     inStock: true,
@@ -51,12 +49,11 @@ const products = [
     model: "DH-05",
     image: "/images/new/DH-05.JPG",
     hoverImage: "/images/new/DH-05.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",    category: "Glass Main Door Handle",
+    colors: ["Antique Black","Gold"],
+    sizes: ["13 Inch"],
     inStock: true,
   },{
     id: 5,
@@ -64,12 +61,11 @@ const products = [
     model: "DH-01",
     image: "/images/new/DH-01.JPG",
     hoverImage: "/images/new/DH-01.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",  category: "Glass Main Door Handle",
+    colors: ["Antique Black","Nickel Black"],
+    sizes: ["24 Inch", "36 Inch"],
     inStock: true,
   },{
     id: 6,
@@ -77,52 +73,49 @@ const products = [
     model: "DH-02",
     image: "/images/new/DH-02.JPG",
     hoverImage: "/images/new/DH-02.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",   category: "Glass Main Door Handle",
+    colors: ["Antique Black","Gold"],
+    sizes: ["32 Inch"],
     inStock: true,
   },{
     id: 7,
     name: "Glass Main Door Handle",
-    model: "TY 25-05",
+    model: "TY25-DH 05",
     image: "/images/new/TY 25-05.JPG",
     hoverImage: "/images/new/TY 25-05.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+     description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",  category: "Glass Main Door Handle",
+    colors: ["Antique Black","Gold"],
+    sizes: ["13 Inch"],
     inStock: true,
   },
   {
     id: 8,
     name: "Glass Main Door Handle",
-    model: "TY 25-07",
+    model: "TY25-DH 07",
     image: "/images/new/TY 25-07.JPG",
     hoverImage: "/images/new/TY 25-07.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",   category: "Glass Main Door Handle",
+    colors: ["R.Gold","Black"],
+    sizes: ["12 Inch"],
     inStock: true,
   },{
     id: 9,
-    name: "Glass Main Door Handle",
+    name: "Mortise Handle",
     model: "TY25-MH 02",
     image: "/images/new/TY25-MH 02.JPG",
     hoverImage: "/images/new/TY25-MH 02.JPG",
     description: "Durable main door handle with elegant finish.",
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    category: "Mortise Handle",
+    colors: ["Antique Black","Grey Black"],
+    sizes: ["Standard"],
     inStock: true,
   },{
     id: 10,
@@ -139,29 +132,29 @@ const products = [
     inStock: true,
   },{
     id: 11,
-    name: "Glass Main Door Handle",
+    name: "Mortise Handle",
     model: "TY25-MH 01",
     image: "/images/new/TY25-MH 01.JPG",
     hoverImage: "/images/new/TY25-MH 01.JPG",
     description: "Durable main door handle with elegant finish.",
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    category: "Mortise Handle",
+    colors: ["Antique Black","Gold"],
+    sizes: ["Standard"],
     inStock: true,
   },{
     id: 12,
-    name: "Glass Main Door Handle",
+    name: "Drawer Knobs",
     model: "TY25-KB 902",
     image: "/images/new/TY25-KB 902.JPG",
     hoverImage: "/images/new/TY25-KB 902.JPG",
     description: "Durable main door handle with elegant finish.",
     fullDescription:
       "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
-    colors: ["R.Gold-Corian"],
-    sizes: ["96mm", "160mm"],
+    category: "Knob",
+    colors: ["Antique Black","Gold"],
+    sizes: ["Standard"],
     inStock: true,
   },{
     id: 13,
@@ -169,10 +162,9 @@ const products = [
     model: "TY25-MH 01",
     image: "/images/new/TY25-MH 01.JPG",
     hoverImage: "/images/new/TY25-MH 01.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Glass Main Door Handle",
+    description: "Durable glass main door handle with an elegant finish.",
+  fullDescription:
+    "Crafted from premium stainless steel with advanced corrosion-resistant plating, this glass main door handle combines strength, style, and longevity. The ergonomic design ensures a comfortable grip, while the polished finish enhances the look of both residential and commercial entrances. Perfect for heavy-use glass doors, it provides reliable performance without compromising on aesthetics.",  category: "Glass Main Door Handle",
     colors: ["R.Gold-Corian"],
     sizes: ["96mm", "160mm"],
     inStock: true,
@@ -183,10 +175,10 @@ const products = [
     model: "TK-GH 03",
     image: "/images/newimgs/TK-GH 03.jpg",
     hoverImage: "/images/newimgs/TK-GH 03.jpg",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Main Door Handle",
+   description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
     colors: [["Gold","R.Gold","Black","Antique"]],
     sizes: ["8 Inch"],
     inStock: true,
@@ -197,9 +189,9 @@ const products = [
     model: "TK-GH 04",
     image: "/images/newimgs/TK-GH 04.jpg",
     hoverImage: "/images/newimgs/TK-GH 04.jpg",
-    description: "Polished satin finish handle set.",
-    fullDescription:
-      "Hand-polished satin finish with ergonomic grip. Ideal for modern interior and main doors.",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: [["Gold","R.Gold","Black","Antique"]],
     sizes: ["8 Inch"],
@@ -211,10 +203,10 @@ const products = [
     model: "TK-GH 05",
     image: "/images/newimgs/TK-GH 05.jpg",
     hoverImage: "/images/newimgs/TK-GH 05.jpg",
-    description: "Heavy duty mortise lock for security doors.",
-    fullDescription:
-      "Robust mortise lock with 3-point locking option. High durability, recommended for commercial applications.",
-    category: "Main Door Handle",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
    colors: [["Gold","R.Gold","Antique"]],
     sizes: ["8 Inch"],
     inStock: true,
@@ -225,9 +217,9 @@ const products = [
     model: "LX/MD-05",
     image: "/images/newimgs/md5.jpg",
     hoverImage: "/images/newimgs/md5-1.jpg",
-    description: "Minimal slim cabinet handle.",
-    fullDescription:
-      "Low-profile design suitable for kitchen cabinets and wardrobes. Available in multiple finishes.",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["AB-Gold", "Black-R.Gold","Black-Gold"],
     sizes: ["10 Inch", "6 Inch","10 Inch"],
@@ -239,9 +231,9 @@ const products = [
     model: "LX/MD-06",
     image: "/images/newimgs/md6.jpg",
     hoverImage: "/images/newimgs/md6-1.jpg",
-    description: "Magnetic floor-mounted door stopper.",
-    fullDescription:
-      "Strong neodymium magnet ensures door stays open when required. Rust-resistant coating.",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["Black-Black","Black-Gold","Black-CP","Black-Gold","CP"],
     sizes: ["10 Inch","8 Inch"],
@@ -253,10 +245,10 @@ const products = [
     model: "LX/MD-07",
     image: "/images/newimgs/md7.jpg",
     hoverImage: "/images/newimgs/md7.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Main Door Handle",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
     colors: ["Black-Black","Black-Gold"],
     sizes: ["10 Inch","8 Inch"],
     inStock: true,
@@ -267,10 +259,10 @@ const products = [
     model: "LX/MD-08",
     image: "/images/newimgs/md8.jpg",
     hoverImage: "/images/newimgs/md8.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Main Door Handle",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+  category: "Main Door Handle",
     colors: ["Gold-Satin","AB_B.Satin"],
     sizes: ["18 Inch","14 Inch"],
     inStock: true,
@@ -281,10 +273,10 @@ const products = [
     model: "LX/MD-09",
     image: "/images/newimgs/md9.jpg",
     hoverImage: "/images/newimgs/md9.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Main Door Handle",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
     colors: ["Antique"],
     sizes: ["14 Inch"],
     inStock: true,
@@ -295,10 +287,10 @@ const products = [
     model: "LX/MD-10",
     image: "/images/newimgs/md10.jpg",
     hoverImage: "/images/newimgs/md10.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Main Door Handle",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
     colors: ["Black-Gold","CP-Black"],
     sizes: ["300mm"],
     inStock: true,
@@ -309,9 +301,9 @@ const products = [
     model: "LX/MD-11",
     image: "/images/newimgs/md11.jpg",
     hoverImage: "/images/newimgs/md11.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["R.Gold","Gold"],
     sizes: ["14 Inch"],
@@ -323,10 +315,10 @@ const products = [
     model: "LX/MD-12",
     image: "/images/newimgs/md12.jpg",
     hoverImage: "/images/newimgs/md12.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Main Door Handle",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
+   category: "Main Door Handle",
     colors: ["Satin/R.Gold","Gold/Black"],
     sizes: ["16 Inch"],
     inStock: true,
@@ -337,9 +329,9 @@ const products = [
     model: "LX/MD-13",
     image: "/images/newimgs/md13.jpg",
     hoverImage: "/images/newimgs/md13.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["Black-Wood","Gold-Wood"],
     sizes: ["300mm","450mm"],
@@ -351,9 +343,9 @@ const products = [
     model: "LX/MD-14",
     image: "/images/newimgs/md14.jpg",
     hoverImage: "/images/newimgs/md14.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["Gold","AB-Gold"],
     sizes: ["18 Inch"],
@@ -365,9 +357,9 @@ const products = [
     model: "LX/MD-15",
     image: "/images/newimgs/md15.jpg",
     hoverImage: "/images/newimgs/md15.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+ description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["Wood-Gold","AB-Gold","Satin-Black"],
     sizes: ["300mm","450mm"],
@@ -379,9 +371,9 @@ const products = [
     model: "LX/MD-16",
     image: "/images/newimgs/md16.jpg",
     hoverImage: "/images/newimgs/md16.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["J.Black-Wood","R.Gold-Wood"],
     sizes: ["300mm","450mm"],
@@ -393,9 +385,9 @@ const products = [
     model: "LX/MD-17",
     image: "/images/newimgs/md17.jpg",
     hoverImage: "/images/newimgs/md17.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Stylish and strong main door handle for everyday use.",
+  fullDescription:
+    "A strong and elegant handle designed for main doors. Combines modern style with long-lasting performance for homes and offices.",
     category: "Main Door Handle",
     colors: ["AB-Gold","Black"],
     sizes: ["Standard"],
@@ -407,9 +399,9 @@ const products = [
     model: "LX/MZ-01",
     image: "/images/newimgs/mz1.jpg",
     hoverImage: "/images/newimgs/mz1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["Antique", "J.Black","Satin","Chrome"],
     sizes: ["Standard"],
@@ -421,9 +413,9 @@ const products = [
     model: "LX/MZ-02",
     image: "/images/newimgs/mz2.jpg",
     hoverImage: "/images/newimgs/mz2.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["Black-Matt", "MAtt-Brush"],
     sizes: ["Standard"],
@@ -435,9 +427,9 @@ const products = [
     model: "LX/MZ-03",
     image: "/images/newimgs/mz3.jpg",
     hoverImage: "/images/newimgs/mz3.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+ description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["Gold-Black", "SS Matt-Choco","AB-Gold"],
     sizes: ["Standard"],
@@ -449,10 +441,10 @@ const products = [
     model: "LX/MZ-04",
     image: "/images/newimgs/mz4.jpg",
     hoverImage: "/images/newimgs/mz4.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Mortise Handle",
+  description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
+   category: "Mortise Handle",
     colors: ["Chrome", "Antique"],
     sizes: ["Standard"],
     inStock: true,
@@ -463,9 +455,9 @@ const products = [
     model: "LX/MZ-05",
     image: "/images/newimgs/mz5.jpg",
     hoverImage: "/images/newimgs/mz5.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+ description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["CP-Satin", "Gold-AB","Black-Bronze","Balck-J.Black"],
     sizes: ["Standard"],
@@ -477,10 +469,10 @@ const products = [
     model: "LX/MZ-06",
     image: "/images/newimgs/mz6.jpg",
     hoverImage: "/images/newimgs/mz6.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Mortise Handle",
+   description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
+   category: "Mortise Handle",
     colors: ["AB-Black", "Bronze-Black"],
     sizes: ["Standard"],
     inStock: true,
@@ -491,9 +483,9 @@ const products = [
     model: "LX/MZ-07",
     image: "/images/newimgs/mz7.jpg",
     hoverImage: "/images/newimgs/mz7.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["Chrome", "SS-Matt"],
     sizes: ["Standard"],
@@ -505,10 +497,10 @@ const products = [
     model: "LX/MZ-08",
     image: "/images/newimgs/mz8.jpg",
     hoverImage: "/images/newimgs/mz8.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Mortise Handle",
+   description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
+  category: "Mortise Handle",
     colors: ["AB-Gold", "Black-J.Black","Satin-CP"],
     sizes: ["Standard"],
     inStock: true,
@@ -519,9 +511,9 @@ const products = [
     model: "LX/MZ-09",
     image: "/images/newimgs/mz9.jpg",
     hoverImage: "/images/newimgs/mz9.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Elegant mortise handle with smooth grip and modern design.",
+  fullDescription:
+    "A durable mortise handle designed for doors that need both security and style. Its sleek finish and ergonomic grip make it ideal for residential and office spaces.",
     category: "Mortise Handle",
     colors: ["Black-J.Black", "AB-Black","Balck-Bronze","Gold-White"],
     sizes: ["Standard"],
@@ -535,10 +527,10 @@ const products = [
     model: "LX/CH-05",
     image: "/images/newimgs/ch5.jpg",
     hoverImage: "/images/newimgs/ch5.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+  category: "Cabinet Handle",
     colors: ["R.Gold", "Gold", "Satin", "J.Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -549,9 +541,9 @@ const products = [
     model: "LX/CH-06",
     image: "/images/newimgs/ch6.jpg",
     hoverImage: "/images/newimgs/ch6.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["CP-Satin", "AB-Gold", "Black-J.Black", "R.Gold-Satin"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -563,9 +555,9 @@ const products = [
     model: "LX/CH-07",
     image: "/images/newimgs/ch7.jpg",
     hoverImage: "/images/newimgs/ch7.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["CP-Satin", "AB-Gold","AB-Satin"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -577,10 +569,10 @@ const products = [
     model: "LX/CH-08",
     image: "/images/newimgs/ch8.jpg",
     hoverImage: "/images/newimgs/ch8.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+   description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+ category: "Cabinet Handle",
     colors: ["CP-Satin", "AB-Gold"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -591,9 +583,9 @@ const products = [
     model: "LX/CH-09",
     image: "/images/newimgs/ch9.jpg",
     hoverImage: "/images/newimgs/ch9.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Black-J.Black", "CP-Satin", "AB-SS Matt"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -605,10 +597,10 @@ const products = [
     model: "LX/CH-10",
     image: "/images/newimgs/ch10.jpg",
     hoverImage: "/images/newimgs/ch10.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["Gold-DMD", "CP-DMD", "Satin-Black-DMD"],
     sizes: ["96mm", "160mm", "224mm"],
     inStock: true,
@@ -619,9 +611,9 @@ const products = [
     model: "LX/CH-11",
     image: "/images/newimgs/ch11.jpg",
     hoverImage: "/images/newimgs/ch11.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+     description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Wood-Gold", "AB-Gold", "Satin-Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -633,10 +625,10 @@ const products = [
     model: "LX/CH-12",
     image: "/images/newimgs/ch12.jpg",
     hoverImage: "/images/newimgs/ch12.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+   description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["R.Gold", "Gold", "Antique", "J.Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm","416mm","550mm"],
     inStock: true,
@@ -647,9 +639,9 @@ const products = [
     model: "LX/CH-13",
     image: "/images/newimgs/ch13.jpg",
     hoverImage: "/images/newimgs/ch13.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Gold-Black", "CP-Satin", "AB-Gold", "R.Gold-Bronze"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -661,10 +653,10 @@ const products = [
     model: "LX/CH-14",
     image: "/images/newimgs/ch14.jpg",
     hoverImage: "/images/newimgs/ch14.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+  description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+category: "Cabinet Handle",
     colors: ["R.Gold", "Gold", "Satin", "J.Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -675,9 +667,9 @@ const products = [
     model: "LX/CH-15",
     image: "/images/newimgs/ch15.jpg",
     hoverImage: "/images/newimgs/ch15.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Black-J.Black", "AB-Gold", "Bronze-B.Satin"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -689,10 +681,10 @@ const products = [
     model: "LX/CH-16",
     image: "/images/newimgs/ch16.jpg",
     hoverImage: "/images/newimgs/ch16.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+ category: "Cabinet Handle",
     colors: ["Black-J.Black", "AB-Gold", "Satin-CP"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -703,10 +695,10 @@ const products = [
     model: "LX/CH-17",
     image: "/images/newimgs/ch17.jpg",
     hoverImage: "/images/newimgs/ch17.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["Gold", "R.Gold", "Black-Satin"],
     sizes: ["96mm", "160mm", "224mm", "288mm","416mm"],
     inStock: true,
@@ -717,9 +709,9 @@ const products = [
     model: "LX/CH-18",
     image: "/images/newimgs/ch18.jpg",
     hoverImage: "/images/newimgs/ch18.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Black-J.Black", "J.Black-Choco"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
@@ -731,10 +723,10 @@ const products = [
     model: "LX/CH-19",
     image: "/images/newimgs/ch19.jpg",
     hoverImage: "/images/newimgs/ch19.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+ category: "Cabinet Handle",
     colors: ["CP-Black", "Satin-Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -745,10 +737,10 @@ const products = [
     model: "LX/CH-20",
     image: "/images/newimgs/ch20.jpg",
     hoverImage: "/images/newimgs/ch20.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+   description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+  category: "Cabinet Handle",
     colors: ["CP", "Black"],
     sizes: ["96mm", "160mm", "224mm", "288mm","416mm"],
     inStock: true,
@@ -759,10 +751,10 @@ const products = [
     model: "LX/CH-21",
     image: "/images/newimgs/ch21.jpg",
     hoverImage: "/images/newimgs/ch21.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["CP", "Antique"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -773,9 +765,9 @@ const products = [
     model: "LX/CH-22",
     image: "/images/newimgs/ch22.jpg",
     hoverImage: "/images/newimgs/ch22.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
     category: "Cabinet Handle",
     colors: ["Black-J.Black", "Bronze-J.Black"],
     sizes: ["96mm", "192mm", "256mm"],
@@ -787,10 +779,10 @@ const products = [
     model: "LX/CH-23",
     image: "/images/newimgs/ch23.jpg",
     hoverImage: "/images/newimgs/ch23.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["Gold-Wood", "A.Black-Wood"],
     sizes: ["96mm", "160mm", "224mm", "288mm","384mm","576mm"],
     inStock: true,
@@ -801,10 +793,10 @@ const products = [
     model: "LX/CH-24",
     image: "/images/newimgs/ch24.jpg",
     hoverImage: "/images/newimgs/ch24.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+   description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+  category: "Cabinet Handle",
     colors: ["CP", "J.Black", "Gold", "R.gold"],
     sizes: ["96mm", "160mm", "224mm", "288mm","416mm","544mm"],
     inStock: true,
@@ -815,10 +807,10 @@ const products = [
     model: "LX/CH-25",
     image: "/images/newimgs/ch25.jpg",
     hoverImage: "/images/newimgs/ch25.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["R.Gold-Corian", "Black-Corian", "Gold-Corian"],
     sizes: ["96mm", "160mm", "224mm", "288mm","450mm","600mm"],
     inStock: true,
@@ -829,10 +821,10 @@ const products = [
     model: "LX/CH-26",
     image: "/images/newimgs/ch26.jpg",
     hoverImage: "/images/newimgs/ch26.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+  category: "Cabinet Handle",
     colors: ["CP-DMD", "Satin-DMD", "UV Choco-DMD", "B.Satin-DMD"],
     sizes: ["96mm", "160mm", "224mm", "288mm"],
     inStock: true,
@@ -843,10 +835,10 @@ const products = [
     model: "LX/CH-27",
     image: "/images/newimgs/ch27.jpg",
     hoverImage: "/images/newimgs/ch27.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+  category: "Cabinet Handle",
     colors: ["R.Gold", "Gold"],
     sizes: ["96mm", "160mm", "224mm", "288mm","416mm","544mm"],
     inStock: true,
@@ -857,10 +849,10 @@ const products = [
     model: "LX/CH-28",
     image: "/images/newimgs/ch28.jpg",
     hoverImage: "/images/newimgs/ch28.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+   category: "Cabinet Handle",
     colors: ["Black-TT", "Gray-Black", "R.Gold-TT", "Gold-TT"],
     sizes: ["96mm", "160mm", "224mm", "288mm","448mm"],
     inStock: true,
@@ -871,10 +863,10 @@ const products = [
     model: "LX/CH-29",
     image: "/images/newimgs/ch29.jpg",
     hoverImage: "/images/newimgs/ch29.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Cabinet Handle",
+    description: "Stylish cabinet handle with a sleek modern look.",
+  fullDescription:
+    "A durable and elegant handle designed for cabinets and drawers. Adds a modern touch while offering a comfortable grip for everyday use.",
+ category: "Cabinet Handle",
     colors: ["Black-DMD", "CP-DMD"],
     sizes: ["96mm","128mm", "160mm", "224mm"],
     inStock: true,
@@ -887,10 +879,10 @@ const products = [
     model: "LX/WH-01",
     image: "/images/newimgs/wh1.jpg",
     hoverImage: "/images/newimgs/wh1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Wardrobe Handle",
+   description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
+   category: "Wardrobe Handle",
     colors: ["Anodized Black-Gold", "Anodized Brass-Gold"],
     sizes: ["160mm", "416mm", "576mm", "864mm", "1184mm"],
     inStock: true,
@@ -901,9 +893,9 @@ const products = [
     model: "LX/WH-02",
     image: "/images/newimgs/wh2.jpg",
     hoverImage: "/images/newimgs/wh2-1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
     category: "Wardrobe Handle",
     colors: ["Anodized R.Gold-Satin", "Anodized Black-Gray"],
     sizes: ["224mm", "416mm", "576mm", "864mm", "1184mm"],
@@ -915,10 +907,10 @@ const products = [
     model: "LX/WH-03",
     image: "/images/newimgs/wh3.jpg",
     hoverImage: "/images/newimgs/wh3-1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Wardrobe Handle",
+   description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
+   category: "Wardrobe Handle",
     colors: ["Anodized AB-Gold", "Anodized Black-Gold"],
     sizes: ["160mm", "416mm", "576mm", "864mm", "1184mm"],
     inStock: true,
@@ -929,10 +921,10 @@ const products = [
     model: "LX/WH-04",
     image: "/images/newimgs/wh4.jpg",
     hoverImage: "/images/newimgs/wh4.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Wardrobe Handle",
+  description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
+     category: "Wardrobe Handle",
     colors: ["Anodized Chrome", "Anodized Brush Black"],
     sizes: ["8 Inch", "12 Inch", "18 Inch", "24 Inch"],
     inStock: true,
@@ -943,10 +935,10 @@ const products = [
     model: "LX/WH-05",
     image: "/images/newimgs/wh5.jpg",
     hoverImage: "/images/newimgs/wh5.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Wardrobe Handle",
+   description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
+     category: "Wardrobe Handle",
     colors: ["Anodized Gold", "Anodized Black"],
     sizes: ["8 Inch", "12 Inch", "18 Inch", "24 Inch", "36 Inch","48 Inch"],
     inStock: true,
@@ -957,10 +949,10 @@ const products = [
     model: "LX/WH-06",
     image: "/images/newimgs/wh6.jpg",
     hoverImage: "/images/newimgs/wh6-1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Wardrobe Handle",
+ description: "Elegant wardrobe handle with a sleek finish.",
+  fullDescription:
+    "Designed for wardrobes and closets, this handle blends style with functionality. Its smooth grip and modern design make it a perfect choice for everyday use.",
+   category: "Wardrobe Handle",
     colors: ["Anodized Black-Gold"],
     sizes: ["50mm", "96mm", "160mm", "224mm", "288mm","320mm", "448mm"],
     inStock: true,
@@ -975,10 +967,10 @@ const products = [
     model: "LX/KH-01",
     image: "/images/newimgs/kh1.jpg",
     hoverImage: "/images/newimgs/kh1.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Conceal Handle",
     colors: ["Black-J.Black","CP-Satin","R.Gold-Black Satin"],
     sizes: ["4 Inch", "8 Inch", "10 Inch", "12 Inch"],
     inStock: true,
@@ -989,10 +981,10 @@ const products = [
     model: "LX/KH-02",
     image: "/images/newimgs/kh2.jpg",
     hoverImage: "/images/newimgs/kh2.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Conceal Handle",
     colors: ["Black-J.Black","Gold-Chrome"],
     sizes: ["4 Inch", "8 Inch", "10 Inch"],
     inStock: true,
@@ -1003,10 +995,10 @@ const products = [
     model: "LX/KH-03",
     image: "/images/newimgs/kh3.jpg",
     hoverImage: "/images/newimgs/kh3.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+ description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Conceal Handle",
     colors: ["Satin-R.Gold","Satin-CP"],
     sizes: ["4 Inch", "8 Inch", "10 Inch"],
     inStock: true,
@@ -1017,10 +1009,10 @@ const products = [
     model: "LX/KH-04",
     image: "/images/newimgs/kh4.jpg",
     hoverImage: "/images/newimgs/kh4.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Conceal Handle",
     colors: ["Anodized Brush-SS","Anodized Black-SS"],
     sizes: ["50mm", "100mm", "150mm", "200mm", "250mm", "300mm", "350mm","400mm","450mm"],
     inStock: true,
@@ -1031,10 +1023,10 @@ const products = [
     model: "LX/KH-05",
     image: "/images/newimgs/kh5.jpg",
     hoverImage: "/images/newimgs/kh5.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+ description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Conceal Handle",
     colors: ["Anodized Gray","Anodized Black"],
     sizes: ["150mm", "200mm", "250mm", "300mm", "350mm","400mm","450mm","500mm","550mm","600mm"],
     inStock: true,
@@ -1045,10 +1037,10 @@ const products = [
     model: "LX/KH-06",
     image: "/images/newimgs/kh6.jpg",
     hoverImage: "/images/newimgs/kh6.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Conceal Handle",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Conceal Handle",
     colors: ["Black","R.Gold","Gold"],
     sizes: ["4 Inch", "8 Inch", "10 Inch"],
     inStock: true,
@@ -1062,10 +1054,10 @@ const products = [
     model: "LX/NB-05",
     image: "/images/newimgs/nb5.jpg",
     hoverImage: "/images/newimgs/nb5.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+ category: "Knob",
     colors: ["CP-Wenge", "AB-Gold", "CP-Satin","R.Gold-Black"],
     sizes: ["Standard"],
     inStock: true,
@@ -1076,10 +1068,10 @@ const products = [
     model: "LX/NB-06",
     image: "/images/newimgs/nb6.jpg",
     hoverImage: "/images/newimgs/nb6.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["Chrome", "Black", "AB","R.Gold","Satin"],
     sizes: ["Small","Big"],
     inStock: true,
@@ -1090,10 +1082,10 @@ const products = [
     model: "LX/NB-07",
     image: "/images/newimgs/nb7.jpg",
     hoverImage: "/images/newimgs/nb7.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Knob",
     colors: ["CP", "AB"],
     sizes: ["Standard"],
     inStock: true,
@@ -1104,10 +1096,10 @@ const products = [
     model: "LX/NB-08",
     image: "/images/newimgs/nb8.jpg",
     hoverImage: "/images/newimgs/nb8.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["Black", "R.Gold", "J.Black","AB"],
     sizes: ["Standard"],
     inStock: true,
@@ -1118,10 +1110,10 @@ const products = [
     model: "LX/NB-09",
     image: "/images/newimgs/nb9.jpg",
     hoverImage: "/images/newimgs/nb9.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["CP-Satin", "Gold", "Black","Black-TT"],
     sizes: ["Standard"],
     inStock: true,
@@ -1132,9 +1124,9 @@ const products = [
     model: "LX/NB-10",
     image: "/images/newimgs/nb10.jpg",
     hoverImage: "/images/newimgs/nb10.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Knob",
     colors: ["Choco-White", "Black-TT", "AB-Gold"],
     sizes: ["Standard"],
@@ -1146,9 +1138,9 @@ const products = [
     model: "LX/NB-11",
     image: "/images/newimgs/nb11.jpg",
     hoverImage: "/images/newimgs/nb11.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+ description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Knob",
     colors: ["J.Black", "R.Gold", "Gold","Antique"],
     sizes: ["Standard"],
@@ -1160,10 +1152,10 @@ const products = [
     model: "LX/NB-12",
     image: "/images/newimgs/nb12.jpg",
     hoverImage: "/images/newimgs/nb12.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["AB-Corian", "Satin-Corian", "Gold-Corian"],
     sizes: ["Standard"],
     inStock: true,
@@ -1174,10 +1166,10 @@ const products = [
     model: "LX/NB-13",
     image: "/images/newimgs/nb13.jpg",
     hoverImage: "/images/newimgs/nb13.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+ description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Knob",
     colors: ["Black", "AB", "Gold","Satin"],
     sizes: ["Standard"],
     inStock: true,
@@ -1188,9 +1180,9 @@ const products = [
     model: "LX/NB-14",
     image: "/images/newimgs/nb14.jpg",
     hoverImage: "/images/newimgs/nb14.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Knob",
     colors: ["Choco", "Satin-CP", "AB-Gold"],
     sizes: ["Standard"],
@@ -1202,9 +1194,9 @@ const products = [
     model: "LX/NB-15",
     image: "/images/newimgs/nb15.jpg",
     hoverImage: "/images/newimgs/nb15.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Knob",
     colors: ["Black Satin", "R.Gold", "CP"],
     sizes: ["Standard"],
@@ -1216,10 +1208,10 @@ const products = [
     model: "LX/NB-16",
     image: "/images/newimgs/nb16.jpg",
     hoverImage: "/images/newimgs/nb16.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["AB-Corian", "Satin-Corian", "Gold-Corian"],
     sizes: ["Standard"],
     inStock: true,
@@ -1230,9 +1222,9 @@ const products = [
     model: "LX/NB-17",
     image: "/images/newimgs/nb17.jpg",
     hoverImage: "/images/newimgs/nb17.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Knob",
     colors: ["Black-Black", "CP-Satin", "Gold-AB"],
     sizes: ["Standard"],
@@ -1244,10 +1236,10 @@ const products = [
     model: "LX/NB-18",
     image: "/images/newimgs/nb18.jpg",
     hoverImage: "/images/newimgs/nb8.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["Black", "R.Gold", "Satin","Brush"],
     sizes: ["Small","Big"],
     inStock: true,
@@ -1258,10 +1250,10 @@ const products = [
     model: "LX/NB-19",
     image: "/images/newimgs/nb19.jpg",
     hoverImage: "/images/newimgs/nb19.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Knob",
     colors: ["Black-Gold", "Brush-Gold"],
     sizes: ["Standard"],
     inStock: true,
@@ -1272,10 +1264,10 @@ const products = [
     model: "LX/NB-20",
     image: "/images/newimgs/nb20.jpg",
     hoverImage: "/images/newimgs/nb20.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Knob",
     colors: ["AB-Gold", "Satin-Gold", "Black Satin-Gold"],
     sizes: ["Standard"],
     inStock: true,
@@ -1286,10 +1278,10 @@ const products = [
     model: "LX/NB-21",
     image: "/images/newimgs/nb21.jpg",
     hoverImage: "/images/newimgs/nb21.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Knob",
     colors: ["Black-Gold", "AB-Gold"],
     sizes: ["Standard"],
     inStock: true,
@@ -1300,10 +1292,10 @@ const products = [
     model: "LX/NB-22",
     image: "/images/newimgs/nb22.jpg",
     hoverImage: "/images/newimgs/nb22.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription:
-      "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
-    category: "Knob",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+   category: "Knob",
     colors: ["Black", "R.Gold", "Gold","CP","AB"],
     sizes: ["Standard"],
     inStock: true,
@@ -1315,8 +1307,9 @@ const products = [
     model: "TK-NB 03",
     image: "/images/newimgs/TK-NB 03.jpg",
     hoverImage: "/images/newimgs/TK-NB 03.jpg",
-    description: "Concealed heavy duty hinge for main doors.",
-    fullDescription: "High-load bearing concealed hinge with adjustable tension. Perfect for wooden main doors.",
+  description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
     category: "Home Decor",
     colors: ["Satin-CP","Gold-Antique","R.Gold-Wengi"],
     sizes: ["Standard"],
@@ -1328,9 +1321,10 @@ const products = [
     model: "TK-NB 05",
     image: "/images/newimgs/TK-NB 05.jpg",
     hoverImage: "/images/newimgs/TK-NB 05.jpg",
-    description: "Heavy duty concealed hinge one piece.",
-    fullDescription: "Single piece hinge suitable for main doors with black and gold finish.",
-    category: "Home Decor",
+   description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Home Decor",
     colors: ["Black", "R.Gold","Grey","Gold"],
     sizes: ["Standard"],
     inStock: true
@@ -1341,9 +1335,10 @@ const products = [
     model: "TK-NB 06",
     image: "/images/newimgs/TK-NB 06.jpg",
     hoverImage: "/images/newimgs/TK-NB 06.jpg",
-    description: "Light duty concealed hinge for cupboard.",
-    fullDescription: "Ideal for lightweight doors and cabinets.",
-    category: "Home Decor",
+ description: "Minimalist conceal handle with modern design.",
+  fullDescription:
+    "A sleek handle designed to blend seamlessly with furniture surfaces. Ideal for wardrobes, cabinets, and drawers where a clean and modern look is required.",
+     category: "Home Decor",
     colors: ["Black", "R.Gold","Gold","Satin"],
     sizes: ["Standard"],
     inStock: true
@@ -1354,9 +1349,10 @@ const products = [
     model: "TK-CC 03",
     image: "/images/newimgs/TK-CC 03.jpg",
     hoverImage: "/images/newimgs/TK-CC 03.jpg",
-    description: "Spring hinge for cabinet doors.",
-    fullDescription: "Self-closing spring hinge with durable finish.",
-    category: "Home Decor",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
+  category: "Home Decor",
     colors: ["Satin-Black", "Antique-Gold","Wengi-R.Gold"],
     sizes: ["Standard"],
     inStock: true
@@ -1367,8 +1363,9 @@ const products = [
     model: "TK-CC 04",
     image: "/images/newimgs/TK-CC 04.jpg",
     hoverImage: "/images/newimgs/TK-CC 04.jpg",
-    description: "Cabinet butt hinge.",
-    fullDescription: "Compact butt hinge for flush cabinet doors.",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
     category: "Home Decor",
     colors: ["Satin-CP", "Antique-Gold","Wengi-R.Gold"],
     sizes: ["Standard"],
@@ -1380,9 +1377,10 @@ const products = [
     model: "TK-CC 05",
     image: "/images/newimgs/TK-CC 05.jpg",
     hoverImage: "/images/newimgs/TK-CC 05.jpg",
-    description: "Pivot hinge for door rotation.",
-    fullDescription: "Smooth operation pivot hinge for lateral movements.",
-    category: "Home Decor",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
+  category: "Home Decor",
     colors: ["Satin-CP", "Antique-Gold","Wengi-R.Gold"],
     sizes: ["Standard"],
     inStock: true
@@ -1393,9 +1391,10 @@ const products = [
     model: "TK-SL 01",
     image: "/images/newimgs/TK-SL 01.jpg",
     hoverImage: "/images/newimgs/TK-SL 01.jpg",
-    description: "Concealed hinge with adjustable tension.",
-    fullDescription: "Suitable for heavy-duty main door usage.",
-    category: "Home Decor",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
+  category: "Home Decor",
     colors: ["Black", "R.Gold"],
     sizes: ["Standard"],
     inStock: true
@@ -1406,9 +1405,10 @@ const products = [
     model: "TK-SL 12",
     image: "/images/newimgs/TK-SL 12.jpg",
     hoverImage: "/images/newimgs/TK-SL 12.jpg",
-    description: "Concealed hinge with adjustable tension.",
-    fullDescription: "Suitable for heavy-duty main door usage.",
-    category: "Home Decor",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
+  category: "Home Decor",
     colors: ["CP-Black", "R.Gold-Black","Gold-Black"],
     sizes: ["Standard"],
     inStock: true
@@ -1419,8 +1419,9 @@ const products = [
     model: "TK-SL 13",
     image: "/images/newimgs/TK-SL 13.jpg",
     hoverImage: "/images/newimgs/TK-SL 13.jpg",
-    description: "Concealed hinge with adjustable tension.",
-    fullDescription: "Suitable for heavy-duty main door usage.",
+   description: "Elegant home decor piece to enhance interiors.",
+  fullDescription:
+    "A beautifully crafted decor item designed to elevate the look of living spaces. Perfect for adding charm and a modern touch to your home or office.",
     category: "Home Decor",
     colors: ["Black", "R.Gold","Antique","Gold"],
     sizes: ["Standard"],
@@ -1432,10 +1433,10 @@ const products = [
     model: "TK-KS-02",
     image: "/images/new/TK-KS-02.JPG",
     hoverImage: "/images/new/TK-KS-02.JPG",
-    description: "Durable main door handle with elegant finish.",
-    fullDescription:
-      "Elegant and durable main door handle made from high-grade stainless steel with corrosion resistant plating. Suitable for both residential and commercial doors.",
-    category: "Key Stand",
+   description: "Wall-mounted key stand with a simple design.",
+  fullDescription:
+    "A compact and stylish key stand designed to keep your keys organized in one place. Perfect for homes and offices, it adds convenience while maintaining a neat look.",
+   category: "Key Stand",
     colors: ["Gold","Antique","Copper"],
     sizes: ["Standard"],
     inStock: true,

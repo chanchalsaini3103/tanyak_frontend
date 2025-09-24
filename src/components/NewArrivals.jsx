@@ -2,9 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/NewArrivals.css";
 import cabinetHandlesImg from "../images/newarrivals/1.jpg";
 import img2 from "../images/newarrivals/2.jpg";
-import img3 from "../images/newarrivals/3.jpg";
-import img4 from "../images/newarrivals/4.jpg";
+import img3 from "/images/newarrivals2/Hinges.jpeg";
+import img4 from "/images/newarrivals2/Knob.jpg";
 import img5 from "../images/newarrivals/5.jpg";
+import img6 from "/images/newarrivals2/wardrobe accesories.png";
+import img7 from "/images/newarrivals2/Wicker baskets.webp";
+import img8 from "/images/newarrivals2/Tendoms.png";
+import img9 from "/images/newarrivals2/Glass Rolling shutter.webp";
+import img10 from "/images/newarrivals2/SS T patti.webp";
 import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
@@ -36,10 +41,15 @@ const NewArrivals = () => {
   // Sample new arrival products
   const newArrivals = [
     { id: 1, name: "Handles", image: cabinetHandlesImg, badge: "New" },
-    { id: 2, name: "Drawer Pulls", image: img2, badge: "Trending" },
+    { id: 2, name: "Handles", image: img2, badge: "Trending" },
     { id: 3, name: "Hinges", image: img3, badge: "Limited" },
     { id: 4, name: "Knobs", image: img4, badge: "Premium" },
     { id: 5, name: "Latches", image: img5, badge: "New" },
+    { id: 6, name: "Wardrobe Accesories", image: img6, badge: "New" },
+    { id: 7, name: "Wicker Baskets", image: img7, badge: "Trending" },
+    { id: 8, name: "Tendoms", image: img8, badge: "Limited" },
+    { id: 9, name: "Glass Rolling shutter", image: img9, badge: "Premium" },
+    { id: 10, name: "SS T patti", image: img10, badge: "New" },
   ];
 
   // Refs to measure widths and update CSS variable
