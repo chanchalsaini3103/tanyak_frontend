@@ -35,6 +35,232 @@
   --nav-text: #f1f1f1;
   --nav-hover: rgba(255, 255, 255, 0.06);
 }
+/* ========== Mobile-specific tweaks you requested ========== */
+@media (max-width: 991.98px) {
+  /* Show the secondary nav (navlinks) on mobile and hide extra header chrome */
+  .secondary-nav {
+    display: block !important;
+  }
+
+  /* Hide desktop-only controls */
+  .contacts,
+  .search-form {
+    display: none !important;
+  }
+
+  /* Make the theme toggle icon-only and compact on header */
+  .theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    font-size: 1rem;
+  }
+
+  /* Ensure top-announcement is hidden on mobile (you previously had it, keep hidden) */
+  .top-announcement { display: none !important; }
+
+  /* Mobile drawer: hide the header close button visually (keeps it in DOM for a11y) */
+  .mobile-drawer .drawer-close {
+    display: none;
+  }
+  /* If you want to hide the 'My TANYAK' label too on small phones, uncomment below */
+  /* .mobile-drawer .drawer-title { display: none; } */
+
+  /* Align contact phone and email inline and make them tappable */
+  .mobile-contact-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .mobile-contact-item a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  /* Remove auth button remnants (safe-guard) */
+  .mobile-auth-buttons,
+  .btn-login,
+  .btn-signup {
+    display: none !important;
+  }
+
+  /* Make menu items a bit larger for tap targets */
+  .mobile-nav-item {
+    padding: 14px 12px;
+    font-size: 15px;
+  }
+
+  /* Ensure categories-fullwidth-dropdown not intruding on mobile layout */
+  .categories-fullwidth-dropdown { display: none; }
+}
+
+/* Make theme icon in mobile drawer crisp */
+.mobile-theme-toggle-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Keep consistent icon sizing */
+.mobile-theme-icon {
+  font-size: 1.1rem;
+}
+
+/* If you want the nav links in the secondary nav to be more compact on mobile */
+@media (max-width: 576px) {
+  .nav-left { gap: 10px; margin-left: 8px; }
+  .nav-link { font-size: 14px; padding: 6px 8px; }
+}
+/* ---------- Mobile drawer logo + cancel button ---------- */
+.mobile-drawer-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+/* Logo in drawer header */
+.mobile-drawer-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+
+/* Cancel (close) button visible at top-right of drawer */
+.mobile-drawer-cancel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1.0rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.mobile-drawer-cancel:focus { outline: 3px solid rgba(240,196,25,0.12); outline-offset: 2px; }
+
+/* mobile footer theme / dark-mode control (above footer) */
+.mobile-footer-theme {
+  padding: 12px 14px;
+  display: flex;
+  justify-content: center;
+}
+.mobile-theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  width: 100%;
+  max-width: 320px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.mobile-theme-toggle-btn:focus { outline: 3px solid rgba(240,196,25,0.12); outline-offset: 2px; }
+.mobile-theme-icon { font-size: 1.1rem; }
+.mobile-theme-text { font-size: 14px; }
+
+/* contact row & items */
+.mobile-contact-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 14px;
+}
+.mobile-contact-item { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; }
+.mobile-contact-item a { text-decoration: none; color: var(--text-primary); }
+
+/* updated mobile footer */
+.mobile-footer {
+  padding: 12px 14px 18px;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Undo any previous rule that hid the close button on mobile */
+@media (max-width: 991.98px) {
+  .mobile-drawer .drawer-close { display: none; } /* keep old invisible if present */
+  .mobile-drawer-cancel { display: inline-flex; } /* ensure our new cancel button shows */
+}
+/* Drawer layout: flex column so footer sticks at bottom */
+.mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Body scrollable, footer sticks */
+.mobile-drawer-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 14px;
+  color: var(--text-primary);
+}
+
+/* Dark mode toggle just above footer */
+.mobile-footer-theme {
+  flex: 0 0 auto;
+  padding: 12px 14px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  background: var(--bg-primary);
+}
+.mobile-theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  width: 100%;
+  max-width: 320px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.mobile-theme-icon { font-size: 1.1rem; }
+.mobile-theme-text { font-size: 14px; }
+
+/* Footer at very bottom */
+.mobile-footer {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 14px 12px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
 
 /* Apply dark mode to body */
 body.dark-mode {
